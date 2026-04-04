@@ -1,0 +1,143 @@
+---
+/* Mentor Section — Lilian's bio */
+---
+
+<section class="bg-glacial-surface border-y border-glacial-bg py-[var(--spacing-section-gap)] overflow-hidden">
+  <div class="container-main">
+    <div class="flex flex-col lg:flex-row gap-20 items-center">
+
+      <!-- Left: Photo area -->
+      <div class="w-full lg:w-5/12 reveal-left">
+        <div class="relative group">
+          <!-- Decorative frame 1 (cyan) -->
+          <div
+            class="absolute -inset-4 border-2 border-cyan/20 group-hover:border-cyan/50 transition-all -rotate-3 pointer-events-none"
+            aria-hidden="true"
+          ></div>
+          <!-- Decorative frame 2 (indigo) -->
+          <div
+            class="absolute -inset-4 border-2 border-indigo/20 group-hover:border-indigo/50 transition-all rotate-3 pointer-events-none"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Photo container -->
+          <div class="relative bg-white p-1 overflow-hidden shadow-2xl">
+            <!-- Placeholder (replace with real image later) -->
+            <div
+              class="aspect-[3/4] bg-gradient-to-br from-glacial-surface to-glacial-bg flex items-center justify-center"
+            >
+              <span class="text-glacial-gray font-display text-lg tracking-wider uppercase">Photo</span>
+            </div>
+          </div>
+
+          <!-- Floating name badge -->
+          <div class="absolute bottom-8 -right-8 bg-clinical-dark text-white p-6 border-r-4 border-indigo rotate-2 shadow-2xl">
+            <span class="text-cyan font-label tracking-widest text-[10px] uppercase mb-1 block">
+              Ton mentor
+            </span>
+            <span class="text-2xl font-black font-display">
+              Lilian Sevoumian
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Bio content -->
+      <div class="w-full lg:w-7/12">
+
+        <!-- Heading -->
+        <h2
+          class="font-display text-[length:var(--font-size-h1)] font-black italic tracking-tighter text-clinical-dark uppercase reveal"
+        >
+          LE MENTOR.
+        </h2>
+
+        <!-- Bio -->
+        <p class="text-2xl text-on-surface-muted font-light leading-relaxed border-l-2 border-glacial-surface pl-8 mt-8 mb-12 reveal delay-1">
+          Expert en automatisation et IA. Make Partner officiel&nbsp;&mdash;&nbsp;premier Fran&ccedil;ais certifi&eacute; niveau&nbsp;5. Plus de 500 automatisations d&eacute;ploy&eacute;es pour des entreprises de toutes tailles.
+        </p>
+
+        <!-- Social links -->
+        <div class="flex gap-10 mb-12 px-8 reveal delay-2">
+          <a
+            href="https://www.linkedin.com/in/lilian-sevoumian/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-indigo font-bold flex items-center gap-2 hover:gap-4 transition-all"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+            LinkedIn
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+          <a
+            href="https://www.youtube.com/@liliansevoumian"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-cyan font-bold flex items-center gap-2 hover:gap-4 transition-all"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+            YouTube
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+
+        <!-- Quote -->
+        <blockquote class="relative p-10 bg-glacial-panel border border-glacial-surface italic text-xl font-light -rotate-1 text-on-surface reveal delay-3">
+          <!-- Left accent bar -->
+          <div
+            class="absolute top-0 left-0 w-1.5 h-full bg-indigo"
+            aria-hidden="true"
+          ></div>
+          <p>
+            Mon objectif&nbsp;: te donner en 3 mois les comp&eacute;tences qui m'ont pris 4 ans &agrave; construire. Pas de th&eacute;orie inutile, que du concret.
+          </p>
+        </blockquote>
+
+        <!-- Stats row -->
+        <div class="flex gap-12 mt-12 reveal delay-4">
+          <div>
+            <span class="font-display text-3xl font-black text-clinical-dark block leading-none">
+              500+
+            </span>
+            <span class="font-label text-xs uppercase tracking-widest text-on-surface-muted mt-1 block">
+              automatisations
+            </span>
+          </div>
+          <div>
+            <span class="font-display text-3xl font-black text-clinical-dark block leading-none">
+              2000h+
+            </span>
+            <span class="font-label text-xs uppercase tracking-widest text-on-surface-muted mt-1 block">
+              &eacute;conomis&eacute;es par mois
+            </span>
+          </div>
+          <div>
+            <span class="font-display text-3xl font-black text-clinical-dark block leading-none">
+              5 ans
+            </span>
+            <span class="font-label text-xs uppercase tracking-widest text-on-surface-muted mt-1 block">
+              d'expertise
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
