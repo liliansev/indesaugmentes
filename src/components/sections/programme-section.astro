@@ -1,75 +1,58 @@
 ---
-/* Programme Section — Bento grid, editorial header | Light Editorial */
+/* Modules — System Architecture */
 ---
 
-<section id="programme" class="bg-surface py-[var(--spacing-section-gap)]">
-  <div class="container-main">
+<section class="mb-24" id="modules">
+  <div class="text-center mb-16">
+    <div class="label-mono text-accent-violet mb-4 reveal">0x04 // System Architecture</div>
+    <h2 class="text-4xl font-bold mb-4 reveal delay-1">Ce que tu vas maîtriser en 3 mois</h2>
+    <p class="text-text-dim reveal delay-2">Le blueprint complet pour ton activité de freelance augmenté.</p>
+  </div>
+  <div class="grid md:grid-cols-2 gap-6">
 
-    <!-- Asymmetric header -->
-    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-      <h2 class="text-5xl md:text-7xl font-display font-bold tracking-tighter text-on-surface reveal">CURRICULUM<br /><span class="text-outline-variant">AUGMENTÉ</span></h2>
-      <div class="max-w-md text-right font-body text-on-surface-variant text-sm border-r-4 border-primary pr-6 reveal delay-1">
-        En 12 semaines, nous reconstruirons ton arsenal technique et stratégique pour devenir l'expert indispensable.
+    <div class="dashboard-panel p-8 group hover:translate-y-[-4px] reveal delay-1">
+      <div class="flex justify-between items-start mb-6">
+        <div class="w-12 h-12 rounded-lg bg-accent-violet/10 flex items-center justify-center text-accent-violet group-hover:bg-accent-violet group-hover:text-white transition-all">
+          <span class="material-symbols-outlined">settings_input_component</span>
+        </div>
+        <div class="label-mono text-accent-violet">Module 01</div>
       </div>
+      <h3 class="text-xl font-bold mb-4">Les outils : Make, n8n & IA</h3>
+      <p class="text-text-dim leading-relaxed">Formations vidéo complètes + exercices pratiques. Tu ne vas pas juste "comprendre" — tu vas savoir construire des automations complexes que des clients paient 2 000€+.</p>
     </div>
 
-    <!-- Bento grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-      <!-- Card 1: Architecture IA (2 cols) -->
-      <div class="md:col-span-2 bg-surface-container-low p-10 relative overflow-hidden group border border-outline-variant/20 rounded-lg reveal delay-1">
-        <div class="absolute top-0 right-0 p-4 font-sans text-outline-variant text-6xl font-black opacity-10">01</div>
-        <span class="material-symbols-outlined text-primary mb-6 text-4xl block">psychology</span>
-        <h3 class="text-3xl font-display font-bold mb-4 uppercase tracking-tighter text-on-surface">Intelligence IA</h3>
-        <p class="text-on-surface-variant leading-relaxed max-w-lg mb-8">
-          <strong>Prompting avancé</strong>, <strong>agents IA</strong>, intégration dans tes workflows d'automatisation. Multiplie ta productivité par 10.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="chip">Prompting</span>
-          <span class="chip">Agents IA</span>
-          <span class="chip">RAG Systems</span>
+    <div class="dashboard-panel p-8 group hover:translate-y-[-4px] reveal delay-2">
+      <div class="flex justify-between items-start mb-6">
+        <div class="w-12 h-12 rounded-lg bg-accent-lime/10 flex items-center justify-center text-accent-lime group-hover:bg-accent-lime group-hover:text-dash-slate transition-all">
+          <span class="material-symbols-outlined">trending_up</span>
         </div>
+        <div class="label-mono text-accent-lime">Module 02</div>
       </div>
-
-      <!-- Card 2: Maîtrise Make (1 col) -->
-      <div class="bg-white p-10 flex flex-col justify-between border-t-4 border-primary shadow-sm border-x border-b border-outline-variant/20 rounded-lg reveal delay-2">
-        <div>
-          <span class="material-symbols-outlined text-primary mb-6 block text-3xl">account_tree</span>
-          <h3 class="text-2xl font-display font-bold mb-4 uppercase tracking-tighter text-on-surface">Maîtrise de Make</h3>
-          <p class="text-sm text-on-surface-variant leading-relaxed">
-            Scénarios d'automatisation de A à Z. <strong>APIs</strong>, <strong>webhooks</strong>, architecture avancée.
-          </p>
-        </div>
-        <div class="mt-8 pt-8 border-t border-outline-variant/20 font-sans text-[10px] text-primary tracking-widest font-bold uppercase">Make Partner Level 5</div>
-      </div>
-
-      <!-- Card 3: Puissance n8n (1 col) -->
-      <div class="bg-white p-10 border-b-4 border-tertiary shadow-sm border-x border-t border-outline-variant/20 rounded-lg reveal delay-3">
-        <span class="material-symbols-outlined text-tertiary mb-6 block text-3xl">device_hub</span>
-        <h3 class="text-2xl font-display font-bold mb-4 uppercase tracking-tighter text-on-surface">Puissance n8n</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed">
-          Workflows <strong>open-source</strong>, <strong>auto-hébergés</strong>, sans limites. Déploie des automatisations que tu possèdes.
-        </p>
-      </div>
-
-      <!-- Card 4: Terminal des Projets (2 cols) -->
-      <div class="md:col-span-2 bg-surface-bright p-10 relative overflow-hidden group border border-outline-variant/20 rounded-lg reveal delay-4">
-        <div class="absolute -bottom-10 -right-10 opacity-5 group-hover:opacity-10 transition-opacity">
-          <span class="material-symbols-outlined text-[20rem] text-on-surface">deployed_code</span>
-        </div>
-        <h3 class="text-3xl font-display font-bold mb-6 uppercase tracking-tighter text-on-surface">Branding & Business</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <div>
-            <div class="font-sans text-primary text-xs mb-2 font-bold uppercase tracking-widest">Branding & Offre</div>
-            <div class="text-sm text-on-surface-variant"><strong>Positionnement</strong>, <strong>pricing premium</strong>, personal branding qui attire les bons clients.</div>
-          </div>
-          <div>
-            <div class="font-sans text-primary text-xs mb-2 font-bold uppercase tracking-widest">Communauté</div>
-            <div class="text-sm text-on-surface-variant">Réseau de <strong>freelances augmentés</strong>, accountability, partage de deals et opportunités.</div>
-          </div>
-        </div>
-      </div>
-
+      <h3 class="text-xl font-bold mb-4">Le business : trouver des clients et closer</h3>
+      <p class="text-text-dim leading-relaxed">Mon process commercial complet : comment je prospecte, comment je positionne mes offres, comment je close en call. Les scripts, les templates, tout.</p>
     </div>
+
+    <div class="dashboard-panel p-8 group hover:translate-y-[-4px] reveal delay-3">
+      <div class="flex justify-between items-start mb-6">
+        <div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center text-white group-hover:bg-white group-hover:text-dash-slate transition-all">
+          <span class="material-symbols-outlined">account_balance</span>
+        </div>
+        <div class="label-mono">Module 03</div>
+      </div>
+      <h3 class="text-xl font-bold mb-4">Le quotidien : gérer ton activité</h3>
+      <p class="text-text-dim leading-relaxed">Trésorerie, facturation, statut juridique, relation client. Les trucs chiants mais vitaux que personne n'enseigne. Accès à un SaaS de pilotage tréso + un call avec un expert-comptable.</p>
+    </div>
+
+    <div class="dashboard-panel p-8 group hover:translate-y-[-4px] reveal delay-4">
+      <div class="flex justify-between items-start mb-6">
+        <div class="w-12 h-12 rounded-lg bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-500 group-hover:bg-fuchsia-500 group-hover:text-white transition-all">
+          <span class="material-symbols-outlined">diversity_3</span>
+        </div>
+        <div class="label-mono text-fuchsia-500">Module 04</div>
+      </div>
+      <h3 class="text-xl font-bold mb-4">Le réseau : tu n'es plus seul</h3>
+      <p class="text-text-dim leading-relaxed">Cohorte de 5-10 personnes. 2 lives groupe par semaine. 2h de coaching 1-to-1 avec moi. Un groupe qui te tire vers le haut.</p>
+    </div>
+
   </div>
 </section>

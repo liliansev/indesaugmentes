@@ -3,78 +3,45 @@ import { Image } from 'astro:assets'
 import lilianPhoto from '../../assets/lilian-sevoumian.jpeg'
 ---
 
-<section id="mentor" class="bg-surface-container-low py-[var(--spacing-section-gap)]">
-  <div class="container-main">
-    <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
-
-      <!-- Left: Photo -->
-      <div class="w-full lg:w-5/12 reveal-left">
-        <div class="rounded-xl overflow-hidden border border-outline-variant/20 relative group">
-          <Image
-            src={lilianPhoto}
-            alt="Lilian Sevoumian — Formateur Indés Augmentés"
-            class="w-full h-auto object-cover rounded-lg"
-            widths={[400, 600]}
-            sizes="(max-width: 1024px) 100vw, 40vw"
-          />
-          <div class="absolute inset-0 cyber-scanline opacity-20" aria-hidden="true"></div>
+<section class="mb-24">
+  <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div class="order-2 lg:order-1">
+      <div class="label-mono text-accent-violet mb-4 reveal">0x03 // Expert ID</div>
+      <h2 class="text-4xl font-bold mb-8 reveal delay-1">Qui je suis (et pourquoi tu devrais m'écouter)</h2>
+      <div class="space-y-6 text-text-dim mb-10 leading-relaxed reveal delay-2">
+        <p>Je suis Lilian. Freelance spécialisé en automation et IA. Je fais <span class="text-white font-bold">+150k€/an</span> en missions clients. J'ai formé <span class="text-white font-bold">+2 000 personnes</span> sur Make et n8n. Je poste sur LinkedIn devant +10 000 abonnés.</p>
+        <p class="bg-dash-surface border border-dash-border p-6 rounded-lg text-text-main border-l-4 border-l-accent-violet">
+          "Mais surtout : je suis passé par exactement là où tu es. J'ai galéré à me positionner, j'ai tatonné pendant des mois, j'ai fait toutes les erreurs possibles."
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-6 reveal delay-3">
+        <div class="dashboard-panel p-4 border-dashed">
+          <div class="text-2xl font-bold text-accent-violet">+150k€/an</div>
+          <div class="label-mono">Revenu Freelance</div>
+        </div>
+        <div class="dashboard-panel p-4 border-dashed">
+          <div class="text-2xl font-bold text-accent-violet">+2 000</div>
+          <div class="label-mono">Formés</div>
+        </div>
+        <div class="dashboard-panel p-4 border-dashed">
+          <div class="text-2xl font-bold text-accent-violet">+10k</div>
+          <div class="label-mono">Abonnés LinkedIn</div>
+        </div>
+        <div class="dashboard-panel p-4 border-dashed">
+          <div class="text-2xl font-bold text-accent-violet">Référent</div>
+          <div class="label-mono">Make & n8n</div>
         </div>
       </div>
-
-      <!-- Right: Bio content -->
-      <div class="w-full lg:w-7/12">
-
-        <span class="eyebrow reveal">Formateur</span>
-
-        <h2 class="font-display text-[length:var(--font-size-h1)] font-black tracking-tight text-on-surface mt-3 reveal delay-1">
-          Lilian Sevoumian
-        </h2>
-
-        <p class="text-on-surface-variant text-lg leading-relaxed mt-6 max-w-xl reveal delay-2">
-          Expert en automatisation et IA. <strong>Make Partner officiel</strong>&nbsp;&mdash;&nbsp;<strong>premier Français certifié niveau&nbsp;5</strong>. Plus de <strong>500&nbsp;automatisations</strong> déployées pour des entreprises de toutes tailles.
-        </p>
-
-        <!-- Stats row -->
-        <div class="flex flex-wrap gap-6 mt-8 reveal delay-3">
-          <div class="flex items-baseline gap-2">
-            <span class="font-display text-2xl font-black text-on-surface">4 ans</span>
-            <span class="text-on-surface-variant text-sm">d'expertise</span>
-          </div>
-          <div class="w-px h-6 bg-outline-variant/30 self-center" aria-hidden="true"></div>
-          <div class="flex items-baseline gap-2">
-            <span class="font-display text-2xl font-black text-on-surface">500+</span>
-            <span class="text-on-surface-variant text-sm">automatisations</span>
-          </div>
-          <div class="w-px h-6 bg-outline-variant/30 self-center" aria-hidden="true"></div>
-          <div class="flex items-baseline gap-2">
-            <span class="font-display text-2xl font-black text-on-surface">2000h+</span>
-            <span class="text-on-surface-variant text-sm">économisées / mois</span>
-          </div>
-        </div>
-
-        <!-- Social links -->
-        <div class="flex gap-5 mt-8 reveal delay-4">
-          <a href="https://www.linkedin.com/in/lilian-sevoumian/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:opacity-80 transition-opacity">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
-            LinkedIn
-          </a>
-          <a href="https://www.youtube.com/@liliansevoumian" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:opacity-80 transition-opacity">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg>
-            YouTube
-          </a>
-          <a href="#" class="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:opacity-80 transition-opacity">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3zM19 10v2a7 7 0 01-14 0v-2H3v2a9 9 0 004 7.46V22h2v-2.54A9 9 0 0021 12v-2h-2z"/></svg>
-            Podcast
-          </a>
-        </div>
-
-        <!-- Quote -->
-        <div class="mt-8 p-6 bg-white rounded-lg border border-outline-variant/20 reveal delay-3">
-          <p class="text-on-surface-variant text-base leading-relaxed">
-            "Ma mission est simple : transformer des freelances ordinaires en architectes de systèmes inarrêtables par l'IA."
-          </p>
-        </div>
-
+    </div>
+    <div class="order-1 lg:order-2 reveal delay-1">
+      <div class="dashboard-panel p-3 aspect-square max-w-md mx-auto transform lg:rotate-3">
+        <Image
+          src={lilianPhoto}
+          alt="Lilian Sevoumian"
+          class="w-full h-full object-cover rounded-lg grayscale"
+          widths={[400, 600]}
+          sizes="(max-width: 1024px) 100vw, 50vw"
+        />
       </div>
     </div>
   </div>

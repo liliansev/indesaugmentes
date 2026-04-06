@@ -1,81 +1,60 @@
 ---
-/* FAQ Section — Accordion | Light Editorial */
+/* FAQ — Dashboard accordion */
 ---
 
-<section id="faq" class="bg-surface py-[var(--spacing-section-gap)]">
-  <div class="max-w-4xl mx-auto px-6">
+<section class="mb-24" id="faq">
+  <h2 class="text-3xl font-bold mb-10 text-center reveal">Questions fréquentes</h2>
+  <div class="max-w-3xl mx-auto space-y-4">
 
-    <h2 class="font-display text-[length:var(--font-size-h1)] font-bold normal-case text-on-surface text-center mb-20 reveal">
-      Questions fréquentes
-    </h2>
+    <details class="dashboard-panel group reveal delay-1">
+      <summary class="p-6 cursor-pointer flex justify-between items-center list-none font-semibold text-white">
+        C'est pour qui exactement ?
+        <span class="material-symbols-outlined text-accent-violet group-open:rotate-180 transition-transform">expand_more</span>
+      </summary>
+      <div class="px-6 pb-6 text-text-dim text-sm leading-relaxed border-t border-dash-border pt-4">
+        Pour deux profils : les freelances qui veulent ajouter l'automation/IA à leurs compétences, et les personnes en reconversion qui veulent se lancer en freelance sur ce créneau. Pas besoin d'être développeur.
+      </div>
+    </details>
 
-    <div class="space-y-0">
+    <details class="dashboard-panel group reveal delay-2">
+      <summary class="p-6 cursor-pointer flex justify-between items-center list-none font-semibold text-white">
+        J'ai déjà suivi ta formation Make / n8n. Ça fait doublon ?
+        <span class="material-symbols-outlined text-accent-violet group-open:rotate-180 transition-transform">expand_more</span>
+      </summary>
+      <div class="px-6 pb-6 text-text-dim text-sm leading-relaxed border-t border-dash-border pt-4">
+        Non. Les formations vidéo sont incluses, mais le bootcamp c'est 80% d'accompagnement : le business, la prospection, le mindset, le coaching personnalisé. C'est la différence entre savoir utiliser un outil et savoir en vivre.
+      </div>
+    </details>
 
-      <details class="group border-b border-outline-variant/30 py-8 reveal delay-1">
-        <summary class="flex justify-between items-center cursor-pointer font-display font-bold text-xl md:text-2xl normal-case text-on-surface">
-          <span>Faut-il savoir coder&nbsp;?</span>
-          <svg class="faq-icon text-primary w-8 h-8 shrink-0 ml-6 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line class="group-open:opacity-0 transition-opacity duration-300" x1="12" y1="5" x2="12" y2="19" />
-            <line x1="5" y1="12" x2="19" y2="12" />
-          </svg>
-        </summary>
-        <div class="mt-6 text-on-surface-variant text-lg leading-relaxed max-w-2xl font-light">
-          Non. Le programme est conçu pour les <strong>non-développeurs</strong>. Tu apprendras la logique des APIs et de l'automatisation étape par étape. On utilise le <strong>no-code</strong> comme accélérateur &mdash; pas besoin d'une seule ligne de code.
-        </div>
-      </details>
+    <details class="dashboard-panel group reveal delay-3">
+      <summary class="p-6 cursor-pointer flex justify-between items-center list-none font-semibold text-white">
+        Je suis encore en CDI, c'est compatible ?
+        <span class="material-symbols-outlined text-accent-violet group-open:rotate-180 transition-transform">expand_more</span>
+      </summary>
+      <div class="px-6 pb-6 text-text-dim text-sm leading-relaxed border-t border-dash-border pt-4">
+        Oui. Les lives sont en soirée/fin de journée et les vidéos sont en accès libre. Plusieurs personnes de la cible sont exactement dans cette situation.
+      </div>
+    </details>
 
-      <details class="group border-b border-outline-variant/30 py-8 reveal delay-2">
-        <summary class="flex justify-between items-center cursor-pointer font-display font-bold text-xl md:text-2xl normal-case text-on-surface">
-          <span>Combien de temps par semaine faut-il investir&nbsp;?</span>
-          <svg class="faq-icon text-primary w-8 h-8 shrink-0 ml-6 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line class="group-open:opacity-0 transition-opacity duration-300" x1="12" y1="5" x2="12" y2="19" />
-            <line x1="5" y1="12" x2="19" y2="12" />
-          </svg>
-        </summary>
-        <div class="mt-6 text-on-surface-variant text-lg leading-relaxed max-w-2xl font-light">
-          Prévois 5 à 8 heures par semaine entre les vidéos, les lives et la pratique. C'est compatible avec une activité en parallèle, mais il faut être régulier.
-        </div>
-      </details>
+    <details class="dashboard-panel group reveal delay-4">
+      <summary class="p-6 cursor-pointer flex justify-between items-center list-none font-semibold text-white">
+        Pourquoi c'est moins cher que d'habitude ?
+        <span class="material-symbols-outlined text-accent-violet group-open:rotate-180 transition-transform">expand_more</span>
+      </summary>
+      <div class="px-6 pb-6 text-text-dim text-sm leading-relaxed border-t border-dash-border pt-4">
+        Parce que c'est la cohorte 1. Tu essuies les plâtres avec moi, je te fais un prix en échange. Dès la cohorte 2, le prix passe à 1 800€.
+      </div>
+    </details>
 
-      <details class="group border-b border-outline-variant/30 py-8 reveal delay-3">
-        <summary class="flex justify-between items-center cursor-pointer font-display font-bold text-xl md:text-2xl normal-case text-on-surface">
-          <span>Est-ce éligible au CPF&nbsp;?</span>
-          <svg class="faq-icon text-primary w-8 h-8 shrink-0 ml-6 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line class="group-open:opacity-0 transition-opacity duration-300" x1="12" y1="5" x2="12" y2="19" />
-            <line x1="5" y1="12" x2="19" y2="12" />
-          </svg>
-        </summary>
-        <div class="mt-6 text-on-surface-variant text-lg leading-relaxed max-w-2xl font-light">
-          Le financement OPCO est possible selon ton statut. Nous n'utilisons pas le CPF volontairement &mdash; cela nous permet de mettre à jour le contenu en temps réel face aux évolutions de l'IA.
-        </div>
-      </details>
+    <details class="dashboard-panel group reveal delay-5">
+      <summary class="p-6 cursor-pointer flex justify-between items-center list-none font-semibold text-white">
+        C'est quoi le call de 15 min ?
+        <span class="material-symbols-outlined text-accent-violet group-open:rotate-180 transition-transform">expand_more</span>
+      </summary>
+      <div class="px-6 pb-6 text-text-dim text-sm leading-relaxed border-t border-dash-border pt-4">
+        Un échange rapide pour voir si le bootcamp est fait pour toi. Pas de pitch commercial, juste une conversation honnête. Si c'est pas le bon moment ou le bon format, je te le dirai.
+      </div>
+    </details>
 
-      <details class="group border-b border-outline-variant/30 py-8 reveal delay-4">
-        <summary class="flex justify-between items-center cursor-pointer font-display font-bold text-xl md:text-2xl normal-case text-on-surface">
-          <span>Et si je n'ai pas encore de clients&nbsp;?</span>
-          <svg class="faq-icon text-primary w-8 h-8 shrink-0 ml-6 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line class="group-open:opacity-0 transition-opacity duration-300" x1="12" y1="5" x2="12" y2="19" />
-            <line x1="5" y1="12" x2="19" y2="12" />
-          </svg>
-        </summary>
-        <div class="mt-6 text-on-surface-variant text-lg leading-relaxed max-w-2xl font-light">
-          C'est justement l'un des objectifs du bootcamp. On t'aide à construire ton offre, ton positionnement et ta stratégie de prospection. Tu accèdes aussi au réseau du collectif pour trouver tes premières missions.
-        </div>
-      </details>
-
-      <details class="group border-b border-outline-variant/30 py-8 reveal delay-5">
-        <summary class="flex justify-between items-center cursor-pointer font-display font-bold text-xl md:text-2xl normal-case text-on-surface">
-          <span>Quelle est la différence avec une formation en ligne classique&nbsp;?</span>
-          <svg class="faq-icon text-primary w-8 h-8 shrink-0 ml-6 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line class="group-open:opacity-0 transition-opacity duration-300" x1="12" y1="5" x2="12" y2="19" />
-            <line x1="5" y1="12" x2="19" y2="12" />
-          </svg>
-        </summary>
-        <div class="mt-6 text-on-surface-variant text-lg leading-relaxed max-w-2xl font-light">
-          Une formation classique te donne des vidéos à regarder seul. Ici, c'est un accompagnement live personnalisé : <strong>sessions en direct</strong> avec Lilian, feedback sur tes projets, <strong>coaching</strong> individuel et accès à un groupe restreint de <strong>6 personnes max</strong>. Tu n'es jamais livré à toi-même.
-        </div>
-      </details>
-
-    </div>
   </div>
 </section>

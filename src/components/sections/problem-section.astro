@@ -1,62 +1,39 @@
 ---
-/* Problem Section — "Le constat" | Light Editorial */
+/* Diagnostics Section — Error Log grid */
 ---
 
-<section id="constat" class="bg-surface-container-low py-[var(--spacing-section-gap)]">
-  <div class="container-main">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+<section class="mb-24" id="diagnostics">
+  <div class="flex items-center gap-4 mb-8 reveal">
+    <span class="label-mono text-accent-violet font-bold">0x01 // Error Log</span>
+    <div class="h-px bg-dash-border flex-grow"></div>
+  </div>
+  <h2 class="text-3xl font-bold mb-10 reveal delay-1">Tu reconnais cette situation ?</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-dash-border/40">
 
-      <!-- Left: Eyebrow + italic headline + body paragraphs -->
-      <div>
-        <span class="eyebrow reveal">Le constat</span>
-
-        <h2 class="mt-8 font-display font-bold tracking-tighter text-on-surface text-[length:var(--font-size-h1)] leading-[1.15] reveal delay-1">
-          L'ancien monde du freelancing meurt.
-        </h2>
-
-        <div class="mt-10 space-y-6 reveal delay-2">
-          <p class="text-lg text-on-surface-variant leading-relaxed">
-            Pendant des années, être freelance signifiait vendre du temps contre de l'argent. Mais le marché a basculé&nbsp;: <strong>l'IA et l'automation</strong> redéfinissent ce que les clients attendent. Les compétences d'hier ne suffisent plus demain.
-          </p>
-          <p class="text-lg text-on-surface-variant leading-relaxed">
-            Ceux qui n'évoluent pas se retrouvent à courir après des missions de moins en moins bien payées, face à une <strong>concurrence mondiale</strong>. Le modèle du freelance généraliste est en train de s'effondrer.
-          </p>
-          <p class="text-lg text-on-surface-variant leading-relaxed">
-            La question n'est plus <em>si</em> tu dois intégrer l'IA &mdash; mais <strong>à quelle vitesse</strong>.
-          </p>
-        </div>
-      </div>
-
-      <!-- Right: 2 icon cards -->
-      <div class="flex flex-col gap-8">
-
-        <!-- Card 1 -->
-        <div class="p-8 bg-white rounded-lg border border-outline-variant/20 reveal delay-2">
-          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-            <span class="material-symbols-outlined text-primary text-2xl">schedule</span>
-          </div>
-          <h4 class="text-xl font-bold text-on-surface normal-case tracking-normal leading-snug">
-            Compétences obsolescentes
-          </h4>
-          <p class="mt-3 text-on-surface-variant leading-relaxed">
-            Tes clients attendent de l'IA et de l'automation, mais tu n'as ni la méthode ni les outils pour répondre. Chaque mois qui passe creuse l'écart.
-          </p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="p-8 bg-white rounded-lg border border-outline-variant/20 reveal delay-3">
-          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-            <span class="material-symbols-outlined text-primary text-2xl">trending_down</span>
-          </div>
-          <h4 class="text-xl font-bold text-on-surface normal-case tracking-normal leading-snug">
-            Course aux missions
-          </h4>
-          <p class="mt-3 text-on-surface-variant leading-relaxed">
-            Tu passes plus de temps à chercher des clients qu'à livrer des résultats. Sans spécialisation, tu te noies dans la concurrence et les tarifs baissent.
-          </p>
-        </div>
-
-      </div>
+    <div class="p-8 border-r border-b border-dash-border/40 hover:bg-dash-surface/30 transition-colors reveal delay-1">
+      <div class="label-mono text-accent-violet mb-4">Diagnostic #1</div>
+      <p class="text-text-main font-medium leading-relaxed">Tu as suivi <span class="text-accent-violet">12 tutos YouTube</span> sur Make, n8n ou l'IA… mais tu ne sais toujours pas comment en vivre.</p>
     </div>
+
+    <div class="p-8 border-r border-b border-dash-border/40 hover:bg-dash-surface/30 transition-colors reveal delay-2">
+      <div class="label-mono text-accent-violet mb-4">Diagnostic #2</div>
+      <p class="text-text-main font-medium leading-relaxed">Tu galères à te positionner. "Consultant automation" ? "Expert IA" ? Tu changes de bio LinkedIn <span class="text-accent-violet">toutes les semaines</span>.</p>
+    </div>
+
+    <div class="p-8 border-r border-b border-dash-border/40 hover:bg-dash-surface/30 transition-colors reveal delay-3">
+      <div class="label-mono text-accent-violet mb-4">Diagnostic #3</div>
+      <p class="text-text-main font-medium leading-relaxed">Le marché explose, mais tu restes au stade <span class="text-accent-violet">"side project"</span> pendant que les autres signent.</p>
+    </div>
+
+    <div class="p-8 border-r border-b border-dash-border/40 hover:bg-dash-surface/30 transition-colors reveal delay-4">
+      <div class="label-mono text-accent-violet mb-4">Diagnostic #4</div>
+      <p class="text-text-main font-medium leading-relaxed">Tu as peut-être même un CDI que tu veux quitter, mais tu ne sais pas par <span class="text-accent-violet">où commencer</span> pour te lancer.</p>
+    </div>
+
+    <div class="p-8 border-r border-b border-dash-border/40 hover:bg-dash-surface/30 transition-colors lg:col-span-2 reveal delay-5">
+      <div class="label-mono text-accent-violet mb-4">Diagnostic #5</div>
+      <p class="text-text-main font-medium leading-relaxed">Tu bosses seul, sans feedback, sans réseau, sans personne pour te dire si t'es sur la <span class="text-accent-violet">bonne voie</span>.</p>
+    </div>
+
   </div>
 </section>

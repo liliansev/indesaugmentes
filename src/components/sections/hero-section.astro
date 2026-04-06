@@ -3,72 +3,47 @@ import { Image } from 'astro:assets'
 import lilianPhoto from '../../assets/lilian-sevoumian.jpeg'
 ---
 
-<section class="relative min-h-screen flex items-center bg-surface overflow-hidden pt-24 pb-16 lg:pt-0 lg:pb-0">
-  <div class="container-main relative z-10 w-full">
-    <div class="asymmetric-grid items-center min-h-[80vh]">
-
-      <!-- Left: Content (8 cols) -->
-      <div class="col-span-12 lg:col-span-8">
-
-        <!-- Label tag -->
-        <div class="font-sans text-primary mb-6 tracking-[0.4em] uppercase font-bold text-xs reveal">
-          Cohorte 1 // Places limitées
-        </div>
-
-        <!-- Headline -->
-        <h1 class="text-6xl md:text-8xl font-display font-bold text-on-surface tracking-tighter leading-[0.9] mb-8 reveal delay-1">
-          DEVIENS UN FREELANCE <span class="text-primary">AUGMENTÉ.</span>
-        </h1>
-
-        <!-- Subtitle with left border -->
-        <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed mb-12 border-l-2 border-outline-variant pl-8 reveal delay-2">
-          En 3 mois, maîtrise <strong>l'IA et l'automation</strong> pour structurer ton <strong>offre freelance</strong> et décrocher tes <strong>premières missions</strong>.
-        </p>
-
-        <!-- CTA buttons -->
-        <div class="flex flex-wrap gap-6 reveal delay-3">
-          <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="group relative px-8 py-4 bg-primary text-white font-bold font-sans uppercase tracking-tighter overflow-hidden shadow-xl shadow-primary/20 btn">
-            <span class="relative z-10 flex items-center gap-2">
-              Réserver mon appel <span class="material-symbols-outlined">north_east</span>
-            </span>
-          </a>
-          <a href="#programme" class="btn btn-ghost">
-            Consulter le programme
-          </a>
-        </div>
-
-        <!-- Stats strip below CTA -->
-        <div class="flex flex-wrap gap-8 mt-12 reveal delay-4">
-          <div>
-            <span class="block text-3xl font-black text-on-surface leading-none font-display">500+</span>
-            <span class="block text-sm text-on-surface-variant mt-1">automatisations déployées</span>
-          </div>
-          <div class="w-px bg-outline-variant/30 self-stretch" aria-hidden="true"></div>
-          <div>
-            <span class="block text-3xl font-black text-on-surface leading-none font-display">Make Partner</span>
-            <span class="block text-sm text-on-surface-variant mt-1">1er Français certifié niveau 5</span>
-          </div>
-        </div>
+<section class="grid lg:grid-cols-12 gap-8 items-start mb-24">
+  <div class="lg:col-span-7 dashboard-panel p-8 lg:p-12 relative overflow-hidden reveal">
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-violet to-accent-lime"></div>
+    <div class="flex items-center gap-3 mb-6">
+      <span class="status-dot bg-accent-lime animate-pulse"></span>
+      <span class="label-mono text-accent-lime">Bootcamp — Cohorte 1 · Places limitées</span>
+    </div>
+    <h1 class="text-4xl lg:text-6xl font-extrabold mb-6 leading-[1.1] text-white">
+      Deviens freelance <br />
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-violet to-fuchsia-400">automation & IA</span> <br />
+      en 3 mois.
+    </h1>
+    <p class="text-lg text-text-dim leading-relaxed mb-10 max-w-xl font-medium">
+      Le programme intensif pour passer de "j'ai vu des tutos" à "je signe des missions à <span class="text-white border-b-2 border-accent-lime/40">500€/jour</span>". Accompagnement live, en petit groupe.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 items-center">
+      <a class="btn-primary w-full sm:w-auto" href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer">Réserver mon call de 15 min →</a>
+      <a class="btn-secondary w-full sm:w-auto" href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer">Rejoindre la liste d'attente</a>
+    </div>
+    <div class="mt-8 pt-6 border-t border-dash-border flex items-center gap-4">
+      <span class="label-mono">SYSTEM STATUS: 5 places restantes</span>
+    </div>
+  </div>
+  <div class="lg:col-span-5 grid grid-rows-2 gap-8">
+    <div class="dashboard-panel p-2 reveal delay-1">
+      <Image
+        src={lilianPhoto}
+        alt="Lilian Sevoumian"
+        class="rounded-lg w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-700"
+        widths={[400, 600]}
+        sizes="(max-width: 1024px) 100vw, 40vw"
+      />
+    </div>
+    <div class="dashboard-panel p-6 flex flex-col justify-center reveal delay-2">
+      <div class="label-mono mb-2">Mentor Profile</div>
+      <div class="text-2xl font-bold text-white mb-2">Lilian Sevoumian</div>
+      <div class="text-sm font-mono text-accent-violet mb-4">Expert Automation & IA</div>
+      <div class="h-1.5 w-full bg-dash-slate rounded-full overflow-hidden">
+        <div class="h-full bg-accent-violet w-3/4"></div>
       </div>
-
-      <!-- Right: Portrait (4 cols) -->
-      <div class="col-span-12 lg:col-span-4 relative reveal-right delay-2">
-        <div class="aspect-[3/4] bg-surface-container overflow-hidden relative group border border-outline-variant/20">
-          <Image
-            src={lilianPhoto}
-            alt="Lilian Sevoumian — Formateur Indés Augmentés"
-            class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700"
-            widths={[400, 600]}
-            sizes="(max-width: 1024px) 100vw, 30vw"
-          />
-          <div class="absolute inset-0 cyber-scanline opacity-30" aria-hidden="true"></div>
-          <div class="absolute bottom-4 left-4 right-4 p-4 bg-white/90 backdrop-blur-md border-t border-primary/30">
-            <div class="text-[10px] font-sans text-primary tracking-tighter mb-1 font-bold uppercase">Fondateur & Formateur</div>
-            <div class="text-sm font-display font-bold text-on-surface">LILIAN SEVOUMIAN</div>
-          </div>
-        </div>
-      </div>
-
+      <div class="mt-2 label-mono text-[9px] text-right">Seniority Level: 99</div>
     </div>
   </div>
 </section>

@@ -1,7 +1,5 @@
 ---
 import '../styles/global.css'
-import { Image } from 'astro:assets'
-import logoImg from '../assets/favicon-source.png'
 
 interface Props {
   title: string
@@ -10,7 +8,7 @@ interface Props {
 
 const {
   title,
-  description = 'Bootcamp de 3 mois pour devenir freelance en IA et automation. Formation Make, n8n, coaching personnalise.',
+  description = 'Le bootcamp intensif pour devenir freelance en automation et IA en 3 mois. Accompagnement live, petit groupe.',
 } = Astro.props
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
@@ -18,8 +16,8 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Course',
-  name: 'Indes Augmentes — Bootcamp IA & Automation',
-  description: 'Bootcamp de 3 mois pour devenir freelance en IA et automation',
+  name: 'Indes Augmentes — Bootcamp Freelance Automation & IA',
+  description: 'Bootcamp de 3 mois pour devenir freelance en automation et IA',
   provider: { '@type': 'Person', name: 'Lilian Sevoumian' },
   offers: { '@type': 'Offer', price: '1500', priceCurrency: 'EUR' },
   duration: 'P12W',
@@ -28,39 +26,34 @@ const structuredData = {
 ---
 
 <!doctype html>
-<html lang="fr">
+<html class="dark" lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#fafaff" />
+    <meta name="theme-color" content="#0f172a" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:site_name" content="Indes Augmentes" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link
@@ -68,213 +61,89 @@ const structuredData = {
       rel="stylesheet"
     />
 
-    <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
 
-  <body class="bg-surface text-on-surface selection:bg-primary/30 selection:text-on-surface">
-    <!-- Skip link for a11y -->
+  <body class="selection:bg-accent-violet/30 selection:text-white">
     <a
       href="#main-content"
-      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-on-surface focus:outline-none"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-lg focus:bg-accent-violet focus:px-4 focus:py-2 focus:text-white focus:outline-none"
     >
       Aller au contenu
     </a>
 
-    <!-- NAV (fixed, glass) -->
-    <nav id="navbar" class="navbar">
-      <div class="container-main flex items-center justify-between py-5">
-        <!-- Brand -->
+    <!-- NAV -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] border-b border-dash-border/60 bg-dash-slate/80 backdrop-blur-xl px-6 py-3">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
         <a href="/" class="flex items-center gap-3">
-          <Image
-            src={logoImg}
-            alt="Indés Augmentés"
-            class="h-10 w-10 rounded-lg object-cover"
-            width={40}
-            height={40}
-          />
-          <span
-            class="glitch-hover font-display text-xl font-black uppercase tracking-tighter text-on-surface"
-            >Indes Augmentes</span
-          >
+          <div class="w-8 h-8 rounded bg-gradient-to-br from-accent-violet to-accent-lime flex items-center justify-center">
+            <span class="material-symbols-outlined text-dash-slate text-xl font-bold">terminal</span>
+          </div>
+          <span class="text-sm font-mono font-bold tracking-tight text-white uppercase">Indes <span class="text-accent-violet">Augmentes</span> // v1.0</span>
         </a>
-
-        <!-- Desktop links -->
-        <div
-          class="hidden items-center gap-10 text-xs font-bold uppercase tracking-[0.2em] font-sans md:flex"
-        >
-          <a
-            href="#programme"
-            class="text-on-surface-variant transition-colors hover:text-primary"
-            >Programme</a
-          >
-          <a
-            href="#arsenal"
-            class="text-on-surface-variant transition-colors hover:text-primary"
-            >Inclus</a
-          >
-          <a
-            href="#tarifs"
-            class="text-on-surface-variant transition-colors hover:text-primary"
-            >Tarifs</a
-          >
-          <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-gradient py-3 px-6 text-sm"
-            >Reserver mon appel</a
-          >
+        <div class="hidden md:flex items-center gap-8">
+          <a class="label-mono hover:text-accent-violet transition-colors" href="#diagnostics">Diagnostics</a>
+          <a class="label-mono hover:text-accent-violet transition-colors" href="#modules">Modules</a>
+          <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn-primary py-2 px-5 text-sm">Reserver mon call</a>
         </div>
 
         <!-- Mobile hamburger -->
-        <button
-          id="menu-toggle"
-          class="flex flex-col gap-1.5 p-2 md:hidden"
-          aria-label="Menu"
-          aria-expanded="false"
-        >
-          <span
-            class="block h-0.5 w-6 bg-on-surface transition-all"
-            id="bar1"></span>
-          <span
-            class="block h-0.5 w-6 bg-on-surface transition-all"
-            id="bar2"></span>
-          <span
-            class="block h-0.5 w-4 bg-on-surface transition-all"
-            id="bar3"></span>
+        <button id="menu-toggle" class="flex flex-col gap-1.5 p-2 md:hidden" aria-label="Menu" aria-expanded="false">
+          <span class="block h-0.5 w-6 bg-text-main transition-all" id="bar1"></span>
+          <span class="block h-0.5 w-6 bg-text-main transition-all" id="bar2"></span>
+          <span class="block h-0.5 w-4 bg-text-main transition-all" id="bar3"></span>
         </button>
       </div>
 
       <!-- Mobile menu -->
-      <div
-        id="mobile-menu"
-        class="hidden bg-surface/95 backdrop-blur-xl md:hidden"
-      >
-        <div
-          class="container-main flex flex-col gap-6 py-8 text-sm font-bold uppercase tracking-[0.2em] font-sans"
-        >
-          <a
-            href="#programme"
-            class="mobile-link text-on-surface-variant transition-colors hover:text-primary"
-            >Programme</a
-          >
-          <a
-            href="#arsenal"
-            class="mobile-link text-on-surface-variant transition-colors hover:text-primary"
-            >Inclus</a
-          >
-          <a
-            href="#tarifs"
-            class="mobile-link text-on-surface-variant transition-colors hover:text-primary"
-            >Tarifs</a
-          >
-          <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="mobile-link btn btn-gradient py-4 text-center"
-            >Reserver mon appel</a
-          >
+      <div id="mobile-menu" class="hidden bg-dash-slate/95 backdrop-blur-xl md:hidden">
+        <div class="flex flex-col gap-6 py-8 px-6 text-sm font-mono uppercase tracking-wider">
+          <a href="#diagnostics" class="mobile-link text-text-dim hover:text-accent-violet transition-colors">Diagnostics</a>
+          <a href="#modules" class="mobile-link text-text-dim hover:text-accent-violet transition-colors">Modules</a>
+          <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="mobile-link btn-primary py-4 text-center">Reserver mon call</a>
         </div>
       </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
-    <main id="main-content">
+    <main id="main-content" class="max-w-7xl mx-auto px-6 pt-32 pb-24">
       <slot />
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-outline-variant bg-surface-container py-20 text-on-surface-variant">
-      <div class="container-main">
-        <div class="grid items-end gap-16 md:grid-cols-2">
-          <div>
-            <div
-              class="mb-8 flex items-center gap-4 font-display text-3xl font-black uppercase tracking-tighter text-on-surface"
-            >
-              <Image
-                src={logoImg}
-                alt="Indés Augmentés"
-                class="h-8 w-8 rounded-md object-cover"
-                width={32}
-                height={32}
-              />
-              Indes Augmentes
+    <footer class="border-t border-dash-border py-12 px-6 bg-dash-slate">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-6 h-6 rounded bg-accent-violet flex items-center justify-center">
+              <span class="material-symbols-outlined text-dash-slate text-xs font-bold">terminal</span>
             </div>
-            <p
-              class="text-sm font-sans uppercase leading-loose tracking-[0.2em] text-on-surface-variant/60"
-            >
-              &copy; 2026 Indes Augmentes par Lilian Sevoumian.<br />
-              Tous droits reserves.
-            </p>
+            <span class="text-xs font-mono font-bold tracking-tight text-white uppercase">INDES AUGMENTES</span>
           </div>
-          <div
-            class="flex flex-wrap gap-x-12 gap-y-6 text-[11px] font-bold uppercase tracking-[0.4em] font-sans md:justify-end"
-          >
-            <a
-              href="#"
-              class="group relative transition-colors hover:text-primary"
-            >
-              Mentions legales
-              <span
-                class="absolute -bottom-1 left-0 h-0.5 w-0 bg-primary transition-all group-hover:w-full"
-              ></span>
-            </a>
-            <a
-              href="#"
-              class="group relative transition-colors hover:text-primary"
-            >
-              CGV
-              <span
-                class="absolute -bottom-1 left-0 h-0.5 w-0 bg-primary transition-all group-hover:w-full"
-              ></span>
-            </a>
-            <a
-              href="https://linkedin.com/in/liliansevoumian"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group relative transition-colors hover:text-primary"
-            >
-              LinkedIn
-              <span
-                class="absolute -bottom-1 left-0 h-0.5 w-0 bg-primary transition-all group-hover:w-full"
-              ></span>
-            </a>
-          </div>
+          <p class="label-mono">&copy; 2026 Lilian Sevoumian. Built for the modern freelance.</p>
+        </div>
+        <div class="flex gap-8">
+          <a class="label-mono hover:text-accent-lime transition-colors" href="https://www.linkedin.com/in/lilian-sevoumian/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="label-mono hover:text-accent-lime transition-colors" href="#">Mentions Legales</a>
         </div>
       </div>
     </footer>
 
-    <!-- MOBILE STICKY CTA (visible on scroll on mobile) -->
+    <!-- MOBILE STICKY CTA -->
     <div
       id="sticky-cta"
-      class="fixed bottom-0 left-0 right-0 z-50 translate-y-full border-t border-outline-variant bg-surface/95 p-4 backdrop-blur-xl transition-transform duration-300 md:hidden"
+      class="fixed bottom-0 left-0 right-0 z-50 translate-y-full border-t border-dash-border bg-dash-slate/95 p-4 backdrop-blur-xl transition-transform duration-300 md:hidden"
     >
-      <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-gradient block w-full py-4 text-center"
-        >Reserver mon appel</a
-      >
+      <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn-primary block w-full py-4 text-center">Reserver mon call →</a>
     </div>
 
     <script is:inline>
       ;(function () {
-        // ── Prefers reduced motion ──
-        var prefersReducedMotion = window.matchMedia(
-          '(prefers-reduced-motion: reduce)'
-        ).matches
-
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
         if (prefersReducedMotion) {
-          document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function (el) {
-            el.classList.add('visible')
-          })
+          document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible') })
         }
 
-        // ── Navbar scroll state ──
-        var navbar = document.getElementById('navbar')
-        function updateNavbar() {
-          if (!navbar) return
-          if (window.scrollY > 20) {
-            navbar.classList.add('is-scrolled')
-          } else {
-            navbar.classList.remove('is-scrolled')
-          }
-        }
-        window.addEventListener('scroll', updateNavbar, { passive: true })
-        updateNavbar()
-
-        // ── Mobile menu toggle ──
+        // Mobile menu
         var menuToggle = document.getElementById('menu-toggle')
         var mobileMenu = document.getElementById('mobile-menu')
         var bar1 = document.getElementById('bar1')
@@ -285,10 +154,8 @@ const structuredData = {
         function toggleMenu() {
           isMenuOpen = !isMenuOpen
           if (!mobileMenu || !menuToggle) return
-
           mobileMenu.classList.toggle('hidden', !isMenuOpen)
           menuToggle.setAttribute('aria-expanded', String(isMenuOpen))
-
           if (bar1 && bar2 && bar3) {
             if (isMenuOpen) {
               bar1.style.transform = 'translateY(4px) rotate(45deg)'
@@ -303,83 +170,49 @@ const structuredData = {
             }
           }
         }
-
-        if (menuToggle) {
-          menuToggle.addEventListener('click', toggleMenu)
-        }
-
-        // ── Close mobile menu on link click ──
+        if (menuToggle) menuToggle.addEventListener('click', toggleMenu)
         document.querySelectorAll('.mobile-link').forEach(function (link) {
-          link.addEventListener('click', function () {
-            if (isMenuOpen) {
-              toggleMenu()
-            }
-          })
+          link.addEventListener('click', function () { if (isMenuOpen) toggleMenu() })
         })
 
-        // ── Smooth scroll for anchor links ──
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
           anchor.addEventListener('click', function (e) {
             var href = this.getAttribute('href')
             if (!href || href === '#') return
-
             var target = document.querySelector(href)
             if (!target) return
-
             e.preventDefault()
-            var navbarHeight = 80
-            var top =
-              target.getBoundingClientRect().top +
-              window.pageYOffset -
-              navbarHeight
-
-            window.scrollTo({ top: top, behavior: 'smooth' })
-
-            // Update URL without jump
+            window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' })
             history.pushState(null, '', href)
           })
         })
 
-        // ── Scroll reveal (IntersectionObserver) ──
+        // Scroll reveal
         if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-          var revealObserver = new IntersectionObserver(
-            function (entries) {
-              entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add('visible')
-                  revealObserver.unobserve(entry.target)
-                }
-              })
-            },
-            { threshold: 0.1, rootMargin: '-50px' }
-          )
-
-          document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function (el) {
-            revealObserver.observe(el)
-          })
+          var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) { entry.target.classList.add('visible'); obs.unobserve(entry.target) }
+            })
+          }, { threshold: 0.1, rootMargin: '-50px' })
+          document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el) })
         }
 
-        // ── FAQ accordion ──
+        // FAQ accordion
         document.querySelectorAll('details').forEach(function (detail) {
           detail.addEventListener('click', function () {
             document.querySelectorAll('details').forEach(function (other) {
-              if (other !== detail && other.open) {
-                other.removeAttribute('open')
-              }
+              if (other !== detail && other.open) other.removeAttribute('open')
             })
           })
         })
 
-        // ── Sticky CTA visibility ──
+        // Sticky CTA
         var stickyCta = document.getElementById('sticky-cta')
         function updateStickyCta() {
           if (!stickyCta) return
-          var scrollY = window.scrollY
-          var viewportHeight = window.innerHeight
-          var docHeight = document.documentElement.scrollHeight
-          var pastHero = scrollY > viewportHeight
-          var nearBottom = scrollY + viewportHeight > docHeight - 200
-
+          var pastHero = window.scrollY > window.innerHeight
+          var nearBottom = window.scrollY + window.innerHeight > document.documentElement.scrollHeight - 200
           if (pastHero && !nearBottom) {
             stickyCta.classList.remove('translate-y-full')
             stickyCta.classList.add('translate-y-0')
