@@ -1,15 +1,16 @@
 ---
-/* Hero Section — Dark Neon Architect */
+import { Image } from 'astro:assets'
+import heroImage from '../../assets/hero-image.png'
 ---
 
 <section class="relative min-h-screen flex items-center bg-surface overflow-hidden pt-24 pb-16 lg:pt-0 lg:pb-0">
   <!-- Decorative blur blobs -->
   <div
-    class="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-primary/20 blur-[120px] animate-float pointer-events-none"
+    class="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-primary/25 blur-[120px] animate-float pointer-events-none"
     aria-hidden="true"
   ></div>
   <div
-    class="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full bg-secondary/15 blur-[100px] animate-float pointer-events-none"
+    class="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full bg-secondary/20 blur-[100px] animate-float pointer-events-none"
     style="animation-delay: -3s;"
     aria-hidden="true"
   ></div>
@@ -22,7 +23,7 @@
 
         <!-- Badge -->
         <div class="reveal">
-          <span class="inline-flex items-center gap-2 font-label uppercase tracking-[0.1em] text-xs font-bold px-4 py-1.5 bg-surface-container-high border-l-4 border-primary text-on-surface-variant">
+          <span class="inline-flex items-center gap-2 font-label uppercase tracking-[0.1em] text-xs font-bold px-4 py-1.5 rounded-md bg-surface-container-high/80 border-l-4 border-primary text-on-surface-variant backdrop-blur-sm">
             <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
             Cohorte 1 &mdash; Places limit&eacute;es
           </span>
@@ -46,7 +47,7 @@
 
         <!-- Prix + date -->
         <div class="flex flex-wrap items-center gap-6 mt-8 reveal delay-2">
-          <span class="font-display font-black text-2xl text-on-surface">1&nbsp;500&euro;</span>
+          <span class="font-display font-black text-3xl text-primary">1&nbsp;500&euro;</span>
           <span class="text-outline-variant">|</span>
           <span class="text-on-surface-variant font-medium">D&eacute;but mai 2026</span>
           <span class="text-outline-variant">|</span>
@@ -77,34 +78,22 @@
         </div>
       </div>
 
-      <!-- Right: Decorative visual (5 cols, hidden mobile) -->
+      <!-- Right: Hero image (5 cols, hidden mobile) -->
       <div class="hidden lg:block lg:col-span-5 reveal-right delay-3">
         <div class="relative">
-          <!-- Main placeholder with deconstructed border -->
-          <div class="deconstructed-border aspect-[4/5] bg-surface-container relative overflow-hidden rounded-lg">
-            <!-- Subtle gradient overlay -->
+          <div class="rounded-xl overflow-hidden border border-outline-variant/25 shadow-[0_0_30px_rgba(151,169,255,0.08)]">
+            <Image
+              src={heroImage}
+              alt="Freelances augment&eacute;s par l'IA et l'automation"
+              class="w-full h-full object-cover"
+              widths={[500, 800]}
+              sizes="(max-width: 1024px) 100vw, 40vw"
+            />
+            <!-- Bottom gradient fade into bg -->
             <div
-              class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"
+              class="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-surface to-transparent"
               aria-hidden="true"
             ></div>
-            <!-- Grid pattern inside -->
-            <div
-              class="absolute inset-0"
-              style="background-image: linear-gradient(to right, rgba(151,169,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(172,138,255,0.04) 1px, transparent 1px); background-size: 32px 32px;"
-              aria-hidden="true"
-            ></div>
-            <!-- Diagonal line accent -->
-            <div
-              class="absolute inset-0"
-              style="background: linear-gradient(135deg, transparent 40%, rgba(151,169,255,0.08) 50%, transparent 60%);"
-              aria-hidden="true"
-            ></div>
-          </div>
-
-          <!-- Floating badge -->
-          <div class="absolute -bottom-6 -left-6 bg-surface-container-high text-on-surface p-6 border-l-4 border-primary rounded-lg reveal-scale delay-5">
-            <span class="eyebrow block mb-2">Status</span>
-            <span class="font-display font-black text-lg tracking-tight uppercase">Syst&egrave;me augment&eacute;</span>
           </div>
         </div>
       </div>

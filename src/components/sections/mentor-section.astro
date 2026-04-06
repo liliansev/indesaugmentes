@@ -3,154 +3,97 @@ import { Image } from 'astro:assets'
 import lilianPhoto from '../../assets/lilian-sevoumian.jpeg'
 ---
 
-<section class="bg-surface-container py-[var(--spacing-section-gap)] overflow-hidden relative">
-  <!-- Shimmer separator top -->
-  <div class="shimmer-line absolute top-0 left-0 right-0" aria-hidden="true"></div>
+<section id="mentor" class="bg-surface py-[var(--spacing-section-gap)]">
   <div class="container-main">
-    <div class="flex flex-col lg:flex-row gap-20 items-center">
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
 
-      <!-- Left: Photo area -->
+      <!-- Left: Photo -->
       <div class="w-full lg:w-5/12 reveal-left">
-        <div class="relative group">
-          <!-- Decorative frame 1 (primary) -->
-          <div
-            class="absolute -inset-4 border-2 border-primary/20 group-hover:border-primary/50 transition-all -rotate-3 pointer-events-none rounded-lg"
-            aria-hidden="true"
-          ></div>
-          <!-- Decorative frame 2 (secondary) -->
-          <div
-            class="absolute -inset-4 border-2 border-secondary/20 group-hover:border-secondary/50 transition-all rotate-3 pointer-events-none rounded-lg"
-            aria-hidden="true"
-          ></div>
-
-          <!-- Photo container -->
-          <div class="relative bg-surface-container-high p-1 overflow-hidden rounded-lg">
-            <Image
-              src={lilianPhoto}
-              alt="Lilian Sevoumian — Mentor Indes Augmentes"
-              class="w-full h-full object-cover rounded-md"
-              widths={[400, 600]}
-              sizes="(max-width: 1024px) 100vw, 40vw"
-            />
-          </div>
-
-          <!-- Floating name badge -->
-          <div class="absolute bottom-8 -right-8 bg-surface-container-high text-on-surface p-6 border-r-4 border-secondary rotate-2 rounded-lg">
-            <span class="text-primary font-label tracking-widest text-[10px] uppercase mb-1 block">
-              Ton mentor
-            </span>
-            <span class="text-2xl font-black font-display">
-              Lilian Sevoumian
-            </span>
-          </div>
+        <div class="rounded-xl overflow-hidden border border-outline-variant/20">
+          <Image
+            src={lilianPhoto}
+            alt="Lilian Sevoumian — Formateur Indes Augmentés"
+            class="w-full h-auto object-cover rounded-lg"
+            widths={[400, 600]}
+            sizes="(max-width: 1024px) 100vw, 40vw"
+          />
         </div>
       </div>
 
       <!-- Right: Bio content -->
       <div class="w-full lg:w-7/12">
 
-        <!-- Heading -->
-        <h2
-          class="font-display text-[length:var(--font-size-h1)] font-black italic tracking-tighter text-on-surface uppercase reveal"
-        >
-          LE MENTOR.
+        <!-- Eyebrow -->
+        <span class="eyebrow reveal">Formateur</span>
+
+        <!-- Name -->
+        <h2 class="font-display text-[length:var(--font-size-h1)] font-black tracking-tight text-on-surface mt-3 reveal delay-1">
+          Lilian Sevoumian
         </h2>
 
         <!-- Bio -->
-        <p class="text-2xl text-on-surface-variant font-light leading-relaxed border-l-2 border-outline-variant/20 pl-8 mt-8 mb-12 reveal delay-1">
-          Expert en automatisation et IA. Make Partner officiel&nbsp;&mdash;&nbsp;premier Fran&ccedil;ais certifi&eacute; niveau&nbsp;5. Plus de 500 automatisations d&eacute;ploy&eacute;es pour des entreprises de toutes tailles.
+        <p class="text-on-surface-variant text-lg leading-relaxed mt-6 max-w-xl reveal delay-2">
+          Expert en automatisation et IA. Make Partner officiel&nbsp;&mdash;&nbsp;premier Fran&ccedil;ais certifi&eacute; niveau&nbsp;5. Plus de 500&nbsp;automatisations d&eacute;ploy&eacute;es pour des entreprises de toutes tailles.
         </p>
 
+        <!-- Stats row -->
+        <div class="flex flex-wrap gap-6 mt-8 reveal delay-3">
+          <div class="flex items-baseline gap-2">
+            <span class="font-display text-2xl font-black text-on-surface">4 ans</span>
+            <span class="text-on-surface-variant text-sm">d'expertise</span>
+          </div>
+          <div class="w-px h-6 bg-outline-variant/30 self-center" aria-hidden="true"></div>
+          <div class="flex items-baseline gap-2">
+            <span class="font-display text-2xl font-black text-on-surface">500+</span>
+            <span class="text-on-surface-variant text-sm">automatisations</span>
+          </div>
+          <div class="w-px h-6 bg-outline-variant/30 self-center" aria-hidden="true"></div>
+          <div class="flex items-baseline gap-2">
+            <span class="font-display text-2xl font-black text-on-surface">2000h+</span>
+            <span class="text-on-surface-variant text-sm">&eacute;conomis&eacute;es / mois</span>
+          </div>
+        </div>
+
         <!-- Social links -->
-        <div class="flex gap-10 mb-12 px-8 reveal delay-2">
+        <div class="flex gap-5 mt-8 reveal delay-4">
           <a
             href="https://www.linkedin.com/in/lilian-sevoumian/"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
+            class="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:opacity-80 transition-opacity"
           >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
             </svg>
             LinkedIn
-            <span aria-hidden="true">&rarr;</span>
           </a>
           <a
             href="https://www.youtube.com/@liliansevoumian"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-secondary font-bold flex items-center gap-2 hover:gap-4 transition-all"
+            class="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:opacity-80 transition-opacity"
           >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
             </svg>
             YouTube
-            <span aria-hidden="true">&rarr;</span>
+          </a>
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:opacity-80 transition-opacity"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3zM19 10v2a7 7 0 01-14 0v-2H3v2a9 9 0 004 7.46V22h2v-2.54A9 9 0 0021 12v-2h-2z"/>
+            </svg>
+            Podcast
           </a>
         </div>
 
         <!-- Quote -->
-        <blockquote class="relative p-10 bg-surface-container-high border border-outline-variant/10 italic text-xl font-light -rotate-1 text-on-surface rounded-lg reveal delay-3">
-          <!-- Left accent bar -->
-          <div
-            class="absolute top-0 left-0 w-1.5 h-full bg-secondary rounded-l-lg"
-            aria-hidden="true"
-          ></div>
-          <p>
-            Mon objectif&nbsp;: te donner en 3 mois les comp&eacute;tences qui m'ont pris 4 ans &agrave; construire. Pas de th&eacute;orie inutile, que du concret.
+        <div class="mt-8 p-6 bg-surface-container-high rounded-lg border border-outline-variant/10 reveal delay-3">
+          <p class="text-on-surface-variant italic text-base leading-relaxed">
+            "Ma mission est simple : transformer des freelances ordinaires en architectes de syst&egrave;mes inarr&ecirc;tables par l'IA."
           </p>
-        </blockquote>
-
-        <!-- Video placeholder -->
-        <div class="mt-10 reveal delay-4">
-          <div class="relative aspect-video bg-surface-container-high border border-outline-variant/10 overflow-hidden group cursor-pointer rounded-lg">
-            <div class="absolute inset-0 flex flex-col items-center justify-center gap-4">
-              <div class="w-16 h-16 bg-primary/90 flex items-center justify-center group-hover:bg-primary transition-colors rounded-full">
-                <svg class="w-6 h-6 text-surface ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-              <span class="text-on-surface-variant text-sm font-label uppercase tracking-widest">Vid&eacute;o bient&ocirc;t disponible</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Stats row -->
-        <div class="flex gap-12 mt-12 reveal delay-4">
-          <div>
-            <span class="font-display text-3xl font-black text-on-surface block leading-none">
-              500+
-            </span>
-            <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant mt-1 block">
-              automatisations
-            </span>
-          </div>
-          <div>
-            <span class="font-display text-3xl font-black text-on-surface block leading-none">
-              2000h+
-            </span>
-            <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant mt-1 block">
-              &eacute;conomis&eacute;es par mois
-            </span>
-          </div>
-          <div>
-            <span class="font-display text-3xl font-black text-on-surface block leading-none">
-              5 ans
-            </span>
-            <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant mt-1 block">
-              d'expertise
-            </span>
-          </div>
         </div>
 
       </div>
