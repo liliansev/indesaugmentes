@@ -1,38 +1,42 @@
 ---
-/* Mentor Section — Lilian's bio */
+import { Image } from 'astro:assets'
+import lilianPhoto from '../../assets/lilian-sevoumian.jpeg'
 ---
 
-<section class="bg-glacial-surface border-y border-glacial-bg py-[var(--spacing-section-gap)] overflow-hidden">
+<section class="bg-surface-container py-[var(--spacing-section-gap)] overflow-hidden relative">
+  <!-- Shimmer separator top -->
+  <div class="shimmer-line absolute top-0 left-0 right-0" aria-hidden="true"></div>
   <div class="container-main">
     <div class="flex flex-col lg:flex-row gap-20 items-center">
 
       <!-- Left: Photo area -->
       <div class="w-full lg:w-5/12 reveal-left">
         <div class="relative group">
-          <!-- Decorative frame 1 (cyan) -->
+          <!-- Decorative frame 1 (primary) -->
           <div
-            class="absolute -inset-4 border-2 border-cyan/20 group-hover:border-cyan/50 transition-all -rotate-3 pointer-events-none"
+            class="absolute -inset-4 border-2 border-primary/20 group-hover:border-primary/50 transition-all -rotate-3 pointer-events-none rounded-lg"
             aria-hidden="true"
           ></div>
-          <!-- Decorative frame 2 (indigo) -->
+          <!-- Decorative frame 2 (secondary) -->
           <div
-            class="absolute -inset-4 border-2 border-indigo/20 group-hover:border-indigo/50 transition-all rotate-3 pointer-events-none"
+            class="absolute -inset-4 border-2 border-secondary/20 group-hover:border-secondary/50 transition-all rotate-3 pointer-events-none rounded-lg"
             aria-hidden="true"
           ></div>
 
           <!-- Photo container -->
-          <div class="relative bg-white p-1 overflow-hidden shadow-2xl">
-            <!-- Placeholder (replace with real image later) -->
-            <div
-              class="aspect-[3/4] bg-gradient-to-br from-glacial-surface to-glacial-bg flex items-center justify-center"
-            >
-              <span class="text-glacial-gray font-display text-lg tracking-wider uppercase">Photo</span>
-            </div>
+          <div class="relative bg-surface-container-high p-1 overflow-hidden rounded-lg">
+            <Image
+              src={lilianPhoto}
+              alt="Lilian Sevoumian — Mentor Indes Augmentes"
+              class="w-full h-full object-cover rounded-md"
+              widths={[400, 600]}
+              sizes="(max-width: 1024px) 100vw, 40vw"
+            />
           </div>
 
           <!-- Floating name badge -->
-          <div class="absolute bottom-8 -right-8 bg-clinical-dark text-white p-6 border-r-4 border-indigo rotate-2 shadow-2xl">
-            <span class="text-cyan font-label tracking-widest text-[10px] uppercase mb-1 block">
+          <div class="absolute bottom-8 -right-8 bg-surface-container-high text-on-surface p-6 border-r-4 border-secondary rotate-2 rounded-lg">
+            <span class="text-primary font-label tracking-widest text-[10px] uppercase mb-1 block">
               Ton mentor
             </span>
             <span class="text-2xl font-black font-display">
@@ -47,13 +51,13 @@
 
         <!-- Heading -->
         <h2
-          class="font-display text-[length:var(--font-size-h1)] font-black italic tracking-tighter text-clinical-dark uppercase reveal"
+          class="font-display text-[length:var(--font-size-h1)] font-black italic tracking-tighter text-on-surface uppercase reveal"
         >
           LE MENTOR.
         </h2>
 
         <!-- Bio -->
-        <p class="text-2xl text-on-surface-muted font-light leading-relaxed border-l-2 border-glacial-surface pl-8 mt-8 mb-12 reveal delay-1">
+        <p class="text-2xl text-on-surface-variant font-light leading-relaxed border-l-2 border-outline-variant/20 pl-8 mt-8 mb-12 reveal delay-1">
           Expert en automatisation et IA. Make Partner officiel&nbsp;&mdash;&nbsp;premier Fran&ccedil;ais certifi&eacute; niveau&nbsp;5. Plus de 500 automatisations d&eacute;ploy&eacute;es pour des entreprises de toutes tailles.
         </p>
 
@@ -63,7 +67,7 @@
             href="https://www.linkedin.com/in/lilian-sevoumian/"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-indigo font-bold flex items-center gap-2 hover:gap-4 transition-all"
+            class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
           >
             <svg
               width="20"
@@ -81,7 +85,7 @@
             href="https://www.youtube.com/@liliansevoumian"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-cyan font-bold flex items-center gap-2 hover:gap-4 transition-all"
+            class="text-secondary font-bold flex items-center gap-2 hover:gap-4 transition-all"
           >
             <svg
               width="20"
@@ -98,10 +102,10 @@
         </div>
 
         <!-- Quote -->
-        <blockquote class="relative p-10 bg-glacial-panel border border-glacial-surface italic text-xl font-light -rotate-1 text-on-surface reveal delay-3">
+        <blockquote class="relative p-10 bg-surface-container-high border border-outline-variant/10 italic text-xl font-light -rotate-1 text-on-surface rounded-lg reveal delay-3">
           <!-- Left accent bar -->
           <div
-            class="absolute top-0 left-0 w-1.5 h-full bg-indigo"
+            class="absolute top-0 left-0 w-1.5 h-full bg-secondary rounded-l-lg"
             aria-hidden="true"
           ></div>
           <p>
@@ -109,29 +113,41 @@
           </p>
         </blockquote>
 
+        <!-- Video placeholder -->
+        <div class="mt-10 reveal delay-4">
+          <div class="relative aspect-video bg-surface-container-high border border-outline-variant/10 overflow-hidden group cursor-pointer rounded-lg">
+            <div class="absolute inset-0 flex flex-col items-center justify-center gap-4">
+              <div class="w-16 h-16 bg-primary/90 flex items-center justify-center group-hover:bg-primary transition-colors rounded-full">
+                <svg class="w-6 h-6 text-surface ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-on-surface-variant text-sm font-label uppercase tracking-widest">Vid&eacute;o bient&ocirc;t disponible</span>
+            </div>
+          </div>
+        </div>
+
         <!-- Stats row -->
         <div class="flex gap-12 mt-12 reveal delay-4">
           <div>
-            <span class="font-display text-3xl font-black text-clinical-dark block leading-none">
+            <span class="font-display text-3xl font-black text-on-surface block leading-none">
               500+
             </span>
-            <span class="font-label text-xs uppercase tracking-widest text-on-surface-muted mt-1 block">
+            <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant mt-1 block">
               automatisations
             </span>
           </div>
           <div>
-            <span class="font-display text-3xl font-black text-clinical-dark block leading-none">
+            <span class="font-display text-3xl font-black text-on-surface block leading-none">
               2000h+
             </span>
-            <span class="font-label text-xs uppercase tracking-widest text-on-surface-muted mt-1 block">
+            <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant mt-1 block">
               &eacute;conomis&eacute;es par mois
             </span>
           </div>
           <div>
-            <span class="font-display text-3xl font-black text-clinical-dark block leading-none">
+            <span class="font-display text-3xl font-black text-on-surface block leading-none">
               5 ans
             </span>
-            <span class="font-label text-xs uppercase tracking-widest text-on-surface-muted mt-1 block">
+            <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant mt-1 block">
               d'expertise
             </span>
           </div>

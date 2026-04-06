@@ -1,15 +1,15 @@
 ---
-/* Hero Section — Full viewport landing */
+/* Hero Section — Dark Neon Architect */
 ---
 
-<section class="relative min-h-screen flex items-center bg-glacial-bg overflow-hidden pt-24 pb-16 lg:pt-0 lg:pb-0">
+<section class="relative min-h-screen flex items-center bg-surface overflow-hidden pt-24 pb-16 lg:pt-0 lg:pb-0">
   <!-- Decorative blur blobs -->
   <div
-    class="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-cyan/10 blur-[120px] animate-float pointer-events-none"
+    class="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-primary/20 blur-[120px] animate-float pointer-events-none"
     aria-hidden="true"
   ></div>
   <div
-    class="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full bg-indigo/10 blur-[100px] animate-float pointer-events-none"
+    class="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full bg-secondary/15 blur-[100px] animate-float pointer-events-none"
     style="animation-delay: -3s;"
     aria-hidden="true"
   ></div>
@@ -22,15 +22,15 @@
 
         <!-- Badge -->
         <div class="reveal">
-          <span class="badge">
-            <span class="w-2 h-2 rounded-full bg-indigo animate-pulse"></span>
-            Cohorte 1 — Places limit&eacute;es
+          <span class="inline-flex items-center gap-2 font-label uppercase tracking-[0.1em] text-xs font-bold px-4 py-1.5 bg-surface-container-high border-l-4 border-primary text-on-surface-variant">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            Cohorte 1 &mdash; Places limit&eacute;es
           </span>
         </div>
 
         <!-- Headline -->
         <h1
-          class="mt-10 font-display font-black tracking-tighter leading-[0.85] text-clinical-dark uppercase text-[length:var(--font-size-display)] reveal delay-1"
+          class="mt-10 font-display font-black tracking-tighter leading-[0.85] text-on-surface uppercase text-[length:var(--font-size-display)] reveal delay-1"
         >
           DEVIENS UN<br />
           FREELANCE<br />
@@ -39,14 +39,23 @@
 
         <!-- Subtitle -->
         <p
-          class="mt-10 text-xl lg:text-2xl text-on-surface-muted font-light leading-relaxed max-w-xl border-l border-glacial-surface pl-8 reveal delay-2"
+          class="mt-10 text-xl lg:text-2xl text-on-surface-variant font-light leading-relaxed max-w-xl border-l border-outline-variant/30 pl-8 reveal delay-2"
         >
           En 3 mois, ma&icirc;trise l'IA et l'automation pour structurer ton offre freelance et d&eacute;crocher tes premi&egrave;res missions.
         </p>
 
+        <!-- Prix + date -->
+        <div class="flex flex-wrap items-center gap-6 mt-8 reveal delay-2">
+          <span class="font-display font-black text-2xl text-on-surface">1&nbsp;500&euro;</span>
+          <span class="text-outline-variant">|</span>
+          <span class="text-on-surface-variant font-medium">D&eacute;but mai 2026</span>
+          <span class="text-outline-variant">|</span>
+          <span class="text-on-surface-variant font-medium">10 places max</span>
+        </div>
+
         <!-- CTA row -->
-        <div class="flex flex-wrap gap-6 mt-12 reveal delay-3">
-          <a href="#cta" class="btn btn-gradient btn-lg">
+        <div class="flex flex-wrap gap-6 mt-10 reveal delay-3">
+          <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-gradient btn-lg">
             R&eacute;server mon appel <span>&rarr;</span>
           </a>
           <a href="#programme" class="btn btn-ghost">
@@ -57,13 +66,13 @@
         <!-- Social proof strip -->
         <div class="flex flex-wrap gap-8 mt-12 reveal delay-4">
           <div>
-            <span class="block text-3xl font-black text-clinical-dark leading-none">500+</span>
-            <span class="block text-sm text-on-surface-muted mt-1">automatisations d&eacute;ploy&eacute;es</span>
+            <span class="block text-3xl font-black text-on-surface leading-none">500+</span>
+            <span class="block text-sm text-on-surface-variant mt-1">automatisations d&eacute;ploy&eacute;es</span>
           </div>
-          <div class="w-px bg-glacial-surface self-stretch" aria-hidden="true"></div>
+          <div class="w-px bg-outline-variant/15 self-stretch" aria-hidden="true"></div>
           <div>
-            <span class="block text-3xl font-black text-clinical-dark leading-none">Make Partner</span>
-            <span class="block text-sm text-on-surface-muted mt-1">1er Fran&ccedil;ais certifi&eacute; niveau 5</span>
+            <span class="block text-3xl font-black text-on-surface leading-none">Make Partner</span>
+            <span class="block text-sm text-on-surface-variant mt-1">1er Fran&ccedil;ais certifi&eacute; niveau 5</span>
           </div>
         </div>
       </div>
@@ -72,29 +81,29 @@
       <div class="hidden lg:block lg:col-span-5 reveal-right delay-3">
         <div class="relative">
           <!-- Main placeholder with deconstructed border -->
-          <div class="deconstructed-border aspect-[4/5] bg-glacial-surface relative overflow-hidden">
+          <div class="deconstructed-border aspect-[4/5] bg-surface-container relative overflow-hidden rounded-lg">
             <!-- Subtle gradient overlay -->
             <div
-              class="absolute inset-0 bg-gradient-to-br from-cyan/5 via-transparent to-indigo/5"
+              class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"
               aria-hidden="true"
             ></div>
             <!-- Grid pattern inside -->
             <div
               class="absolute inset-0"
-              style="background-image: linear-gradient(to right, rgba(0,240,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(79,70,229,0.04) 1px, transparent 1px); background-size: 32px 32px;"
+              style="background-image: linear-gradient(to right, rgba(151,169,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(172,138,255,0.04) 1px, transparent 1px); background-size: 32px 32px;"
               aria-hidden="true"
             ></div>
             <!-- Diagonal line accent -->
             <div
               class="absolute inset-0"
-              style="background: linear-gradient(135deg, transparent 40%, rgba(0,240,255,0.08) 50%, transparent 60%);"
+              style="background: linear-gradient(135deg, transparent 40%, rgba(151,169,255,0.08) 50%, transparent 60%);"
               aria-hidden="true"
             ></div>
           </div>
 
           <!-- Floating badge -->
-          <div class="absolute -bottom-6 -left-6 bg-clinical-dark text-white p-6 border-l-4 border-cyan shadow-lg reveal-scale delay-5">
-            <span class="eyebrow text-cyan/70 block mb-2">Status</span>
+          <div class="absolute -bottom-6 -left-6 bg-surface-container-high text-on-surface p-6 border-l-4 border-primary rounded-lg reveal-scale delay-5">
+            <span class="eyebrow block mb-2">Status</span>
             <span class="font-display font-black text-lg tracking-tight uppercase">Syst&egrave;me augment&eacute;</span>
           </div>
         </div>
