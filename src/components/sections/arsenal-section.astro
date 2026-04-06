@@ -1,5 +1,5 @@
 ---
-/* Arsenal Section — "Ce qui est inclus" | 6 simple cards grid */
+/* Arsenal Section — "Ce qui est inclus" | Light Editorial */
 ---
 
 <section id="arsenal" class="bg-surface-container py-[var(--spacing-section-gap)]">
@@ -7,25 +7,17 @@
 
     <!-- Header -->
     <div class="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
-
-      <!-- Left -->
       <div class="reveal">
         <span class="eyebrow">Ce qui est inclus</span>
-        <h2
-          class="font-display text-[length:var(--font-size-h1)] font-bold italic tracking-tight text-on-surface mt-4 normal-case"
-        >
-          Ce qui est inclus
+        <h2 class="font-display text-[length:var(--font-size-h1)] font-bold tracking-tight text-on-surface mt-4 normal-case">
+          Ton arsenal complet
         </h2>
         <p class="text-on-surface-variant text-lg max-w-md mt-3">
-          Rien n'est laiss&eacute; au hasard pour te rendre op&eacute;rationnel.
+          Rien n'est laissé au hasard pour te rendre opérationnel.
         </p>
       </div>
-
-      <!-- Right: Value badge -->
       <div class="reveal delay-1">
-        <span
-          class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full text-primary text-sm font-label font-bold tracking-wider"
-        >
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-primary/20 rounded-full text-primary text-sm font-sans font-bold tracking-wider">
           Valeur totale : +5&nbsp;000&euro;
         </span>
       </div>
@@ -34,100 +26,52 @@
     <!-- 6-card grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
-      <!-- Card 1: Formation Make -->
-      <div class="bg-surface-container-high rounded-lg p-8 reveal delay-1">
-        <div class="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center mb-5" aria-hidden="true">
-          <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"></path>
-          </svg>
+      <div class="bg-white rounded-lg p-8 border border-outline-variant/20 reveal delay-1">
+        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-5" aria-hidden="true">
+          <span class="material-symbols-outlined text-primary">inventory_2</span>
         </div>
-        <h3 class="font-display font-bold text-on-surface text-lg mb-3 normal-case">
-          Formation Make Compl&egrave;te
-        </h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          De z&eacute;ro &agrave; expert. Sc&eacute;narios avanc&eacute;s, APIs, webhooks, architecture.
-        </p>
+        <h3 class="font-display font-bold text-on-surface text-lg mb-3 normal-case">Formation Make Complète</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed"><strong>De zéro à expert</strong>. Scénarios avancés, APIs, webhooks, architecture.</p>
       </div>
 
-      <!-- Card 2: Formation n8n -->
-      <div class="bg-surface-container-high rounded-lg p-8 reveal delay-2">
-        <div class="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center mb-5" aria-hidden="true">
-          <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="5" cy="12" r="3"></circle>
-            <circle cx="19" cy="12" r="3"></circle>
-            <line x1="8" y1="12" x2="16" y2="12"></line>
-          </svg>
+      <div class="bg-white rounded-lg p-8 border border-outline-variant/20 reveal delay-2">
+        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-5" aria-hidden="true">
+          <span class="material-symbols-outlined text-primary">device_hub</span>
         </div>
-        <h3 class="font-display font-bold text-on-surface text-lg mb-3 normal-case">
-          Formation n8n Compl&egrave;te
-        </h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          Workflows open-source, self-hosted. D&eacute;ploie sans limites.
-        </p>
+        <h3 class="font-display font-bold text-on-surface text-lg mb-3 normal-case">Formation n8n Complète</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Workflows <strong>open-source</strong>, <strong>self-hosted</strong>. Déploie sans limites.</p>
       </div>
 
-      <!-- Card 3: 2 Lives par Semaine -->
-      <div class="bg-surface-container-high rounded-lg p-8 reveal delay-3">
-        <div class="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center mb-5" aria-hidden="true">
-          <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="7" width="15" height="10" rx="2"></rect>
-            <polygon points="23,7 17,12 23,17"></polygon>
-          </svg>
+      <div class="bg-white rounded-lg p-8 border border-outline-variant/20 reveal delay-3">
+        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-5" aria-hidden="true">
+          <span class="material-symbols-outlined text-primary">videocam</span>
         </div>
-        <h3 class="font-display font-bold text-on-surface text-lg mb-3 normal-case">
-          2 Lives par Semaine
-        </h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          Sessions tactiques en groupe pour d&eacute;bloquer tes blocages en temps r&eacute;el.
-        </p>
+        <h3 class="font-display font-bold text-on-surface text-lg mb-3 normal-case">2 Lives par Semaine</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed"><strong>Sessions tactiques en groupe</strong> pour débloquer tes blocages en temps réel.</p>
       </div>
 
-      <!-- Card 4: Coaching 1-to-1 -->
-      <div class="bg-surface-container-high rounded-lg p-8 reveal delay-4">
-        <div class="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center mb-5" aria-hidden="true">
-          <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="7" r="4"></circle>
-            <path d="M5.5 21a8.38 8.38 0 0113 0"></path>
-          </svg>
+      <div class="bg-white rounded-lg p-8 border border-outline-variant/20 reveal delay-4">
+        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-5" aria-hidden="true">
+          <span class="material-symbols-outlined text-primary">person</span>
         </div>
-        <h3 class="font-display font-bold text-on-surface text-lg mb-3 normal-case">
-          Coaching 1-to-1
-        </h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          2h de session individuelle avec Lilian pour aligner ta trajectoire.
-        </p>
+        <h3 class="font-display font-bold text-on-surface text-lg mb-3 normal-case">Coaching 1-to-1</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed"><strong>2h de session individuelle</strong> avec Lilian pour aligner ta trajectoire.</p>
       </div>
 
-      <!-- Card 5: SaaS de Pilotage -->
-      <div class="bg-surface-container-high rounded-lg p-8 reveal delay-5">
-        <div class="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center mb-5" aria-hidden="true">
-          <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="20" x2="18" y2="10"></line>
-            <line x1="12" y1="20" x2="12" y2="4"></line>
-            <line x1="6" y1="20" x2="6" y2="14"></line>
-          </svg>
+      <div class="bg-white rounded-lg p-8 border border-outline-variant/20 reveal delay-5">
+        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-5" aria-hidden="true">
+          <span class="material-symbols-outlined text-primary">bar_chart</span>
         </div>
-        <h3 class="font-display font-bold text-on-surface text-lg mb-3 normal-case">
-          SaaS de Pilotage
-        </h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          Acc&egrave;s &agrave; notre outil interne pour g&eacute;rer ta tr&eacute;sorerie freelance.
-        </p>
+        <h3 class="font-display font-bold text-on-surface text-lg mb-3 normal-case">SaaS de Pilotage</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Accès à notre <strong>outil interne</strong> pour gérer ta trésorerie freelance.</p>
       </div>
 
-      <!-- Card 6: Call Expert-Comptable -->
-      <div class="bg-surface-container-high rounded-lg p-8 reveal delay-6">
-        <div class="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center mb-5" aria-hidden="true">
-          <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
-          </svg>
+      <div class="bg-white rounded-lg p-8 border border-outline-variant/20 reveal delay-6">
+        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-5" aria-hidden="true">
+          <span class="material-symbols-outlined text-primary">call</span>
         </div>
-        <h3 class="font-display font-bold text-on-surface text-lg mb-3 normal-case">
-          Call Expert-Comptable
-        </h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          30 min avec un expert-comptable pour structurer ton activit&eacute;.
-        </p>
+        <h3 class="font-display font-bold text-on-surface text-lg mb-3 normal-case">Call Expert-Comptable</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">30 min avec un <strong>expert-comptable</strong> pour structurer ton activité.</p>
       </div>
 
     </div>

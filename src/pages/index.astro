@@ -1,26 +1,86 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import HeroSection from '../components/sections/hero-section.astro'
-import ProblemSection from '../components/sections/problem-section.astro'
-import ProgrammeSection from '../components/sections/programme-section.astro'
-import ArsenalSection from '../components/sections/arsenal-section.astro'
-import CibleSection from '../components/sections/cible-section.astro'
-import MentorSection from '../components/sections/mentor-section.astro'
-import FormatSection from '../components/sections/format-section.astro'
-import PricingSection from '../components/sections/pricing-section.astro'
-import FaqSection from '../components/sections/faq-section.astro'
-import FinalCtaSection from '../components/sections/final-cta-section.astro'
+import '../styles/global.css'
+import { Image } from 'astro:assets'
+import logoImg from '../assets/favicon-source.png'
 ---
 
-<Layout title="Indés Augmentés — Bootcamp IA & Automation pour Freelances">
-  <HeroSection />
-  <ProblemSection />
-  <CibleSection />
-  <MentorSection />
-  <ProgrammeSection />
-  <ArsenalSection />
-  <FormatSection />
-  <PricingSection />
-  <FaqSection />
-  <FinalCtaSection />
-</Layout>
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fafaff" />
+    <title>Indés Augmentés — Bientôt disponible</title>
+    <meta name="description" content="Le bootcamp pour devenir freelance en IA & automation. Ça arrive bientôt." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-surface text-on-surface min-h-screen flex flex-col items-center justify-center px-6">
+
+    <div class="text-center max-w-2xl mx-auto">
+
+      <!-- Logo -->
+      <div class="mb-12 flex justify-center reveal">
+        <Image
+          src={logoImg}
+          alt="Indés Augmentés"
+          class="h-20 w-20 rounded-2xl object-cover shadow-lg shadow-primary/10"
+          width={80}
+          height={80}
+        />
+      </div>
+
+      <!-- Brand -->
+      <h1 class="font-display text-4xl md:text-6xl font-bold uppercase tracking-tighter text-on-surface mb-6 reveal delay-1">
+        Indés Augmentés
+      </h1>
+
+      <!-- Tagline -->
+      <p class="text-xl md:text-2xl text-on-surface-variant mb-12 leading-relaxed reveal delay-2">
+        Le bootcamp pour devenir <strong>freelance en IA & automation</strong>.<br />
+        <span class="text-primary font-bold font-display uppercase tracking-tight">Ça sort bientôt.</span>
+      </p>
+
+      <!-- Decorative line -->
+      <div class="shimmer-line w-48 mx-auto mb-12 reveal delay-3" aria-hidden="true"></div>
+
+      <!-- CTA -->
+      <a
+        href="https://cal.com/lilian-sevoumian/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-gradient btn-lg inline-flex reveal delay-3"
+      >
+        Réserver un appel découverte
+      </a>
+
+      <!-- Footer info -->
+      <p class="mt-16 text-sm text-on-surface-variant reveal delay-4">
+        &copy; 2026 Indés Augmentés par <strong>Lilian Sevoumian</strong>
+      </p>
+
+    </div>
+
+    <script is:inline>
+      ;(function () {
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        if (prefersReducedMotion) {
+          document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible') })
+          return
+        }
+        if ('IntersectionObserver' in window) {
+          var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target) }
+            })
+          }, { threshold: 0.1 })
+          document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el) })
+        }
+      })()
+    </script>
+  </body>
+</html>

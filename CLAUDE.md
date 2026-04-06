@@ -6,7 +6,8 @@ Landing page de vente pour le bootcamp "Indés Augmentés" — 3 mois pour deven
 ## Stack
 - **Framework** : Astro 5 (static)
 - **CSS** : Tailwind CSS v4 avec @theme tokens dans `src/styles/global.css`
-- **Fonts** : Space Grotesk (display), Inter (body), Manrope (labels) — Google Fonts
+- **Fonts** : Geist Mono (headings), Inter (body) — 2 polices max, Google Fonts
+- **Icons** : Material Symbols Outlined (Google Fonts)
 - **Hébergement** : Vercel (static)
 - **Package manager** : pnpm
 
@@ -20,12 +21,15 @@ src/
 ```
 
 ## Design System
-- **Thème** : Light (glacial/blanc)
-- **Palette** : glacial-bg #F8FAFC, glacial-surface #E2E8F0, cyan #00F0FF (décoratif uniquement), indigo #4F46E5 (CTA + accent texte)
-- **Contraste** : cyan interdit pour le texte (ratio 1.5:1 sur blanc). Texte = clinical-dark / on-surface / on-surface-muted
+- **Thème** : Light editorial (fond #fafaff)
+- **Palette** : primary #7c3aed (violet), secondary #6d28d9, on-surface #191b23, on-surface-variant #44474e
+- **Contraste** : minimum #44474e sur fond clair (8:1). Pas d'opacité <80% sur du texte lisible
 - **Typo fluide** : clamp() dans @theme (pas de breakpoints pour la typo)
-- **Effets** : glassmorphism, deconstructed borders, skew sections, scroll reveal (IntersectionObserver)
-- **Ton** : Pro-ambitieux, pas agressif/dystopique
+- **Pas d'italic** : jamais d'italic sur les titres ni le body
+- **Bold keywords** : les mots importants dans les paragraphes sont en `<strong>`
+- **6 places max** par cohorte (positionnement premium)
+- **Effets** : scroll reveal (IntersectionObserver), cyber-scanline overlay sur images
+- **Ton** : Pro-ambitieux, effet waouh, transformation claire, envie de passer à l'action
 
 ## Commandes
 ```bash

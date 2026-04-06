@@ -1,117 +1,73 @@
 ---
-/* Programme Section — 5 pillars, centered header, aligned columns */
+/* Programme Section — Bento grid, editorial header | Light Editorial */
 ---
 
 <section id="programme" class="bg-surface py-[var(--spacing-section-gap)]">
   <div class="container-main">
 
-    <!-- Header (centered) -->
-    <div class="text-center mb-20">
-      <span class="eyebrow reveal">La transformation</span>
-      <h2
-        class="font-display text-[length:var(--font-size-display)] font-bold italic tracking-tight text-on-surface mt-6 normal-case reveal delay-1"
-      >
-        Deviens l'expert indispensable.
-      </h2>
-      <p class="text-on-surface-variant text-lg max-w-2xl mx-auto mt-6 reveal delay-2">
-        En 12 semaines, nous reconstruirons ton arsenal technique et strat&eacute;gique.
-      </p>
+    <!-- Asymmetric header -->
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+      <h2 class="text-5xl md:text-7xl font-display font-bold tracking-tighter text-on-surface reveal">CURRICULUM<br /><span class="text-outline-variant">AUGMENTÉ</span></h2>
+      <div class="max-w-md text-right font-body text-on-surface-variant text-sm border-r-4 border-primary pr-6 reveal delay-1">
+        En 12 semaines, nous reconstruirons ton arsenal technique et stratégique pour devenir l'expert indispensable.
+      </div>
     </div>
 
-    <!-- 5-column grid (all aligned, no translate-y offset) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+    <!-- Bento grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-      <!-- Pillar 1: Architecte Make -->
-      <div class="bg-surface-container rounded-lg p-8 reveal delay-1">
-        <div class="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-6">
-          <svg class="w-6 h-6 text-primary" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M14 4L14 24" />
-            <path d="M14 4L18 11" />
-            <path d="M14 4L10 11" />
-            <path d="M6 16L22 16" />
-            <path d="M8 20L20 20" />
-          </svg>
+      <!-- Card 1: Architecture IA (2 cols) -->
+      <div class="md:col-span-2 bg-surface-container-low p-10 relative overflow-hidden group border border-outline-variant/20 rounded-lg reveal delay-1">
+        <div class="absolute top-0 right-0 p-4 font-sans text-outline-variant text-6xl font-black opacity-10">01</div>
+        <span class="material-symbols-outlined text-primary mb-6 text-4xl block">psychology</span>
+        <h3 class="text-3xl font-display font-bold mb-4 uppercase tracking-tighter text-on-surface">Intelligence IA</h3>
+        <p class="text-on-surface-variant leading-relaxed max-w-lg mb-8">
+          <strong>Prompting avancé</strong>, <strong>agents IA</strong>, intégration dans tes workflows d'automatisation. Multiplie ta productivité par 10.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="chip">Prompting</span>
+          <span class="chip">Agents IA</span>
+          <span class="chip">RAG Systems</span>
         </div>
-        <h3 class="font-display font-bold text-on-surface mb-3 normal-case">
-          Ma&icirc;trise de Make
-        </h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          Ma&icirc;trise les sc&eacute;narios d'automatisation de A &agrave; Z.
+      </div>
+
+      <!-- Card 2: Maîtrise Make (1 col) -->
+      <div class="bg-white p-10 flex flex-col justify-between border-t-4 border-primary shadow-sm border-x border-b border-outline-variant/20 rounded-lg reveal delay-2">
+        <div>
+          <span class="material-symbols-outlined text-primary mb-6 block text-3xl">account_tree</span>
+          <h3 class="text-2xl font-display font-bold mb-4 uppercase tracking-tighter text-on-surface">Maîtrise de Make</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            Scénarios d'automatisation de A à Z. <strong>APIs</strong>, <strong>webhooks</strong>, architecture avancée.
+          </p>
+        </div>
+        <div class="mt-8 pt-8 border-t border-outline-variant/20 font-sans text-[10px] text-primary tracking-widest font-bold uppercase">Make Partner Level 5</div>
+      </div>
+
+      <!-- Card 3: Puissance n8n (1 col) -->
+      <div class="bg-white p-10 border-b-4 border-tertiary shadow-sm border-x border-t border-outline-variant/20 rounded-lg reveal delay-3">
+        <span class="material-symbols-outlined text-tertiary mb-6 block text-3xl">device_hub</span>
+        <h3 class="text-2xl font-display font-bold mb-4 uppercase tracking-tighter text-on-surface">Puissance n8n</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">
+          Workflows <strong>open-source</strong>, <strong>auto-hébergés</strong>, sans limites. Déploie des automatisations que tu possèdes.
         </p>
       </div>
 
-      <!-- Pillar 2: Puissance n8n -->
-      <div class="bg-surface-container rounded-lg p-8 reveal delay-2">
-        <div class="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-6">
-          <svg class="w-6 h-6 text-primary" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="4" y="7" width="8" height="6" rx="1" />
-            <rect x="16" y="15" width="8" height="6" rx="1" />
-            <path d="M12 10L16 18" />
-            <path d="M8 13L8 24" />
-            <path d="M20 15L20 4" />
-          </svg>
+      <!-- Card 4: Terminal des Projets (2 cols) -->
+      <div class="md:col-span-2 bg-surface-bright p-10 relative overflow-hidden group border border-outline-variant/20 rounded-lg reveal delay-4">
+        <div class="absolute -bottom-10 -right-10 opacity-5 group-hover:opacity-10 transition-opacity">
+          <span class="material-symbols-outlined text-[20rem] text-on-surface">deployed_code</span>
         </div>
-        <h3 class="font-display font-bold text-on-surface mb-3 normal-case">
-          Puissance n8n
-        </h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          Workflows open-source, auto-h&eacute;berg&eacute;s, sans limites.
-        </p>
-      </div>
-
-      <!-- Pillar 3: Intelligence IA -->
-      <div class="bg-surface-container rounded-lg p-8 reveal delay-3">
-        <div class="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-6">
-          <svg class="w-6 h-6 text-primary" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="14" cy="11" r="6" />
-            <path d="M8 11C8 11 11 16 14 16C17 16 20 11 20 11" />
-            <path d="M14 17L14 21" />
-            <path d="M10 21L18 21" />
-            <circle cx="12" cy="10" r="1" fill="currentColor" stroke="none" />
-            <circle cx="16" cy="10" r="1" fill="currentColor" stroke="none" />
-          </svg>
+        <h3 class="text-3xl font-display font-bold mb-6 uppercase tracking-tighter text-on-surface">Branding & Business</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div>
+            <div class="font-sans text-primary text-xs mb-2 font-bold uppercase tracking-widest">Branding & Offre</div>
+            <div class="text-sm text-on-surface-variant"><strong>Positionnement</strong>, <strong>pricing premium</strong>, personal branding qui attire les bons clients.</div>
+          </div>
+          <div>
+            <div class="font-sans text-primary text-xs mb-2 font-bold uppercase tracking-widest">Communauté</div>
+            <div class="text-sm text-on-surface-variant">Réseau de <strong>freelances augmentés</strong>, accountability, partage de deals et opportunités.</div>
+          </div>
         </div>
-        <h3 class="font-display font-bold text-on-surface mb-3 normal-case">
-          Intelligence IA
-        </h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          Prompting, agents IA, int&eacute;gration dans tes workflows.
-        </p>
-      </div>
-
-      <!-- Pillar 4: Branding & Offre -->
-      <div class="bg-surface-container rounded-lg p-8 reveal delay-4">
-        <div class="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-6">
-          <svg class="w-6 h-6 text-primary" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polygon points="14,4 17,11 24,12 19,17 20,24 14,21 8,24 9,17 4,12 11,11" />
-          </svg>
-        </div>
-        <h3 class="font-display font-bold text-on-surface mb-3 normal-case">
-          Branding & Offre
-        </h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          Positionnement, pricing, personal branding.
-        </p>
-      </div>
-
-      <!-- Pillar 5: Communaut&eacute; -->
-      <div class="bg-surface-container rounded-lg p-8 reveal delay-5">
-        <div class="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-6">
-          <svg class="w-6 h-6 text-primary" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="10" cy="10" r="3.5" />
-            <circle cx="18" cy="10" r="3.5" />
-            <path d="M10 13.5C10 13.5 6 16 6 18.5L6 22" />
-            <path d="M18 13.5C18 13.5 22 16 22 18.5L22 22" />
-            <path d="M14 14.5C14 14.5 11 17 11 19.5L11 24" />
-            <path d="M14 14.5C14 14.5 17 17 17 19.5L17 24" />
-          </svg>
-        </div>
-        <h3 class="font-display font-bold text-on-surface mb-3 normal-case">
-          Communaut&eacute;
-        </h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          R&eacute;seau de freelances augment&eacute;s, accountability, partage de deals.
-        </p>
       </div>
 
     </div>
