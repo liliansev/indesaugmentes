@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css'
+import { Image } from 'astro:assets'
+import logoImg from '../assets/favicon-source.png'
 
 interface Props {
   title: string
@@ -80,11 +82,13 @@ const structuredData = {
       <div class="container-main flex items-center justify-between py-5">
         <!-- Brand -->
         <a href="/" class="flex items-center gap-3">
-          <div
-            class="flex h-10 w-10 items-center justify-center rotate-45 overflow-hidden border border-primary/30 bg-surface-container"
-          >
-            <span class="-rotate-45 text-sm font-bold text-primary">IA</span>
-          </div>
+          <Image
+            src={logoImg}
+            alt="Indés Augmentés"
+            class="h-10 w-10 rounded-lg object-cover"
+            width={40}
+            height={40}
+          />
           <span
             class="glitch-hover font-display text-xl font-black uppercase tracking-tighter text-on-surface"
             >Indes Augmentes</span
@@ -177,7 +181,13 @@ const structuredData = {
             <div
               class="mb-8 flex items-center gap-4 font-display text-3xl font-black uppercase tracking-tighter text-on-surface"
             >
-              <div class="h-8 w-8 bg-primary"></div>
+              <Image
+                src={logoImg}
+                alt="Indés Augmentés"
+                class="h-8 w-8 rounded-md object-cover"
+                width={32}
+                height={32}
+              />
               Indes Augmentes
             </div>
             <p
