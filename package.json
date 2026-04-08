@@ -16,5 +16,8 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4",
     "tailwindcss": "^4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["sharp", "esbuild"]
   }
 }
