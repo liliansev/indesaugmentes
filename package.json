@@ -11,6 +11,7 @@
     "@astrojs/check": "^0.9",
     "@astrojs/sitemap": "^3",
     "astro": "^5",
+    "sharp": "^0.34.5",
     "typescript": "^5"
   },
   "devDependencies": {
@@ -18,6 +19,9 @@
     "tailwindcss": "^4"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["sharp", "esbuild"]
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild"
+    ]
   }
 }
