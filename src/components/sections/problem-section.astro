@@ -1,39 +1,62 @@
 ---
-/* Diagnostics Section — Error Log grid */
+const diagnostics = [
+  {
+    n: 1,
+    tone: 'violet',
+    html: 'Tu as suivi <span class="hi">12 tutos YouTube</span> sur Make, n8n ou l\'IA… mais tu ne sais toujours pas comment en vivre.',
+  },
+  {
+    n: 2,
+    tone: 'lime',
+    html: 'Tu galères à te positionner. "Consultant automation" ? "Expert IA" ? Tu changes de bio LinkedIn <span class="hi">toutes les semaines</span>.',
+  },
+  {
+    n: 3,
+    tone: 'white',
+    html: 'Le marché explose, mais tu restes au stade <span class="hi">"side project"</span> pendant que les autres signent.',
+  },
+  {
+    n: 4,
+    tone: 'amber',
+    html: 'Tu as peut-être un CDI que tu veux quitter, mais tu ne sais pas par <span class="hi">où commencer</span>.',
+  },
+  {
+    n: 5,
+    tone: 'violet',
+    wide: true,
+    html: 'Tu bosses seul, sans feedback, sans réseau, sans personne pour te dire si t\'es sur la <span class="hi">bonne voie</span>.',
+  },
+]
 ---
 
-<section class="mb-24" id="diagnostics">
-  <div class="flex items-center gap-4 mb-8 reveal">
-    <span class="label-mono text-accent-violet font-bold">0x01 // Error Log</span>
-    <div class="h-px bg-dash-border flex-grow"></div>
+<section id="diagnostics">
+  <div class="section-head reveal">
+    <span class="label-mono violet" style="font-weight:600">01 — Le constat</span>
+    <div class="rule"></div>
   </div>
-  <h2 class="text-3xl font-bold mb-10 reveal delay-1">Tu reconnais cette situation ?</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-dash-border/40">
-
-    <div class="p-8 border-r border-b border-dash-border/40 hover:bg-dash-surface/30 transition-colors reveal delay-1">
-      <div class="label-mono text-accent-violet mb-4">Diagnostic #1</div>
-      <p class="text-text-main font-medium leading-relaxed">Tu as suivi <span class="text-accent-violet">12 tutos YouTube</span> sur Make, n8n ou l'IA… mais tu ne sais toujours pas comment en vivre.</p>
-    </div>
-
-    <div class="p-8 border-r border-b border-dash-border/40 hover:bg-dash-surface/30 transition-colors reveal delay-2">
-      <div class="label-mono text-accent-violet mb-4">Diagnostic #2</div>
-      <p class="text-text-main font-medium leading-relaxed">Tu galères à te positionner. "Consultant automation" ? "Expert IA" ? Tu changes de bio LinkedIn <span class="text-accent-violet">toutes les semaines</span>.</p>
-    </div>
-
-    <div class="p-8 border-r border-b border-dash-border/40 hover:bg-dash-surface/30 transition-colors reveal delay-3">
-      <div class="label-mono text-accent-violet mb-4">Diagnostic #3</div>
-      <p class="text-text-main font-medium leading-relaxed">Le marché explose, mais tu restes au stade <span class="text-accent-violet">"side project"</span> pendant que les autres signent.</p>
-    </div>
-
-    <div class="p-8 border-r border-b border-dash-border/40 hover:bg-dash-surface/30 transition-colors reveal delay-4">
-      <div class="label-mono text-accent-violet mb-4">Diagnostic #4</div>
-      <p class="text-text-main font-medium leading-relaxed">Tu as peut-être même un CDI que tu veux quitter, mais tu ne sais pas par <span class="text-accent-violet">où commencer</span> pour te lancer.</p>
-    </div>
-
-    <div class="p-8 border-r border-b border-dash-border/40 hover:bg-dash-surface/30 transition-colors lg:col-span-2 reveal delay-5">
-      <div class="label-mono text-accent-violet mb-4">Diagnostic #5</div>
-      <p class="text-text-main font-medium leading-relaxed">Tu bosses seul, sans feedback, sans réseau, sans personne pour te dire si t'es sur la <span class="text-accent-violet">bonne voie</span>.</p>
-    </div>
-
+  <div class="problem-intro">
+    <h2 class="reveal d1">Tu reconnais cette situation ?</h2>
+  </div>
+  <div class="problem-grid" data-problem-grid>
+    {
+      diagnostics.map((d) => (
+        <div class={`cell tone-${d.tone}${d.wide ? ' wide' : ''} reveal d${d.n}`} data-cell>
+          <span class="label-mono lab">Diagnostic #{d.n}</span>
+          <p set:html={d.html} />
+        </div>
+      ))
+    }
   </div>
 </section>
+
+<script is:inline>
+  ;(function () {
+    document.querySelectorAll('[data-cell]').forEach(function (cell) {
+      cell.addEventListener('mousemove', function (e) {
+        var r = cell.getBoundingClientRect()
+        cell.style.setProperty('--mx', ((e.clientX - r.left) / r.width) * 100 + '%')
+        cell.style.setProperty('--my', ((e.clientY - r.top) / r.height) * 100 + '%')
+      })
+    })
+  })()
+</script>
