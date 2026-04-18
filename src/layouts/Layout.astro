@@ -257,25 +257,16 @@ const structuredData = {
           link.addEventListener('click', function () { toggleMenu(false) })
         })
 
-        // --- FAQ accordion (with scroll compensation) ---
+        // --- FAQ accordion ---
         document.querySelectorAll('.faq-item').forEach(function (item) {
           var summary = item.querySelector('.faq-summary')
           if (!summary) return
           summary.addEventListener('click', function () {
-            var topBefore = item.getBoundingClientRect().top
             var wasOpen = item.classList.contains('open')
             document.querySelectorAll('.faq-item.open').forEach(function (other) {
-              other.classList.remove('open')
+              if (other !== item) other.classList.remove('open')
             })
-            if (!wasOpen) item.classList.add('open')
-            // Compensate scroll shift from above-siblings closing/opening
-            requestAnimationFrame(function () {
-              var topAfter = item.getBoundingClientRect().top
-              var delta = topAfter - topBefore
-              if (Math.abs(delta) > 1) {
-                window.scrollBy({ top: delta, left: 0, behavior: 'instant' })
-              }
-            })
+            item.classList.toggle('open', !wasOpen)
           })
         })
 
