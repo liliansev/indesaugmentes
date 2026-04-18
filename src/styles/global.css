@@ -1175,12 +1175,15 @@ section {
   letter-spacing: -0.04em;
   line-height: 1;
   font-family: var(--font-sans);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 .pricing .price .strike {
   font-size: 20px;
   color: var(--color-text-mute);
   font-weight: 500;
-  margin-right: 14px;
   text-decoration: line-through;
   text-decoration-color: var(--color-accent-amber);
   letter-spacing: -0.02em;
