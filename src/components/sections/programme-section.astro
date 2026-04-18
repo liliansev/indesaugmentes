@@ -1,58 +1,107 @@
 ---
-/* Modules — System Architecture */
+const timeline = [
+  {
+    n: 1,
+    phase: 'Mois 1',
+    variant: 'violet',
+    icon: 'settings_input_component',
+    title: 'Les outils : Make, n8n & IA',
+    body: "Formations vidéo complètes + exercices pratiques. Tu construis des automations complexes que des clients paient 2 000€+.",
+  },
+  {
+    n: 2,
+    phase: 'Mois 1–2',
+    variant: 'lime',
+    icon: 'trending_up',
+    title: 'Le business : trouver des clients et closer',
+    body: "Mon process commercial complet : prospection, positionnement des offres, closing en call. Les scripts, les templates, tout.",
+  },
+  {
+    n: 3,
+    phase: 'Mois 2',
+    variant: 'white',
+    icon: 'account_balance',
+    title: 'Le quotidien : gérer ton activité',
+    body: "Trésorerie, facturation, statut juridique, relation client. Accès à un SaaS de pilotage tréso + un call avec un expert-comptable.",
+  },
+  {
+    n: 4,
+    phase: 'Mois 2–3',
+    variant: 'amber',
+    icon: 'diversity_3',
+    title: 'Le réseau : tu n\'es plus seul',
+    body: "Cohorte de 5–10 personnes. 2 lives groupe par semaine. 2h de coaching 1-to-1 avec moi. Un groupe qui te tire vers le haut.",
+  },
+]
 ---
 
-<section class="mb-24" id="modules">
-  <div class="text-center mb-16">
-    <div class="label-mono text-accent-violet mb-4 reveal">0x04 // System Architecture</div>
-    <h2 class="text-4xl font-bold mb-4 reveal delay-1">Ce que tu vas maîtriser en 3 mois</h2>
-    <p class="text-text-dim reveal delay-2">Le blueprint complet pour ton activité de freelance augmenté.</p>
+<section id="modules">
+  <div class="programme-head reveal">
+    <div class="label-mono violet eyebrow">04 — Le programme</div>
+    <h2>3 mois, une trajectoire claire</h2>
+    <p>Chaque étape construit la suivante. Tu finis avec une activité qui tient debout.</p>
   </div>
-  <div class="grid md:grid-cols-2 gap-6">
 
-    <div class="dashboard-panel p-8 group hover:translate-y-[-4px] reveal delay-1">
-      <div class="flex justify-between items-start mb-6">
-        <div class="w-12 h-12 rounded-lg bg-accent-violet/10 flex items-center justify-center text-accent-violet group-hover:bg-accent-violet group-hover:text-white transition-all">
-          <span class="material-symbols-outlined">settings_input_component</span>
+  <div class="timeline">
+    <div class="tl-spine"><div class="tl-spine-fill"></div></div>
+
+    {
+      timeline.map((step, idx) => (
+        <div class={`tl-step reveal d${idx + 1}`}>
+          <div class="tl-rail">
+            <div class={`tl-node ${step.variant}`}>
+              <span class="material-symbols-outlined mat">{step.icon}</span>
+              <span class="tl-node-chip">{String(step.n).padStart(2, '0')}</span>
+            </div>
+          </div>
+          <div class="tl-body">
+            <div class="tl-meta">
+              <span class={`label-mono ${step.variant === 'white' ? 'white' : step.variant}`}>
+                Étape {String(step.n).padStart(2, '0')}
+              </span>
+              <span class="tl-phase">{step.phase}</span>
+            </div>
+            <div class={`dashboard-panel tl-card ${step.variant}`}>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+            </div>
+          </div>
         </div>
-        <div class="label-mono text-accent-violet">Module 01</div>
-      </div>
-      <h3 class="text-xl font-bold mb-4">Les outils : Make, n8n & IA</h3>
-      <p class="text-text-dim leading-relaxed">Formations vidéo complètes + exercices pratiques. Tu ne vas pas juste "comprendre" — tu vas savoir construire des automations complexes que des clients paient 2 000€+.</p>
-    </div>
+      ))
+    }
 
-    <div class="dashboard-panel p-8 group hover:translate-y-[-4px] reveal delay-2">
-      <div class="flex justify-between items-start mb-6">
-        <div class="w-12 h-12 rounded-lg bg-accent-lime/10 flex items-center justify-center text-accent-lime group-hover:bg-accent-lime group-hover:text-dash-slate transition-all">
-          <span class="material-symbols-outlined">trending_up</span>
+    <div class="tl-step tl-outcome reveal d5">
+      <div class="tl-rail">
+        <div class="tl-node outcome">
+          <span class="material-symbols-outlined mat">workspace_premium</span>
         </div>
-        <div class="label-mono text-accent-lime">Module 02</div>
       </div>
-      <h3 class="text-xl font-bold mb-4">Le business : trouver des clients et closer</h3>
-      <p class="text-text-dim leading-relaxed">Mon process commercial complet : comment je prospecte, comment je positionne mes offres, comment je close en call. Les scripts, les templates, tout.</p>
-    </div>
-
-    <div class="dashboard-panel p-8 group hover:translate-y-[-4px] reveal delay-3">
-      <div class="flex justify-between items-start mb-6">
-        <div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center text-white group-hover:bg-white group-hover:text-dash-slate transition-all">
-          <span class="material-symbols-outlined">account_balance</span>
+      <div class="tl-body">
+        <div class="tl-meta">
+          <span class="label-mono lime">Résultat · Mois 3</span>
+          <span class="tl-phase">Fin du bootcamp</span>
         </div>
-        <div class="label-mono">Module 03</div>
-      </div>
-      <h3 class="text-xl font-bold mb-4">Le quotidien : gérer ton activité</h3>
-      <p class="text-text-dim leading-relaxed">Trésorerie, facturation, statut juridique, relation client. Les trucs chiants mais vitaux que personne n'enseigne. Accès à un SaaS de pilotage tréso + un call avec un expert-comptable.</p>
-    </div>
-
-    <div class="dashboard-panel p-8 group hover:translate-y-[-4px] reveal delay-4">
-      <div class="flex justify-between items-start mb-6">
-        <div class="w-12 h-12 rounded-lg bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-500 group-hover:bg-fuchsia-500 group-hover:text-white transition-all">
-          <span class="material-symbols-outlined">diversity_3</span>
+        <div class="dashboard-panel tl-card outcome">
+          <h3>Bravo, tu es un indépendant augmenté.</h3>
+          <p>
+            Positionnement clair, premiers clients signés, facturation entre <strong>400€ et 600€/jour</strong>, un réseau solide et les outils pour scaler. Tu as passé le cap.
+          </p>
+          <div class="tl-kpis">
+            <div class="tl-kpi">
+              <div class="v">400–600€</div>
+              <div class="label-mono">/ jour facturé</div>
+            </div>
+            <div class="tl-kpi">
+              <div class="v">1 offre claire</div>
+              <div class="label-mono">positionnée</div>
+            </div>
+            <div class="tl-kpi">
+              <div class="v">Premiers clients</div>
+              <div class="label-mono">signés</div>
+            </div>
+          </div>
         </div>
-        <div class="label-mono text-fuchsia-500">Module 04</div>
       </div>
-      <h3 class="text-xl font-bold mb-4">Le réseau : tu n'es plus seul</h3>
-      <p class="text-text-dim leading-relaxed">Cohorte de 5-10 personnes. 2 lives groupe par semaine. 2h de coaching 1-to-1 avec moi. Un groupe qui te tire vers le haut.</p>
     </div>
-
   </div>
 </section>

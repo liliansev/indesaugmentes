@@ -2,13 +2,13 @@
 import '../styles/global.css'
 
 interface Props {
-  title: string
+  title?: string
   description?: string
 }
 
 const {
-  title,
-  description = 'Le bootcamp intensif pour devenir freelance en automation et IA en 3 mois. Accompagnement live, petit groupe.',
+  title = "Indés Augmentés — Utilise l'IA et l'automation pour devenir l'indé que tu es",
+  description = "Le bootcamp intensif pour devenir freelance en automation et IA en 3 mois. Accompagnement live, cohorte de 5 à 10 personnes, mi-mai 2026.",
 } = Astro.props
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
@@ -16,7 +16,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Course',
-  name: 'Indes Augmentes — Bootcamp Freelance Automation & IA',
+  name: 'Indés Augmentés — Bootcamp Freelance Automation & IA',
   description: 'Bootcamp de 3 mois pour devenir freelance en automation et IA',
   provider: { '@type': 'Person', name: 'Lilian Sevoumian' },
   offers: { '@type': 'Offer', price: '1500', priceCurrency: 'EUR' },
@@ -26,11 +26,11 @@ const structuredData = {
 ---
 
 <!doctype html>
-<html class="dark" lang="fr">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="theme-color" content="#0a1628" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -38,7 +38,7 @@ const structuredData = {
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
-    <meta property="og:site_name" content="Indes Augmentes" />
+    <meta property="og:site_name" content="Indés Augmentés" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
@@ -53,11 +53,11 @@ const structuredData = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
       rel="stylesheet"
     />
 
@@ -74,165 +74,290 @@ const structuredData = {
     ></script>
   </head>
 
-  <body class="selection:bg-accent-violet/30 selection:text-white">
-    <a
-      href="#main-content"
-      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-lg focus:bg-accent-violet focus:px-4 focus:py-2 focus:text-white focus:outline-none"
-    >
-      Aller au contenu
-    </a>
+  <body>
+    <a href="#main-content" class="skip-link">Aller au contenu</a>
+
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- Ambient cursor aura -->
+    <div id="cursor-aura" class="cursor-aura"></div>
 
     <!-- NAV -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] border-b border-dash-border/60 bg-dash-slate/80 backdrop-blur-xl px-6 py-3">
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="/" class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded bg-gradient-to-br from-accent-violet to-accent-lime flex items-center justify-center">
-            <span class="material-symbols-outlined text-dash-slate text-xl font-bold">terminal</span>
+    <nav id="navbar" class="nav">
+      <div class="inner">
+        <a href="#top" class="brand">
+          <div class="logo-mark">
+            <span class="bar-tall"></span>
+            <span class="bar-short"></span>
           </div>
-          <span class="text-sm font-mono font-bold tracking-tight text-white uppercase">Indes <span class="text-accent-violet">Augmentes</span> // v1.0</span>
+          <span class="wordmark">indés <em>augmentés</em></span>
         </a>
-        <div class="hidden md:flex items-center gap-8">
-          <a class="label-mono hover:text-accent-violet transition-colors" href="#diagnostics">Diagnostics</a>
-          <a class="label-mono hover:text-accent-violet transition-colors" href="#modules">Modules</a>
-          <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn-primary py-2 px-5 text-sm">Reserver mon call</a>
+        <div class="links">
+          <a class="label-mono" href="#diagnostics">Diagnostics</a>
+          <a class="label-mono" href="#modules">Modules</a>
+          <a class="label-mono" href="#tarifs">Tarifs</a>
+          <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Réserver mon call <span class="arr">→</span></a>
         </div>
 
         <!-- Mobile hamburger -->
-        <button id="menu-toggle" class="flex flex-col gap-1.5 p-2 md:hidden" aria-label="Menu" aria-expanded="false">
-          <span class="block h-0.5 w-6 bg-text-main transition-all" id="bar1"></span>
-          <span class="block h-0.5 w-6 bg-text-main transition-all" id="bar2"></span>
-          <span class="block h-0.5 w-4 bg-text-main transition-all" id="bar3"></span>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
 
       <!-- Mobile menu -->
-      <div id="mobile-menu" class="hidden bg-dash-slate/95 backdrop-blur-xl md:hidden">
-        <div class="flex flex-col gap-6 py-8 px-6 text-sm font-mono uppercase tracking-wider">
-          <a href="#diagnostics" class="mobile-link text-text-dim hover:text-accent-violet transition-colors">Diagnostics</a>
-          <a href="#modules" class="mobile-link text-text-dim hover:text-accent-violet transition-colors">Modules</a>
-          <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="mobile-link btn-primary py-4 text-center">Reserver mon call</a>
-        </div>
+      <div id="mobile-menu" class="mobile-menu">
+        <a class="mobile-link" href="#diagnostics">Diagnostics</a>
+        <a class="mobile-link" href="#modules">Modules</a>
+        <a class="mobile-link" href="#tarifs">Tarifs</a>
+        <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="mobile-link btn btn-primary">Réserver mon call <span class="arr">→</span></a>
       </div>
     </nav>
 
-    <main id="main-content" class="max-w-7xl mx-auto px-6 pt-32 pb-24">
+    <main id="main-content" class="content">
       <slot />
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-dash-border py-12 px-6 bg-dash-slate">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+    <footer>
+      <div class="inner">
         <div>
-          <div class="flex items-center gap-2 mb-4">
-            <div class="w-6 h-6 rounded bg-accent-violet flex items-center justify-center">
-              <span class="material-symbols-outlined text-dash-slate text-xs font-bold">terminal</span>
+          <div class="brand">
+            <div class="logo-mark">
+              <span class="bar-tall"></span>
+              <span class="bar-short"></span>
             </div>
-            <span class="text-xs font-mono font-bold tracking-tight text-white uppercase">INDES AUGMENTES</span>
+            <span class="wordmark">indés <em>augmentés</em></span>
           </div>
-          <p class="label-mono">&copy; 2026 Lilian Sevoumian. Built for the modern freelance.</p>
+          <div class="label-mono">© 2026 Lilian Sevoumian. Built for the modern freelance.</div>
         </div>
-        <div class="flex gap-8">
-          <a class="label-mono hover:text-accent-lime transition-colors" href="https://www.linkedin.com/in/lilian-sevoumian/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a class="label-mono hover:text-accent-lime transition-colors" href="#">Mentions Legales</a>
+        <div class="links">
+          <a class="label-mono" href="https://www.linkedin.com/in/lilian-sevoumian/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="label-mono" href="#">Mentions légales</a>
+          <a class="label-mono" href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer">Contact</a>
         </div>
       </div>
     </footer>
 
     <!-- MOBILE STICKY CTA -->
-    <div
-      id="sticky-cta"
-      class="fixed bottom-0 left-0 right-0 z-50 translate-y-full border-t border-dash-border bg-dash-slate/95 p-4 backdrop-blur-xl transition-transform duration-300 md:hidden"
-    >
-      <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn-primary block w-full py-4 text-center">Reserver mon call →</a>
+    <div id="sticky-cta" class="sticky-cta">
+      <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Réserver mon call <span class="arr">→</span></a>
     </div>
 
     <script is:inline>
       ;(function () {
         var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        if (prefersReducedMotion) {
-          document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible') })
+
+        // --- Scroll reveal ---
+        if ('IntersectionObserver' in window && !prefersReducedMotion) {
+          var revealObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in')
+                revealObs.unobserve(entry.target)
+              }
+            })
+          }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' })
+          document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el) })
+        } else {
+          document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in') })
         }
 
-        // Mobile menu
-        var menuToggle = document.getElementById('menu-toggle')
-        var mobileMenu = document.getElementById('mobile-menu')
-        var bar1 = document.getElementById('bar1')
-        var bar2 = document.getElementById('bar2')
-        var bar3 = document.getElementById('bar3')
-        var isMenuOpen = false
+        // --- Smooth scroll + nav scrolled state + scroll progress + sticky CTA ---
+        var navbar = document.getElementById('navbar')
+        var progressEl = document.getElementById('scroll-progress')
+        var stickyCta = document.getElementById('sticky-cta')
 
-        function toggleMenu() {
-          isMenuOpen = !isMenuOpen
-          if (!mobileMenu || !menuToggle) return
-          mobileMenu.classList.toggle('hidden', !isMenuOpen)
-          menuToggle.setAttribute('aria-expanded', String(isMenuOpen))
-          if (bar1 && bar2 && bar3) {
-            if (isMenuOpen) {
-              bar1.style.transform = 'translateY(4px) rotate(45deg)'
-              bar2.style.opacity = '0'
-              bar3.style.transform = 'translateY(-4px) rotate(-45deg)'
-              bar3.style.width = '1.5rem'
-            } else {
-              bar1.style.transform = ''
-              bar2.style.opacity = ''
-              bar3.style.transform = ''
-              bar3.style.width = ''
-            }
+        function handleScroll() {
+          var y = window.scrollY
+          if (navbar) {
+            if (y > 12) navbar.classList.add('scrolled')
+            else navbar.classList.remove('scrolled')
+          }
+          if (progressEl) {
+            var h = document.documentElement.scrollHeight - window.innerHeight
+            var p = h > 0 ? (y / h) * 100 : 0
+            progressEl.style.width = p + '%'
+          }
+          if (stickyCta) {
+            var pastHero = y > window.innerHeight * 0.8
+            var nearBottom = y + window.innerHeight > document.documentElement.scrollHeight - 200
+            if (pastHero && !nearBottom) stickyCta.classList.add('show')
+            else stickyCta.classList.remove('show')
+          }
+          // Timeline spine fill — 0% when timeline top enters viewport,
+          // 100% when outcome node reaches 70% viewport from top
+          var spine = document.querySelector('.tl-spine-fill')
+          var timelineSection = document.querySelector('.timeline')
+          var outcomeNode = document.querySelector('.tl-outcome')
+          if (spine && timelineSection && outcomeNode) {
+            var r = timelineSection.getBoundingClientRect()
+            var outcomeR = outcomeNode.getBoundingClientRect()
+            var vh = window.innerHeight
+            var offsetToOutcome = outcomeR.top - r.top
+            var startTop = vh * 0.85
+            var endTop = vh * 0.7 - offsetToOutcome
+            var progress = Math.max(0, Math.min(1, (startTop - r.top) / (startTop - endTop)))
+            spine.style.height = (progress * 100) + '%'
           }
         }
-        if (menuToggle) menuToggle.addEventListener('click', toggleMenu)
-        document.querySelectorAll('.mobile-link').forEach(function (link) {
-          link.addEventListener('click', function () { if (isMenuOpen) toggleMenu() })
-        })
+        handleScroll()
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        window.addEventListener('resize', handleScroll, { passive: true })
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
           anchor.addEventListener('click', function (e) {
             var href = this.getAttribute('href')
             if (!href || href === '#') return
+            if (href === '#top') {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+              history.pushState(null, '', '#top')
+              return
+            }
             var target = document.querySelector(href)
             if (!target) return
             e.preventDefault()
-            window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' })
+            window.scrollTo({
+              top: target.getBoundingClientRect().top + window.scrollY - 80,
+              behavior: 'smooth'
+            })
             history.pushState(null, '', href)
           })
         })
 
-        // Scroll reveal
-        if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-          var obs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) { entry.target.classList.add('visible'); obs.unobserve(entry.target) }
-            })
-          }, { threshold: 0.1, rootMargin: '-50px' })
-          document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el) })
+        // --- Mobile menu ---
+        var menuToggle = document.getElementById('menu-toggle')
+        var mobileMenu = document.getElementById('mobile-menu')
+        var isMenuOpen = false
+        function toggleMenu(force) {
+          if (typeof force === 'boolean') isMenuOpen = force
+          else isMenuOpen = !isMenuOpen
+          if (!mobileMenu || !menuToggle) return
+          mobileMenu.classList.toggle('open', isMenuOpen)
+          menuToggle.setAttribute('aria-expanded', String(isMenuOpen))
+          var bars = menuToggle.querySelectorAll('span')
+          if (bars.length >= 3) {
+            if (isMenuOpen) {
+              bars[0].style.transform = 'translateY(7px) rotate(45deg)'
+              bars[1].style.opacity = '0'
+              bars[2].style.transform = 'translateY(-7px) rotate(-45deg)'
+            } else {
+              bars[0].style.transform = ''
+              bars[1].style.opacity = ''
+              bars[2].style.transform = ''
+            }
+          }
         }
+        if (menuToggle) menuToggle.addEventListener('click', function () { toggleMenu() })
+        document.querySelectorAll('.mobile-link').forEach(function (link) {
+          link.addEventListener('click', function () { toggleMenu(false) })
+        })
 
-        // FAQ accordion
-        document.querySelectorAll('details').forEach(function (detail) {
-          detail.addEventListener('click', function () {
-            document.querySelectorAll('details').forEach(function (other) {
-              if (other !== detail && other.open) other.removeAttribute('open')
+        // --- FAQ accordion (with scroll compensation) ---
+        document.querySelectorAll('.faq-item').forEach(function (item) {
+          var summary = item.querySelector('.faq-summary')
+          if (!summary) return
+          summary.addEventListener('click', function () {
+            var topBefore = item.getBoundingClientRect().top
+            var wasOpen = item.classList.contains('open')
+            document.querySelectorAll('.faq-item.open').forEach(function (other) {
+              other.classList.remove('open')
+            })
+            if (!wasOpen) item.classList.add('open')
+            // Compensate scroll shift from above-siblings closing/opening
+            requestAnimationFrame(function () {
+              var topAfter = item.getBoundingClientRect().top
+              var delta = topAfter - topBefore
+              if (Math.abs(delta) > 1) {
+                window.scrollBy({ top: delta, left: 0, behavior: 'instant' })
+              }
             })
           })
         })
 
-        // Sticky CTA
-        var stickyCta = document.getElementById('sticky-cta')
-        function updateStickyCta() {
-          if (!stickyCta) return
-          var pastHero = window.scrollY > window.innerHeight
-          var nearBottom = window.scrollY + window.innerHeight > document.documentElement.scrollHeight - 200
-          if (pastHero && !nearBottom) {
-            stickyCta.classList.remove('translate-y-full')
-            stickyCta.classList.add('translate-y-0')
-          } else {
-            stickyCta.classList.add('translate-y-full')
-            stickyCta.classList.remove('translate-y-0')
+        // --- Cursor aura ---
+        var aura = document.getElementById('cursor-aura')
+        var supportsHover = window.matchMedia('(hover: hover)').matches
+        if (aura && supportsHover && !prefersReducedMotion) {
+          var mx = window.innerWidth / 2, my = window.innerHeight / 2
+          var tx = mx, ty = my
+          window.addEventListener('mousemove', function (e) {
+            mx = e.clientX
+            my = e.clientY
+          }, { passive: true })
+          function auraLoop() {
+            tx += (mx - tx) * 0.08
+            ty += (my - ty) * 0.08
+            aura.style.transform = 'translate(' + tx + 'px, ' + ty + 'px)'
+            requestAnimationFrame(auraLoop)
           }
+          auraLoop()
         }
-        window.addEventListener('scroll', updateStickyCta, { passive: true })
-        updateStickyCta()
+
+        // --- Terminal chip typewriter ---
+        var chipTxt = document.querySelector('.terminal-chip .txt span[data-typewriter]')
+        if (chipTxt && !prefersReducedMotion) {
+          var strings = [
+            'booking call · 15 min',
+            'cohorte 1 · 5 places',
+            'démarrage · mi-mai 2026',
+            'places restantes · 5/10',
+          ]
+          var ci = 0
+          function typeNext() {
+            var target = strings[ci]
+            var k = 0
+            chipTxt.textContent = ''
+            var iv = setInterval(function () {
+              k++
+              chipTxt.textContent = target.slice(0, k)
+              if (k >= target.length) {
+                clearInterval(iv)
+                setTimeout(function () {
+                  ci = (ci + 1) % strings.length
+                  typeNext()
+                }, 2400)
+              }
+            }, 26)
+          }
+          setTimeout(typeNext, 120)
+        }
+
+        // --- Count-up animation for mentor stats ---
+        function easeOutCubic(p) { return 1 - Math.pow(1 - p, 3) }
+        document.querySelectorAll('[data-countup]').forEach(function (el) {
+          var target = parseInt(el.dataset.countup, 10)
+          if (isNaN(target)) return
+          var duration = parseInt(el.dataset.duration || '1800', 10)
+          var started = false
+          function startCount() {
+            if (started) return
+            started = true
+            if (prefersReducedMotion) { el.textContent = target.toLocaleString('fr-FR'); return }
+            var t0 = performance.now()
+            function tick(t) {
+              var p = Math.min(1, (t - t0) / duration)
+              var v = Math.round(target * easeOutCubic(p))
+              el.textContent = v.toLocaleString('fr-FR')
+              if (p < 1) requestAnimationFrame(tick)
+            }
+            requestAnimationFrame(tick)
+          }
+          if ('IntersectionObserver' in window) {
+            var io = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) { startCount(); io.disconnect() }
+              })
+            }, { threshold: 0.4 })
+            io.observe(el)
+          } else {
+            startCount()
+          }
+        })
       })()
     </script>
   </body>

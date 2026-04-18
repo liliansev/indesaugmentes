@@ -1,60 +1,41 @@
 ---
-/* FAQ — Dashboard accordion */
+const faqs = [
+  {
+    q: "C'est pour qui exactement ?",
+    a: "Pour deux profils : les freelances qui veulent ajouter l'automation/IA à leurs compétences, et les personnes en reconversion qui veulent se lancer en freelance sur ce créneau. Pas besoin d'être développeur.",
+  },
+  {
+    q: "J'ai déjà suivi ta formation Make / n8n. Ça fait doublon ?",
+    a: "Non. Les formations vidéo sont incluses, mais le bootcamp c'est 80% d'accompagnement : business, prospection, mindset, coaching personnalisé.",
+  },
+  {
+    q: "Je suis encore en CDI, c'est compatible ?",
+    a: "Oui. Les lives sont en soirée/fin de journée et les vidéos sont en accès libre. Plusieurs personnes de la cible sont exactement dans cette situation.",
+  },
+  {
+    q: "Pourquoi c'est moins cher que d'habitude ?",
+    a: "Parce que c'est la cohorte 1. Tu essuies les plâtres avec moi, je te fais un prix en échange. Dès la cohorte 2, le prix passe à 1 800€.",
+  },
+  {
+    q: "C'est quoi le call de 15 min ?",
+    a: "Un échange rapide pour voir si le bootcamp est fait pour toi. Pas de pitch commercial, juste une conversation honnête.",
+  },
+]
 ---
 
-<section class="mb-24" id="faq">
-  <h2 class="text-3xl font-bold mb-10 text-center reveal">Questions fréquentes</h2>
-  <div class="max-w-3xl mx-auto space-y-4">
-
-    <details class="dashboard-panel group reveal delay-1">
-      <summary class="p-6 cursor-pointer flex justify-between items-center list-none font-semibold text-white">
-        C'est pour qui exactement ?
-        <span class="material-symbols-outlined text-accent-violet group-open:rotate-180 transition-transform">expand_more</span>
-      </summary>
-      <div class="px-6 pb-6 text-text-dim text-sm leading-relaxed border-t border-dash-border pt-4">
-        Pour deux profils : les freelances qui veulent ajouter l'automation/IA à leurs compétences, et les personnes en reconversion qui veulent se lancer en freelance sur ce créneau. Pas besoin d'être développeur.
-      </div>
-    </details>
-
-    <details class="dashboard-panel group reveal delay-2">
-      <summary class="p-6 cursor-pointer flex justify-between items-center list-none font-semibold text-white">
-        J'ai déjà suivi ta formation Make / n8n. Ça fait doublon ?
-        <span class="material-symbols-outlined text-accent-violet group-open:rotate-180 transition-transform">expand_more</span>
-      </summary>
-      <div class="px-6 pb-6 text-text-dim text-sm leading-relaxed border-t border-dash-border pt-4">
-        Non. Les formations vidéo sont incluses, mais le bootcamp c'est 80% d'accompagnement : le business, la prospection, le mindset, le coaching personnalisé. C'est la différence entre savoir utiliser un outil et savoir en vivre.
-      </div>
-    </details>
-
-    <details class="dashboard-panel group reveal delay-3">
-      <summary class="p-6 cursor-pointer flex justify-between items-center list-none font-semibold text-white">
-        Je suis encore en CDI, c'est compatible ?
-        <span class="material-symbols-outlined text-accent-violet group-open:rotate-180 transition-transform">expand_more</span>
-      </summary>
-      <div class="px-6 pb-6 text-text-dim text-sm leading-relaxed border-t border-dash-border pt-4">
-        Oui. Les lives sont en soirée/fin de journée et les vidéos sont en accès libre. Plusieurs personnes de la cible sont exactement dans cette situation.
-      </div>
-    </details>
-
-    <details class="dashboard-panel group reveal delay-4">
-      <summary class="p-6 cursor-pointer flex justify-between items-center list-none font-semibold text-white">
-        Pourquoi c'est moins cher que d'habitude ?
-        <span class="material-symbols-outlined text-accent-violet group-open:rotate-180 transition-transform">expand_more</span>
-      </summary>
-      <div class="px-6 pb-6 text-text-dim text-sm leading-relaxed border-t border-dash-border pt-4">
-        Parce que c'est la cohorte 1. Tu essuies les plâtres avec moi, je te fais un prix en échange. Dès la cohorte 2, le prix passe à 1 800€.
-      </div>
-    </details>
-
-    <details class="dashboard-panel group reveal delay-5">
-      <summary class="p-6 cursor-pointer flex justify-between items-center list-none font-semibold text-white">
-        C'est quoi le call de 15 min ?
-        <span class="material-symbols-outlined text-accent-violet group-open:rotate-180 transition-transform">expand_more</span>
-      </summary>
-      <div class="px-6 pb-6 text-text-dim text-sm leading-relaxed border-t border-dash-border pt-4">
-        Un échange rapide pour voir si le bootcamp est fait pour toi. Pas de pitch commercial, juste une conversation honnête. Si c'est pas le bon moment ou le bon format, je te le dirai.
-      </div>
-    </details>
-
+<section class="faq-wrap" id="faq">
+  <h2 class="reveal">Questions fréquentes</h2>
+  <div class="faq">
+    {
+      faqs.map((f, i) => (
+        <div class={`dashboard-panel faq-item reveal d${i + 1}${i === 0 ? ' open' : ''}`}>
+          <div class="faq-summary">
+            <span>{f.q}</span>
+            <span class="material-symbols-outlined">expand_more</span>
+          </div>
+          <div class="faq-body">{f.a}</div>
+        </div>
+      ))
+    }
   </div>
 </section>

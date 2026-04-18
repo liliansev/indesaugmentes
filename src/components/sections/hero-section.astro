@@ -1,40 +1,29 @@
 ---
-import { Image } from 'astro:assets'
-import lilianPhoto from '../../assets/lilian-sevoumian.jpeg'
 ---
 
-<section class="grid lg:grid-cols-12 gap-8 items-start mb-24">
-  <div class="lg:col-span-7 dashboard-panel p-8 lg:p-12 relative overflow-hidden reveal">
-    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-violet to-accent-lime"></div>
-    <div class="flex items-center gap-3 mb-6">
-      <span class="status-dot bg-accent-lime animate-pulse"></span>
-      <span class="label-mono text-accent-lime">Bootcamp — Cohorte 1 · Places limitées</span>
+<section class="hero" id="top">
+  <div class="dashboard-panel left reveal">
+    <div class="terminal-chip">
+      <span class="dot"></span>
+      <span class="txt">› <span data-typewriter>booking call · 15 min</span><span class="cur"></span></span>
     </div>
-    <h1 class="text-4xl lg:text-6xl font-extrabold mb-6 leading-[1.1] text-white">
-      Deviens freelance <br />
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-violet to-fuchsia-400">automation & IA</span> <br />
-      en 3 mois.
+    <h1>
+      Utilise l'<span class="grad">IA &amp; l'automation</span><br />
+      pour devenir l'indé<br />
+      que tu es.
     </h1>
-    <p class="text-lg text-text-dim leading-relaxed mb-10 max-w-xl font-medium">
-      Le programme intensif pour passer de "j'ai vu des tutos" à "je signe des missions à <span class="text-white border-b-2 border-accent-lime/40">500€/jour</span>". Accompagnement live, en petit groupe.
+    <p class="tagline">
+      Le programme intensif pour passer de "j'ai vu des tutos" à "je <strong>SCALE</strong> mon activité grâce à <strong>l'IA</strong>". Accompagnement live, en petit groupe.
     </p>
-    <div class="flex flex-col sm:flex-row gap-4 items-center">
-      <a class="btn-primary w-full sm:w-auto" href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer">Réserver mon call de 15 min →</a>
-      <a class="btn-secondary w-full sm:w-auto" href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer">Rejoindre la liste d'attente</a>
+    <div class="ctas">
+      <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        Réserver mon call de 15 min <span class="arr">→</span>
+      </a>
+      <a href="#cta" class="btn btn-secondary">Rejoindre la liste d'attente</a>
     </div>
-    <div class="mt-8 pt-6 border-t border-dash-border flex items-center gap-4">
-      <span class="label-mono">SYSTEM STATUS: 5 places restantes</span>
-    </div>
-  </div>
-  <div class="lg:col-span-5 reveal delay-1">
-    <div class="dashboard-panel p-2">
-      <Image
-        src={lilianPhoto}
-        alt="Lilian Sevoumian"
-        class="rounded-lg w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-700"
-        widths={[400, 600]}
-        sizes="(max-width: 1024px) 100vw, 40vw"
-      />
+    <div class="status-row">
+      <span class="status-dot pulse"></span>
+      <span class="label-mono">SYSTEM STATUS: 5 places restantes · cohorte 1 · mi-mai 2026</span>
     </div>
   </div>
 </section>
