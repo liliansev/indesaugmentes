@@ -248,7 +248,7 @@
   background: var(--color-accent-violet-text);
   border-radius: 2px;
   transform-origin: bottom center;
-  animation: logoTall 20s var(--ease-out-expo) infinite;
+  animation: logoTall 5.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 .logo-mark .bar-short {
   width: 5px;
@@ -256,25 +256,21 @@
   background: var(--color-accent-lime);
   border-radius: 2px;
   transform-origin: bottom center;
-  animation: logoShort 20s var(--ease-out-expo) infinite;
-}
-@keyframes logoShort {
-  0% { transform: scaleY(1); }
-  4% { transform: scaleY(1.72); }
-  6% { transform: scaleY(1.55); }
-  8% { transform: scaleY(1.78); }
-  10% { transform: scaleY(1.55); }
-  12% { transform: scaleY(1); }
-  100% { transform: scaleY(1); }
+  animation: logoShort 5.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 @keyframes logoTall {
-  0% { transform: scaleY(1); }
-  4% { transform: scaleY(0.58); }
-  6% { transform: scaleY(0.65); }
-  8% { transform: scaleY(0.58); }
-  10% { transform: scaleY(0.72); }
-  12% { transform: scaleY(1); }
+  0%, 10% { transform: scaleY(1); }
+  50%, 60% { transform: scaleY(0.58); }
   100% { transform: scaleY(1); }
+}
+@keyframes logoShort {
+  0%, 10% { transform: scaleY(1); }
+  50%, 60% { transform: scaleY(1.72); }
+  100% { transform: scaleY(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-mark .bar-tall,
+  .logo-mark .bar-short { animation: none; }
 }
 
 /* ========== Nav ========== */
@@ -462,7 +458,7 @@ section {
   font-weight: 500;
 }
 .hero .tagline strong {
-  color: var(--color-text-bright);
+  color: var(--color-accent-lime);
   font-weight: 500;
   border-bottom: 2px solid rgba(190, 242, 100, 0.5);
 }
@@ -698,7 +694,7 @@ section {
   position: relative;
 }
 .desired .copy p { margin-bottom: 20px; }
-.desired .copy strong { color: var(--color-text-bright); font-weight: 500; }
+.desired .copy strong { color: var(--color-accent-lime); font-weight: 500; }
 .desired .quote {
   padding-top: 24px;
   border-top: 1px solid var(--color-dash-border);
@@ -725,7 +721,7 @@ section {
   line-height: 1.7;
 }
 .mentor .copy p { margin-bottom: 16px; }
-.mentor .copy strong { color: var(--color-text-bright); font-weight: 700; }
+.mentor .copy strong { color: var(--color-accent-violet-text); font-weight: 700; }
 .mentor .pullquote {
   padding: 20px 22px;
   color: var(--color-text-main);
@@ -1212,6 +1208,7 @@ section {
   color: var(--color-accent-lime);
   font-size: 18px;
 }
+.pricing .inc strong { color: var(--color-accent-violet-text); font-weight: 600; }
 .pricing .ctas {
   display: flex;
   flex-direction: column;
@@ -1338,7 +1335,7 @@ section {
   line-height: 1.6;
 }
 .final .copy strong {
-  color: var(--color-text-bright);
+  color: var(--color-accent-lime);
   font-weight: 700;
 }
 .final .ctas {
