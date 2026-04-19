@@ -1,7 +1,30 @@
 ---
 import { Image } from 'astro:assets'
 import lilianPhoto from '../../assets/lilian-sevoumian.jpeg'
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': 'https://indesaugmentes.com/#lilian',
+  name: 'Lilian Sevoumian',
+  url: 'https://indesaugmentes.com',
+  image: 'https://indesaugmentes.com/og.png',
+  jobTitle: 'Freelance IA & automation · Mentor',
+  description:
+    "Freelance augmenté depuis plus de 6 ans, formateur Make et n8n, mentor du bootcamp Indés Augmentés. +500 personnes formées, +10 000 abonnés LinkedIn.",
+  knowsAbout: [
+    'Intelligence artificielle',
+    'Automation no-code',
+    'Make',
+    'n8n',
+    'Freelancing',
+    'Acquisition client',
+  ],
+  sameAs: ['https://www.linkedin.com/in/lilian-sevoumian/'],
+}
 ---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
 <section class="mentor" id="mentor">
   <div class="reveal">
@@ -53,7 +76,7 @@ import lilianPhoto from '../../assets/lilian-sevoumian.jpeg'
     <div class="photo">
       <Image
         src={lilianPhoto}
-        alt="Lilian Sevoumian"
+        alt="Lilian Sevoumian, mentor du bootcamp Indés Augmentés — freelance IA et automation depuis plus de 6 ans"
         widths={[320, 480, 640]}
         sizes="(max-width: 900px) 70vw, 320px"
         loading="lazy"

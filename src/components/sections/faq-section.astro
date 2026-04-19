@@ -21,7 +21,23 @@ const faqs = [
     a: "Un échange rapide pour voir si le bootcamp est fait pour toi. Pas de pitch commercial, juste une conversation honnête.",
   },
 ]
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': 'https://indesaugmentes.com/#faq',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a,
+    },
+  })),
+}
 ---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 <section class="faq-wrap" id="faq">
   <h2 class="reveal">Questions fréquentes</h2>

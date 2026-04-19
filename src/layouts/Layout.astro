@@ -7,21 +7,93 @@ interface Props {
 }
 
 const {
-  title = "Indés Augmentés — Utilise l'IA et l'automation pour devenir l'indé que tu es",
-  description = "Le bootcamp intensif pour faire de l'IA et l'automation ton levier d'indépendance en 3 mois. Accompagnement live, cohorte de 7 personnes, mi-mai 2026.",
+  title = "Indés Augmentés — Maîtrise l'IA et l'automation pour scaler ton activité d'indé",
+  description = "Bootcamp intensif de 3 mois pour faire de l'IA et l'automation ton levier d'indépendance. Cohorte de 7 personnes, démarrage mi-mai 2026. Accompagnement live avec Lilian Sevoumian.",
 } = Astro.props
 
+const siteUrl = 'https://indesaugmentes.com'
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
+const ogImageUrl = `${siteUrl}/og.png`
 
-const structuredData = {
+const courseSchema = {
   '@context': 'https://schema.org',
   '@type': 'Course',
-  name: 'Indés Augmentés — Bootcamp Freelance Automation & IA',
-  description: 'Bootcamp de 3 mois pour devenir freelance en automation et IA',
-  provider: { '@type': 'Person', name: 'Lilian Sevoumian' },
-  offers: { '@type': 'Offer', price: '1500', priceCurrency: 'EUR' },
-  duration: 'P12W',
+  '@id': `${siteUrl}/#course`,
+  name: 'Indés Augmentés — Bootcamp Freelance IA & Automation',
+  description:
+    "Bootcamp intensif de 3 mois pour devenir freelance augmenté grâce à l'IA, Make et n8n. Positionnement, acquisition clients, outils, accompagnement live en cohorte de 7.",
+  url: siteUrl,
+  image: ogImageUrl,
+  inLanguage: 'fr-FR',
   educationalLevel: 'Beginner to Intermediate',
+  teaches: [
+    "IA générative appliquée au freelancing",
+    "Automation no-code avec Make et n8n",
+    "Positionnement et acquisition clients en indépendant",
+    "Gestion d'activité freelance (facturation, trésorerie, juridique)",
+  ],
+  about: ['Intelligence artificielle', 'Automation no-code', 'Freelancing', 'Make', 'n8n'],
+  provider: {
+    '@type': 'Person',
+    '@id': `${siteUrl}/#lilian`,
+    name: 'Lilian Sevoumian',
+    url: siteUrl,
+    sameAs: ['https://www.linkedin.com/in/lilian-sevoumian/'],
+  },
+  offers: {
+    '@type': 'Offer',
+    url: 'https://cal.com/lilian-sevoumian/30min',
+    price: '1500',
+    priceCurrency: 'EUR',
+    availability: 'https://schema.org/LimitedAvailability',
+    validFrom: '2026-01-01',
+    category: 'Cohorte 1 — Prix early adopter',
+  },
+  hasCourseInstance: {
+    '@type': 'CourseInstance',
+    name: 'Cohorte 1',
+    courseMode: 'Online',
+    courseWorkload: 'P12W',
+    startDate: '2026-05-15',
+    endDate: '2026-08-15',
+    location: {
+      '@type': 'VirtualLocation',
+      url: siteUrl,
+    },
+    inLanguage: 'fr-FR',
+    maximumAttendeeCapacity: 7,
+    instructor: {
+      '@type': 'Person',
+      '@id': `${siteUrl}/#lilian`,
+    },
+  },
+}
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
+  name: 'Indés Augmentés',
+  url: siteUrl,
+  logo: `${siteUrl}/icon-512.png`,
+  founder: { '@id': `${siteUrl}/#lilian` },
+  sameAs: ['https://www.linkedin.com/in/lilian-sevoumian/'],
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
+  url: siteUrl,
+  name: 'Indés Augmentés',
+  description,
+  inLanguage: 'fr-FR',
+  publisher: { '@id': `${siteUrl}/#organization` },
+}
+
+const graphSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [courseSchema, organizationSchema, websiteSchema],
 }
 ---
 
@@ -30,7 +102,10 @@ const structuredData = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0a1628" />
+    <meta name="theme-color" content="#7c3aed" />
+    <meta name="color-scheme" content="light" />
+    <meta name="author" content="Lilian Sevoumian" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -42,14 +117,18 @@ const structuredData = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:image" content="https://indesaugmentes.com/og.png" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Indés Augmentés — Bootcamp IA & automation pour freelances" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://indesaugmentes.com/og.png" />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content="Indés Augmentés — Bootcamp IA & automation pour freelances" />
 
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
@@ -57,15 +136,15 @@ const structuredData = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=account_balance,calendar_month,check_circle,diversity_3,expand_more,settings_input_component,trending_up,workspace_premium,workspaces&display=swap"
       rel="stylesheet"
     />
 
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(graphSchema)} />
 
     <!-- DataFast Analytics (cookieless, proxied via Vercel) -->
     <script
@@ -101,7 +180,7 @@ const structuredData = {
           <a class="label-mono" href="#diagnostics">Diagnostics</a>
           <a class="label-mono" href="#modules">Modules</a>
           <a class="label-mono" href="#tarifs">Tarifs</a>
-          <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Sécuriser ma place <span class="arr">→</span></a>
+          <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Sécuriser ma place <span class="arr" aria-hidden="true">→</span></a>
         </div>
 
         <!-- Mobile hamburger -->
@@ -117,7 +196,7 @@ const structuredData = {
         <a class="mobile-link" href="#diagnostics">Diagnostics</a>
         <a class="mobile-link" href="#modules">Modules</a>
         <a class="mobile-link" href="#tarifs">Tarifs</a>
-        <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="mobile-link btn btn-primary">Sécuriser ma place <span class="arr">→</span></a>
+        <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="mobile-link btn btn-primary">Sécuriser ma place <span class="arr" aria-hidden="true">→</span></a>
       </div>
     </nav>
 
@@ -140,7 +219,8 @@ const structuredData = {
         </div>
         <div class="links">
           <a class="label-mono" href="https://www.linkedin.com/in/lilian-sevoumian/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a class="label-mono" href="#">Mentions légales</a>
+          <a class="label-mono" href="/mentions-legales/">Mentions légales</a>
+          <a class="label-mono" href="/cgv/">CGV</a>
           <a class="label-mono" href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer">Contact</a>
         </div>
       </div>
@@ -148,7 +228,7 @@ const structuredData = {
 
     <!-- MOBILE STICKY CTA -->
     <div id="sticky-cta" class="sticky-cta">
-      <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Sécuriser ma place <span class="arr">→</span></a>
+      <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Sécuriser ma place <span class="arr" aria-hidden="true">→</span></a>
     </div>
 
     <script is:inline>
