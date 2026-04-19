@@ -74,8 +74,18 @@ const organizationSchema = {
   '@type': 'Organization',
   '@id': `${siteUrl}/#organization`,
   name: 'Indés Augmentés',
+  legalName: 'AURA GROUP',
   url: siteUrl,
   logo: `${siteUrl}/icon-512.png`,
+  email: 'bonjour@liliansevoumian.fr',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '5 Avenue du Maréchal de Lattre de Tassigny',
+    postalCode: '94600',
+    addressLocality: 'Choisy-le-Roi',
+    addressCountry: 'FR',
+  },
+  taxID: '991735036',
   founder: { '@id': `${siteUrl}/#lilian` },
   sameAs: ['https://www.linkedin.com/in/lilian-sevoumian/'],
 }
