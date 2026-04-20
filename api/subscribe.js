@@ -1,8 +1,4 @@
-import * as welcomeEmail from './_emails/welcome-waitlist.js'
-
-const AUDIENCE_ID = '7806f7d3-76b3-47f3-8fa8-fd3dd23d83e5'
-const FROM = 'Lilian Sevoumian <lilian@indesaugmentes.com>'
-const REPLY_TO = 'bonjour@liliansevoumian.fr'
+const EVENT = 'cohorte_inscription'
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -19,39 +15,19 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Email invalide' })
   }
 
-  const addRes = await fetch(`https://api.resend.com/audiences/${AUDIENCE_ID}/contacts`, {
+  const response = await fetch('https://api.resend.com/events/send', {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ email, unsubscribed: false }),
+    body: JSON.stringify({ event: EVENT, email }),
   })
 
-  const addData = await addRes.json().catch(() => ({}))
+  const data = await response.json().catch(() => ({}))
 
-  if (!addRes.ok) {
-    return res.status(addRes.status).json({ error: addData?.message || 'Resend error' })
-  }
-
-  try {
-    await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: FROM,
-        to: email,
-        reply_to: REPLY_TO,
-        subject: welcomeEmail.subject,
-        html: welcomeEmail.html,
-        text: welcomeEmail.text,
-      }),
-    })
-  } catch (err) {
-    console.error('welcome email failed', err)
+  if (!response.ok) {
+    return res.status(response.status).json({ error: data?.message || 'Resend error' })
   }
 
   return res.status(200).json({ ok: true })
