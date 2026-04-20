@@ -912,6 +912,56 @@ section {
 .tl-node.amber { background-image: radial-gradient(circle at 50% 40%, rgba(245, 158, 11, 0.22), rgba(245, 158, 11, 0.06)); }
 .tl-node.amber .mat { color: var(--color-accent-amber); }
 
+.tl-node.active {
+  transform: scale(1.06);
+}
+.tl-node.active .mat {
+  font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+}
+.tl-node.violet.active {
+  background-image: radial-gradient(circle at 50% 40%, rgba(196, 181, 253, 0.45), rgba(196, 181, 253, 0.12));
+  box-shadow:
+    0 0 0 5px #0a1628,
+    0 0 0 6px rgba(196, 181, 253, 0.45),
+    0 0 28px -2px rgba(196, 181, 253, 0.55),
+    inset 0 0 0 1px rgba(196, 181, 253, 0.3);
+}
+.tl-node.lime.active {
+  background-image: radial-gradient(circle at 50% 40%, rgba(190, 242, 100, 0.45), rgba(190, 242, 100, 0.12));
+  box-shadow:
+    0 0 0 5px #0a1628,
+    0 0 0 6px rgba(190, 242, 100, 0.5),
+    0 0 28px -2px rgba(190, 242, 100, 0.55),
+    inset 0 0 0 1px rgba(190, 242, 100, 0.3);
+}
+.tl-node.white.active {
+  background-image: radial-gradient(circle at 50% 40%, rgba(241, 245, 249, 0.42), rgba(241, 245, 249, 0.12));
+  box-shadow:
+    0 0 0 5px #0a1628,
+    0 0 0 6px rgba(241, 245, 249, 0.35),
+    0 0 28px -2px rgba(241, 245, 249, 0.35),
+    inset 0 0 0 1px rgba(241, 245, 249, 0.25);
+}
+.tl-node.amber.active {
+  background-image: radial-gradient(circle at 50% 40%, rgba(245, 158, 11, 0.45), rgba(245, 158, 11, 0.12));
+  box-shadow:
+    0 0 0 5px #0a1628,
+    0 0 0 6px rgba(245, 158, 11, 0.5),
+    0 0 28px -2px rgba(245, 158, 11, 0.55),
+    inset 0 0 0 1px rgba(245, 158, 11, 0.3);
+}
+.tl-node.outcome.active {
+  box-shadow:
+    0 0 0 6px #0a1628,
+    0 0 0 7px rgba(190, 242, 100, 0.7),
+    0 14px 40px -4px rgba(190, 242, 100, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.tl-node.active .tl-node-chip {
+  color: var(--color-text-bright);
+  box-shadow: 0 0 0 1px rgba(241, 245, 249, 0.28);
+}
+
 .tl-node-chip {
   position: absolute;
   bottom: -4px;

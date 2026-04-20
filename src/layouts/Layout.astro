@@ -290,20 +290,28 @@ const graphSchema = {
             if (pastHero && !nearBottom) stickyCta.classList.add('show')
             else stickyCta.classList.remove('show')
           }
-          // Timeline spine fill — 0% when timeline top enters viewport,
-          // 100% when outcome node reaches 70% viewport from top
-          var spine = document.querySelector('.tl-spine-fill')
-          var timelineSection = document.querySelector('.timeline')
-          var outcomeNode = document.querySelector('.tl-outcome')
-          if (spine && timelineSection && outcomeNode) {
-            var r = timelineSection.getBoundingClientRect()
-            var outcomeR = outcomeNode.getBoundingClientRect()
-            var vh = window.innerHeight
-            var offsetToOutcome = outcomeR.top - r.top
-            var startTop = vh * 0.85
-            var endTop = vh * 0.7 - offsetToOutcome
-            var progress = Math.max(0, Math.min(1, (startTop - r.top) / (startTop - endTop)))
-            spine.style.height = (progress * 100) + '%'
+          // Timeline spine fill — the fill head tracks scroll at a line slightly
+          // above viewport center (~42%), so the progression feels slower and the
+          // leading edge sits just above what the reader is focusing on.
+          var spineEl = document.querySelector('.tl-spine')
+          var spineFill = document.querySelector('.tl-spine-fill')
+          var tlNodes = document.querySelectorAll('.timeline .tl-node')
+          if (spineEl && spineFill && tlNodes.length) {
+            var sr = spineEl.getBoundingClientRect()
+            var vh2 = window.innerHeight
+            var anchorY = vh2 * 0.42
+            var headPixels = anchorY - sr.top
+            var progress = sr.height > 0 ? Math.max(0, Math.min(1, headPixels / sr.height)) : 0
+            spineFill.style.height = (progress * 100) + '%'
+
+            var headY = sr.top + progress * sr.height
+            for (var ni = 0; ni < tlNodes.length; ni++) {
+              var node = tlNodes[ni]
+              var nr = node.getBoundingClientRect()
+              var nodeCenter = nr.top + nr.height / 2
+              if (headY >= nodeCenter) node.classList.add('active')
+              else node.classList.remove('active')
+            }
           }
         }
         handleScroll()
