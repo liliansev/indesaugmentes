@@ -41,7 +41,7 @@ const diagnostics = [
     {
       diagnostics.map((d) => (
         <div class={`cell tone-${d.tone}${d.wide ? ' wide' : ''} reveal d${d.n}`} data-cell>
-          <span class="label-mono lab">Diagnostic #{d.n}</span>
+          <span class="label-mono lab" data-scramble={`Diagnostic #${d.n}`}>Diagnostic #{d.n}</span>
           <p set:html={d.html} />
         </div>
       ))
@@ -57,6 +57,61 @@ const diagnostics = [
         cell.style.setProperty('--mx', ((e.clientX - r.left) / r.width) * 100 + '%')
         cell.style.setProperty('--my', ((e.clientY - r.top) / r.height) * 100 + '%')
       })
+    })
+
+    // --- Text scramble on diagnostic labels ---
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    var pool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@%&*+<>/\\'
+
+    function scramble(el, finalText) {
+      var len = finalText.length
+      var queue = []
+      for (var i = 0; i < len; i++) {
+        var start = Math.floor(Math.random() * 18)
+        var end = start + 18 + Math.floor(Math.random() * 22)
+        queue.push({ to: finalText[i], start: start, end: end, char: '' })
+      }
+      var frame = 0
+      function update() {
+        var out = ''
+        var done = 0
+        for (var i = 0; i < queue.length; i++) {
+          var q = queue[i]
+          if (frame >= q.end) { done++; out += q.to }
+          else if (frame >= q.start) {
+            if (!q.char || Math.random() < 0.32) {
+              q.char = pool.charAt(Math.floor(Math.random() * pool.length))
+            }
+            out += q.char
+          } else {
+            out += q.to === ' ' ? ' ' : ' '
+          }
+        }
+        el.textContent = out
+        if (done < queue.length) { frame++; requestAnimationFrame(update) }
+      }
+      update()
+    }
+
+    var labels = document.querySelectorAll('[data-scramble]')
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      labels.forEach(function (el) { el.textContent = el.getAttribute('data-scramble') })
+      return
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return
+        var el = entry.target
+        io.unobserve(el)
+        scramble(el, el.getAttribute('data-scramble'))
+      })
+    }, { threshold: 0.6 })
+    labels.forEach(function (el) {
+      var finalText = el.getAttribute('data-scramble')
+      var filler = ''
+      for (var i = 0; i < finalText.length; i++) filler += ' '
+      el.textContent = filler
+      io.observe(el)
     })
   })()
 </script>
