@@ -703,6 +703,27 @@ section {
   font-family: var(--font-mono);
   font-size: 14px;
 }
+.desired .quote .quote-prompt {
+  display: inline-block;
+  margin-right: 0.4ch;
+}
+.desired .quote .quote-caret {
+  display: inline-block;
+  width: 0.55ch;
+  height: 1em;
+  background: var(--color-accent-lime);
+  vertical-align: -2px;
+  margin-left: 2px;
+  opacity: 0;
+}
+.desired .quote.is-typing .quote-caret,
+.desired .quote.is-done .quote-caret {
+  opacity: 1;
+  animation: blink 1.1s steps(2) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .desired .quote .quote-caret { display: none; }
+}
 
 /* ========== Mentor ========== */
 .mentor {

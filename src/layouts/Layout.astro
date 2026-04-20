@@ -418,6 +418,52 @@ const graphSchema = {
           setTimeout(typeNext, 120)
         }
 
+        // --- Quote typewriter (prompt blinks twice, then text types out) ---
+        document.querySelectorAll('[data-typewriter-quote]').forEach(function (el) {
+          var promptEl = el.querySelector('.quote-prompt')
+          var textEl = el.querySelector('.quote-text')
+          if (!promptEl || !textEl) return
+          var fullText = textEl.textContent || ''
+          if (prefersReducedMotion) return
+          textEl.textContent = ''
+          var played = false
+          function play() {
+            if (played) return
+            played = true
+            var blinkCount = 0
+            var blinkTarget = 4
+            var blinkIv = setInterval(function () {
+              blinkCount++
+              promptEl.style.opacity = blinkCount % 2 === 0 ? '1' : '0'
+              if (blinkCount >= blinkTarget) {
+                clearInterval(blinkIv)
+                promptEl.style.opacity = '1'
+                el.classList.add('is-typing')
+                var k = 0
+                var typeIv = setInterval(function () {
+                  k++
+                  textEl.textContent = fullText.slice(0, k)
+                  if (k >= fullText.length) {
+                    clearInterval(typeIv)
+                    el.classList.remove('is-typing')
+                    el.classList.add('is-done')
+                  }
+                }, 22)
+              }
+            }, 260)
+          }
+          if ('IntersectionObserver' in window) {
+            var qo = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) { play(); qo.disconnect() }
+              })
+            }, { threshold: 0.5 })
+            qo.observe(el)
+          } else {
+            play()
+          }
+        })
+
         // --- DataFast scroll depth tracking ---
         if ('IntersectionObserver' in window) {
           var scrollGoals = { tarifs: 'scroll_to_pricing' }
