@@ -156,6 +156,14 @@ const graphSchema = {
 
     <script is:inline type="application/ld+json" set:html={JSON.stringify(graphSchema)} />
 
+    <!-- DataFast queue (captures goals avant le chargement du script) -->
+    <script id="datafast-queue" is:inline>
+      window.datafast = window.datafast || function () {
+        window.datafast.q = window.datafast.q || []
+        window.datafast.q.push(arguments)
+      }
+    </script>
+
     <!-- DataFast Analytics (cookieless, proxied via Vercel) -->
     <script
       defer
@@ -190,7 +198,7 @@ const graphSchema = {
           <a class="label-mono" href="#diagnostics">Diagnostics</a>
           <a class="label-mono" href="#modules">Modules</a>
           <a class="label-mono" href="#tarifs">Tarifs</a>
-          <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Sécuriser ma place <span class="arr" aria-hidden="true">→</span></a>
+          <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-fast-goal="click_cta_navbar">Sécuriser ma place <span class="arr" aria-hidden="true">→</span></a>
         </div>
 
         <!-- Mobile hamburger -->
@@ -206,7 +214,7 @@ const graphSchema = {
         <a class="mobile-link" href="#diagnostics">Diagnostics</a>
         <a class="mobile-link" href="#modules">Modules</a>
         <a class="mobile-link" href="#tarifs">Tarifs</a>
-        <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="mobile-link btn btn-primary">Sécuriser ma place <span class="arr" aria-hidden="true">→</span></a>
+        <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="mobile-link btn btn-primary" data-fast-goal="click_cta_navbar">Sécuriser ma place <span class="arr" aria-hidden="true">→</span></a>
       </div>
     </nav>
 
@@ -238,7 +246,7 @@ const graphSchema = {
 
     <!-- MOBILE STICKY CTA -->
     <div id="sticky-cta" class="sticky-cta">
-      <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Sécuriser ma place <span class="arr" aria-hidden="true">→</span></a>
+      <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-fast-goal="click_cta_navbar">Sécuriser ma place <span class="arr" aria-hidden="true">→</span></a>
     </div>
 
     <script is:inline>
@@ -408,6 +416,25 @@ const graphSchema = {
             }, 26)
           }
           setTimeout(typeNext, 120)
+        }
+
+        // --- DataFast scroll depth tracking ---
+        if ('IntersectionObserver' in window) {
+          var scrollGoals = { tarifs: 'scroll_to_pricing' }
+          var scrollTracked = {}
+          var scrollObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              var id = entry.target.id
+              if (entry.isIntersecting && !scrollTracked[id]) {
+                scrollTracked[id] = true
+                if (window.datafast) window.datafast(scrollGoals[id])
+              }
+            })
+          }, { threshold: 0.3 })
+          Object.keys(scrollGoals).forEach(function (id) {
+            var el = document.getElementById(id)
+            if (el) scrollObs.observe(el)
+          })
         }
 
         // --- Count-up animation for mentor stats ---

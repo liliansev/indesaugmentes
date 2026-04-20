@@ -10,12 +10,74 @@
       Le prix le plus bas qu'il y aura jamais. Si tu hésites, réserve un call — on en parle 15 minutes et tu décides après.
     </p>
     <div class="ctas">
-      <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+      <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-fast-goal="click_cta_primaire_last">
         Sécuriser ma place <span class="arr" aria-hidden="true">→</span>
       </a>
-      <a href="https://cal.com/lilian-sevoumian/30min" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-        Rejoindre la liste d'attente
-      </a>
+
+      <form id="waitlist-form" class="waitlist-form" novalidate>
+        <label for="waitlist-email" class="sr-only">Email pour la liste d'attente</label>
+        <input
+          id="waitlist-email"
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+          placeholder="ton@email.com"
+          class="waitlist-input"
+        />
+        <button type="submit" class="btn btn-secondary waitlist-submit" data-fast-goal="click_cta_secondaire">
+          Rejoindre la liste d'attente
+        </button>
+        <p id="waitlist-status" class="waitlist-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </div>
 </section>
+
+<script is:inline>
+  ;(function () {
+    var form = document.getElementById('waitlist-form')
+    if (!form) return
+    var input = document.getElementById('waitlist-email')
+    var submit = form.querySelector('.waitlist-submit')
+    var status = document.getElementById('waitlist-status')
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault()
+      var email = (input.value || '').trim()
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        status.textContent = 'Email invalide.'
+        status.className = 'waitlist-status error'
+        input.focus()
+        return
+      }
+
+      submit.disabled = true
+      var originalLabel = submit.textContent
+      submit.textContent = 'Envoi…'
+      status.textContent = ''
+      status.className = 'waitlist-status'
+
+      try {
+        var res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email }),
+        })
+        var data = await res.json().catch(function () { return {} })
+        if (!res.ok) throw new Error(data.error || 'Erreur')
+
+        status.textContent = 'Inscrit · on te tient au courant.'
+        status.className = 'waitlist-status success'
+        input.value = ''
+        if (window.datafast) window.datafast('click_cta_secondaire')
+      } catch (err) {
+        status.textContent = 'Oups, réessaie dans un instant.'
+        status.className = 'waitlist-status error'
+      } finally {
+        submit.disabled = false
+        submit.textContent = originalLabel
+      }
+    })
+  })()
+</script>
