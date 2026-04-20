@@ -58,9 +58,10 @@
     color: var(--color-text-main);
     line-height: 1.1;
     margin: 0;
+    text-wrap: balance;
   }
 
-  p { margin: 0; }
+  p { margin: 0; text-wrap: pretty; }
 
   [id] {
     scroll-margin-top: 5rem;
