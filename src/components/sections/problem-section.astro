@@ -30,12 +30,14 @@ const diagnostics = [
 ---
 
 <section id="diagnostics">
-  <div class="section-head reveal">
-    <span class="label-mono violet" style="font-weight:600">01 — Le constat</span>
-    <div class="rule"></div>
-  </div>
-  <div class="problem-intro">
-    <h2 class="reveal d1">Est-ce que tu te reconnais dans cette situation ?</h2>
+  <div class="problem-left">
+    <div class="section-head reveal">
+      <span class="label-mono violet" style="font-weight:600">01 — Le constat</span>
+      <div class="rule"></div>
+    </div>
+    <div class="problem-intro">
+      <h2 class="reveal d1">Est-ce que tu te reconnais dans cette situation ?</h2>
+    </div>
   </div>
   <div class="problem-grid" data-problem-grid>
     {
@@ -48,6 +50,7 @@ const diagnostics = [
     }
   </div>
 </section>
+
 
 <script is:inline>
   ;(function () {
@@ -85,6 +88,7 @@ const diagnostics = [
             out += q.char
           } else {
             out += q.to === ' ' ? ' ' : ' '
+            out += q.to === ' ' ? ' ' : ' '
           }
         }
         el.textContent = out
@@ -110,6 +114,7 @@ const diagnostics = [
       var finalText = el.getAttribute('data-scramble')
       var filler = ''
       for (var i = 0; i < finalText.length; i++) filler += ' '
+      for (var i = 0; i < finalText.length; i++) filler += ' '
       el.textContent = filler
       io.observe(el)
     })

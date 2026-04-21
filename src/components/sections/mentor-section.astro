@@ -27,58 +27,60 @@ const personSchema = {
 <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
 <section class="mentor" id="mentor">
-  <div class="reveal">
+  <!-- Col 1 : tout le contenu, pullquote poussé en bas -->
+  <div class="mentor-left reveal">
     <div class="label-mono violet" style="margin-bottom:14px;display:inline-block">03 — Ton mentor</div>
     <h2>Qui je suis et ce que j'ai fait</h2>
-    <div class="copy">
-      <p>
-        Je suis Lilian. <strong>Passé à l'indépendance grâce à l'IA et l'automation</strong> il y a +6&nbsp;ans. J'ai formé <strong>+500&nbsp;personnes</strong> sur Make et n8n — freelances, salariés en reconversion, indés qui ont boosté leur offre. Je poste sur LinkedIn devant +10&nbsp;000&nbsp;abonnés.
-      </p>
+    <p class="mentor-intro">
+      Je suis Lilian. <strong>Passé à l'indépendance grâce à l'IA et l'automation</strong> il y a +6 ans. J'ai formé <strong>+500 personnes</strong> sur Make et n8n — freelances, salariés en reconversion, indés qui ont boosté leur offre. Je poste sur LinkedIn devant +10 000 abonnés.
+    </p>
+    <div class="mentor-bottom">
+      <div class="mentor-stats">
+        <div class="stat">
+          <div class="val">
+            <span class="pre">+</span>
+            <span data-countup="6" data-duration="1200">0</span>
+            <span class="suf">ans</span>
+          </div>
+          <div class="label-mono">Indé augmenté</div>
+        </div>
+        <div class="stat">
+          <div class="val">
+            <span class="pre">+</span>
+            <span data-countup="500" data-duration="1800">0</span>
+          </div>
+          <div class="label-mono">Personnes formées</div>
+        </div>
+        <div class="stat">
+          <div class="val">
+            <span class="pre">+</span>
+            <span data-countup="10" data-duration="1400">0</span>
+            <span class="suf">k</span>
+          </div>
+          <div class="label-mono">Abonnés LinkedIn</div>
+        </div>
+        <div class="stat">
+          <div class="val">
+            <span class="pre">+</span>
+            <span data-countup="90" data-duration="1600">0</span>
+          </div>
+          <div class="label-mono">Clients</div>
+        </div>
+      </div>
       <div class="dashboard-panel pullquote">
         "Mais surtout : je suis passé par exactement là où tu es. J'ai galéré à me positionner, j'ai tâtonné pendant des mois, j'ai fait toutes les erreurs possibles."
       </div>
     </div>
-    <div class="stats">
-      <div class="stat">
-        <div class="val">
-          <span class="pre">+</span>
-          <span data-countup="6" data-duration="1200">0</span>
-          <span class="suf">ans</span>
-        </div>
-        <div class="label-mono">Indé augmenté</div>
-      </div>
-      <div class="stat">
-        <div class="val">
-          <span class="pre">+</span>
-          <span data-countup="500" data-duration="1800">0</span>
-        </div>
-        <div class="label-mono">Personnes formées</div>
-      </div>
-      <div class="stat">
-        <div class="val">
-          <span class="pre">+</span>
-          <span data-countup="10" data-duration="1400">0</span>
-          <span class="suf">k</span>
-        </div>
-        <div class="label-mono">Abonnés LinkedIn</div>
-      </div>
-      <div class="stat">
-        <div class="val">
-          <span class="pre">+</span>
-          <span data-countup="90" data-duration="1600">0</span>
-        </div>
-        <div class="label-mono">Clients</div>
-      </div>
-    </div>
   </div>
 
+  <!-- Col 2 : photo -->
   <div class="dashboard-panel photo-frame mentor-photo reveal d2">
     <div class="photo">
       <Image
         src={lilianPhoto}
         alt="Lilian Sevoumian, mentor du bootcamp Indés Augmentés — freelance IA et automation depuis plus de 6 ans"
         widths={[320, 480, 640]}
-        sizes="(max-width: 900px) 70vw, 320px"
+        sizes="(max-width: 900px) 70vw, 480px"
         loading="lazy"
       />
     </div>
