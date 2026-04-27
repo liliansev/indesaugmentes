@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout
+  title="Candidature reçue — Indés Augmentés"
+  description="Ta candidature pour le bootcamp Indés Augmentés est bien arrivée. Voici la suite."
+>
+  <article class="legal-page merci">
+    <header class="legal-header">
+      <span class="merci-check" aria-hidden="true">
+        <span class="material-symbols-outlined">check_circle</span>
+      </span>
+      <span class="label-mono violet">Candidature reçue</span>
+      <h1>C'est noté.</h1>
+      <p class="legal-updated">Ta candidature est dans ma boîte mail.</p>
+    </header>
+
+    <section class="legal-section">
+      <h2>La suite, étape par étape</h2>
+      <ol class="merci-steps">
+        <li>
+          <span class="merci-step-num">01</span>
+          <div>
+            <strong>Je lis ta candidature sous 48h.</strong>
+            <p>Chaque dossier est lu par moi, pas par un assistant. C'est plus lent, mais c'est aussi pour ça que les cohortes sont à 6.</p>
+          </div>
+        </li>
+        <li>
+          <span class="merci-step-num">02</span>
+          <div>
+            <strong>Si ton profil colle, je te propose un appel de 20 min.</strong>
+            <p>L'objectif : valider ensemble que tu es au bon moment et que le bootcamp peut t'amener là où tu veux aller.</p>
+          </div>
+        </li>
+        <li>
+          <span class="merci-step-num">03</span>
+          <div>
+            <strong>On confirme ta place — ou pas.</strong>
+            <p>Si c'est un go des deux côtés, tu sécurises l'une des 6 places. Si ce n'est pas le moment, je te le dis franchement.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="legal-section">
+      <h2>En attendant</h2>
+      <p>
+        Vérifie tes spams ces prochaines heures — mon adresse
+        <strong>bonjour@liliansevoumian.fr</strong> peut atterrir au mauvais endroit la première fois.
+        Ajoute-la à tes contacts pour être sûr de ne rien rater.
+      </p>
+      <p>
+        Tu peux aussi me suivre sur
+        <a href="https://www.linkedin.com/in/liliansevoumian/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        — j'y partage ce que je construis avec mes Indés Augmentés en temps réel.
+      </p>
+    </section>
+
+    <div class="merci-cta">
+      <a href="/" class="btn-secondary">Retour à l'accueil</a>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .merci .legal-header {
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+  .merci-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--color-accent-violet-text);
+    margin-bottom: 1.25rem;
+  }
+  .merci-check .material-symbols-outlined {
+    font-size: 40px;
+    font-variation-settings: 'FILL' 1, 'wght' 500;
+  }
+  .merci-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .merci-steps li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--color-dash-border);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .merci-step-num {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-accent-violet-text);
+    letter-spacing: 0.05em;
+    align-self: start;
+    padding-top: 2px;
+  }
+  .merci-steps li > div p {
+    margin: 0.35rem 0 0;
+    font-size: 14px;
+  }
+  .merci-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-dash-border);
+  }
+</style>
