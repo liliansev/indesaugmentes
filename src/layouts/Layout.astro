@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-  title = "Indés Augmentés — Maîtrise l'IA et l'automation pour scaler ton activité d'indé",
+  title = "Indés Augmentés · Maîtrise l'IA et l'automation pour scaler ton activité d'indé",
   description = "Bootcamp intensif de 3 mois pour faire de l'IA et l'automation ton levier d'indépendance. Cohorte de 7 personnes, démarrage mi-mai 2026. Accompagnement live avec Lilian Sevoumian.",
 } = Astro.props
 
@@ -19,7 +19,7 @@ const courseSchema = {
   '@context': 'https://schema.org',
   '@type': 'Course',
   '@id': `${siteUrl}/#course`,
-  name: 'Indés Augmentés — Bootcamp Freelance IA & Automation',
+  name: 'Indés Augmentés · Bootcamp Freelance IA & Automation',
   description:
     "Bootcamp intensif de 3 mois pour devenir freelance augmenté grâce à l'IA, Make et n8n. Positionnement, acquisition clients, outils, accompagnement live en cohorte de 7.",
   url: siteUrl,
@@ -47,7 +47,7 @@ const courseSchema = {
     priceCurrency: 'EUR',
     availability: 'https://schema.org/LimitedAvailability',
     validFrom: '2026-01-01',
-    category: 'Cohorte 1 — Prix early adopter',
+    category: 'Cohorte 1 · Prix early adopter',
   },
   hasCourseInstance: {
     '@type': 'CourseInstance',
@@ -131,12 +131,12 @@ const graphSchema = {
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Indés Augmentés — Bootcamp IA & automation pour freelances" />
+    <meta property="og:image:alt" content="Indés Augmentés · Bootcamp IA & automation pour freelances" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
-    <meta name="twitter:image:alt" content="Indés Augmentés — Bootcamp IA & automation pour freelances" />
+    <meta name="twitter:image:alt" content="Indés Augmentés · Bootcamp IA & automation pour freelances" />
 
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -192,7 +192,7 @@ const graphSchema = {
             <span class="bar-tall"></span>
             <span class="bar-short"></span>
           </div>
-          <span class="wordmark">indés <em>augmentés</em></span>
+          <span class="wordmark">indés <strong>augmentés</strong></span>
         </a>
         <div class="links">
           <a class="label-mono" href="#diagnostics">Diagnostics</a>
@@ -231,7 +231,7 @@ const graphSchema = {
               <span class="bar-tall"></span>
               <span class="bar-short"></span>
             </div>
-            <span class="wordmark">indés <em>augmentés</em></span>
+            <span class="wordmark">indés <strong>augmentés</strong></span>
           </div>
           <div class="label-mono">© 2026 Lilian Sevoumian. Built for the modern freelance.</div>
         </div>
@@ -281,8 +281,8 @@ const graphSchema = {
           }
           if (progressEl) {
             var h = document.documentElement.scrollHeight - window.innerHeight
-            var p = h > 0 ? (y / h) * 100 : 0
-            progressEl.style.width = p + '%'
+            var p = h > 0 ? y / h : 0
+            progressEl.style.transform = 'scaleX(' + p + ')'
           }
           if (stickyCta) {
             var pastHero = y > window.innerHeight * 0.8
@@ -290,7 +290,7 @@ const graphSchema = {
             if (pastHero && !nearBottom) stickyCta.classList.add('show')
             else stickyCta.classList.remove('show')
           }
-          // Timeline spine fill — the fill head tracks scroll at a line slightly
+          // Timeline spine fill: the fill head tracks scroll at a line slightly
           // above viewport center (~42%), so the progression feels slower and the
           // leading edge sits just above what the reader is focusing on.
           var spineEl = document.querySelector('.tl-spine')
@@ -302,7 +302,7 @@ const graphSchema = {
             var anchorY = vh2 * 0.42
             var headPixels = anchorY - sr.top
             var progress = sr.height > 0 ? Math.max(0, Math.min(1, headPixels / sr.height)) : 0
-            spineFill.style.height = (progress * 100) + '%'
+            spineFill.style.transform = 'scaleY(' + progress + ')'
 
             var headY = sr.top + progress * sr.height
             for (var ni = 0; ni < tlNodes.length; ni++) {

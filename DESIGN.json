@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-04-28T00:00:00.000Z",
+  "title": "Design System: Indés Augmentés",
+  "extensions": {
+    "colorMeta": {
+      "dash-slate": {
+        "role": "neutral",
+        "displayName": "Dash Slate (canvas)",
+        "canonical": "#0a1628",
+        "tonalRamp": ["#03070f", "#060e1d", "#08122a", "#0a1628", "#172642", "#27375c", "#445479", "#7c8aad"]
+      },
+      "dash-surface": {
+        "role": "neutral",
+        "displayName": "Dash Surface (deepest)",
+        "canonical": "#000000",
+        "tonalRamp": ["#000000", "#050505", "#0b0b0b", "#121212", "#1c1c1c", "#2a2a2a", "#3d3d3d", "#5a5a5a"]
+      },
+      "dash-border": {
+        "role": "neutral",
+        "displayName": "Dash Border (subtle)",
+        "canonical": "#1e293b",
+        "tonalRamp": ["#0a0f17", "#101725", "#161f30", "#1e293b", "#2a3a52", "#3a4d6a", "#586a87", "#7e8fac"]
+      },
+      "accent-violet": {
+        "role": "secondary",
+        "displayName": "Deep Violet",
+        "canonical": "#6d28d9",
+        "tonalRamp": ["#1d0a3c", "#2a1058", "#42198b", "#6d28d9", "#8c54e8", "#a780f1", "#c4b5fd", "#e8def8"]
+      },
+      "accent-violet-text": {
+        "role": "secondary",
+        "displayName": "Lavender Violet (text accent)",
+        "canonical": "#c4b5fd",
+        "tonalRamp": ["#3a2870", "#4f3993", "#6f55c1", "#9787e0", "#b3a4f4", "#c4b5fd", "#dad0fe", "#ece6ff"]
+      },
+      "accent-lime": {
+        "role": "primary",
+        "displayName": "Operator Lime (action)",
+        "canonical": "#bef264",
+        "tonalRamp": ["#2a3a13", "#3f561c", "#587a25", "#789f30", "#9bc846", "#a3e635", "#bef264", "#dff8a8"]
+      },
+      "accent-lime-deep": {
+        "role": "primary",
+        "displayName": "Lime Deep (hover fill)",
+        "canonical": "#a3e635",
+        "tonalRamp": ["#243412", "#37501c", "#4d6f24", "#6c9a30", "#8cc73d", "#a3e635", "#beef58", "#dbf690"]
+      },
+      "accent-amber": {
+        "role": "tertiary",
+        "displayName": "Signal Amber",
+        "canonical": "#f59e0b",
+        "tonalRamp": ["#3a2503", "#5d3a05", "#86530a", "#b16d10", "#d3851a", "#f59e0b", "#fbb63a", "#fde08c"]
+      },
+      "text-bright": {
+        "role": "neutral",
+        "displayName": "Text Bright (headings)",
+        "canonical": "#e9eef5",
+        "tonalRamp": ["#1f2530", "#2c3441", "#3e4759", "#5d6779", "#838c9c", "#aab2c0", "#cdd3dd", "#e9eef5"]
+      },
+      "text-main": {
+        "role": "neutral",
+        "displayName": "Text Main (default)",
+        "canonical": "#f1f5f9",
+        "tonalRamp": ["#1f2734", "#2d3543", "#3f4858", "#5e6878", "#838d9d", "#b1bac8", "#d6dde7", "#f1f5f9"]
+      },
+      "text-dim": {
+        "role": "neutral",
+        "displayName": "Text Dim (secondary)",
+        "canonical": "#cbd5e1",
+        "tonalRamp": ["#1d2530", "#2a3340", "#3c4654", "#5b6675", "#7d8a9b", "#a0acbe", "#c0ccdb", "#cbd5e1"]
+      },
+      "text-mute": {
+        "role": "neutral",
+        "displayName": "Text Mute (utility)",
+        "canonical": "#94a3b8",
+        "tonalRamp": ["#1c232f", "#2a3140", "#3b4456", "#576476", "#73818f", "#94a3b8", "#b6c2d2", "#d4dce6"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero h1 only — paired with the animated marker underline." },
+      "headline": { "displayName": "Headline", "purpose": "Section h2, always paired with a label-mono eyebrow." },
+      "title": { "displayName": "Title", "purpose": "Card titles (timeline, bonus, KPIs, mentor stat)." },
+      "body-lg": { "displayName": "Body Large", "purpose": "Hero tagline and intro paragraphs only." },
+      "body": { "displayName": "Body", "purpose": "Default prose, FAQ answers, mentor intro." },
+      "label": { "displayName": "Label Mono", "purpose": "Every eyebrow, chip, KPI, status label, button text." }
+    },
+    "shadows": [
+      { "name": "cta-glow", "value": "0 6px 18px rgba(190, 242, 100, 0.22)", "purpose": "Lime halo under the primary CTA — reads as 'plugged in'." },
+      { "name": "pricing-aura", "value": "0 20px 40px rgba(109, 40, 217, 0.15), 0 0 0 4px rgba(109, 40, 217, 0.08)", "purpose": "The pricing card's signature double-ring violet halo." },
+      { "name": "panel-ambient", "value": "0 10px 30px rgba(0, 0, 0, 0.35)", "purpose": "The single sanctioned black drop shadow, used on .dashboard-panel only." },
+      { "name": "active-node-violet", "value": "0 0 0 5px #0a1628, 0 0 0 6px rgba(196, 181, 253, 0.45), 0 0 28px -2px rgba(196, 181, 253, 0.55), inset 0 0 0 1px rgba(196, 181, 253, 0.3)", "purpose": "Timeline node active state — violet variant." },
+      { "name": "active-node-lime", "value": "0 0 0 5px #0a1628, 0 0 0 6px rgba(190, 242, 100, 0.5), 0 0 28px -2px rgba(190, 242, 100, 0.55), inset 0 0 0 1px rgba(190, 242, 100, 0.3)", "purpose": "Timeline node active state — lime variant." },
+      { "name": "active-node-amber", "value": "0 0 0 5px #0a1628, 0 0 0 6px rgba(245, 158, 11, 0.5), 0 0 28px -2px rgba(245, 158, 11, 0.55), inset 0 0 0 1px rgba(245, 158, 11, 0.3)", "purpose": "Timeline node active state — amber variant." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing for reveal, hover lifts, transitions." },
+      { "name": "ease-sweep", "value": "cubic-bezier(0.77, 0, 0.175, 1)", "purpose": "Button hover sweep — fast in, slow out." },
+      { "name": "reveal-duration", "value": "700-800ms", "purpose": "Scroll-triggered fade + 28px translate." },
+      { "name": "marker-underline", "value": "900ms ease-out-expo with 400ms delay", "purpose": "Hero h1 hand-drawn marker animates in once on load." },
+      { "name": "logo-heartbeat", "value": "5.2s cubic-bezier(0.65, 0, 0.35, 1) infinite", "purpose": "Counter-rhythm logo bars." },
+      { "name": "scanlines", "value": "8s linear infinite", "purpose": "Drifting CRT overlay on photos." },
+      { "name": "blink", "value": "1.1s steps(2) infinite", "purpose": "Terminal-chip caret + quote caret." },
+      { "name": "pulse", "value": "2s infinite", "purpose": "Status dot." },
+      { "name": "rule-sweep", "value": "4s linear infinite", "purpose": "Section-head rule glint sweep." },
+      { "name": "drift", "value": "14s ease-out-expo infinite alternate", "purpose": "Desired-section radial-gradient drift." },
+      { "name": "aurora-drift", "value": "12s ease-out-expo infinite alternate", "purpose": "Final CTA section background slow rotation." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "900px" },
+      { "name": "mobile", "value": "700px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The action button — lime fill on slate text, with a left-to-right sweep hover.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Sécuriser ma place <span class=\"ds-arr\" aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; font-weight: 500; padding: 0.75rem 1.25rem; border-radius: 0.5rem; text-decoration: none; border: 1px solid transparent; white-space: nowrap; overflow: hidden; isolation: isolate; cursor: pointer; transition: color 400ms cubic-bezier(0.16, 1, 0.3, 1), border-color 400ms cubic-bezier(0.16, 1, 0.3, 1), transform 200ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--fill, transparent); transform: translateX(-101%); transition: transform 600ms cubic-bezier(0.77, 0, 0.175, 1); } .ds-btn:hover::before { transform: translateX(0); } .ds-btn-primary { color: #0a1628; background: #bef264; font-weight: 600; box-shadow: 0 6px 18px rgba(190, 242, 100, 0.22); --fill: #a3e635; } .ds-btn .ds-arr { transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1); display: inline-block; } .ds-btn:hover .ds-arr { transform: translateX(4px); } .ds-btn:active { transform: scale(0.97); } .ds-btn:focus-visible { outline: 2px solid #c4b5fd; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button (Ghost)",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ghost button with lime border that fills lime on sweep — text flips to slate mid-sweep.",
+      "html": "<button class=\"ds-btn ds-btn-secondary\">Voir le programme <span class=\"ds-arr\" aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-btn-secondary { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; font-weight: 500; padding: 0.75rem 1.25rem; border-radius: 0.5rem; border: 1px solid rgba(190, 242, 100, 0.5); color: #bef264; background: transparent; cursor: pointer; overflow: hidden; isolation: isolate; transition: color 400ms cubic-bezier(0.16, 1, 0.3, 1), border-color 400ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-secondary::before { content: ''; position: absolute; inset: 0; z-index: -1; background: #bef264; transform: translateX(-101%); transition: transform 600ms cubic-bezier(0.77, 0, 0.175, 1); } .ds-btn-secondary:hover::before { transform: translateX(0); } .ds-btn-secondary:hover { color: #0a1628; border-color: #bef264; } .ds-arr { display: inline-block; transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-secondary:hover .ds-arr { transform: translateX(4px); }"
+    },
+    {
+      "name": "Terminal Chip",
+      "kind": "chip",
+      "refersTo": "chip-terminal",
+      "description": "Signature pill with lime status dot and blinking caret — used at the hero to declare 'system online'.",
+      "html": "<span class=\"ds-term-chip\"><span class=\"ds-term-dot\" aria-hidden=\"true\"></span><span class=\"ds-term-txt\">cohorte 1 · 7 places</span><span class=\"ds-term-cur\" aria-hidden=\"true\"></span></span>",
+      "css": ".ds-term-chip { display: inline-flex; gap: 10px; align-items: center; padding: 6px 10px; border: 1px solid rgba(190, 242, 100, 0.25); background: rgba(190, 242, 100, 0.05); border-radius: 999px; } .ds-term-dot { width: 6px; height: 6px; border-radius: 50%; background: #bef264; box-shadow: 0 0 10px #bef264; } .ds-term-txt { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #bef264; letter-spacing: 0.05em; } .ds-term-cur { display: inline-block; width: 7px; height: 12px; background: #bef264; margin-left: 2px; vertical-align: -1px; animation: ds-blink 1.1s steps(2) infinite; } @keyframes ds-blink { 0%, 50% { opacity: 1; } 50.01%, 100% { opacity: 0; } }"
+    },
+    {
+      "name": "Label Mono Eyebrow",
+      "kind": "chip",
+      "refersTo": "label-mono",
+      "description": "All-caps Geist Mono eyebrow stamp — every section opens with one, color-tinted to intent.",
+      "html": "<span class=\"ds-label-mono ds-violet\">[ Module 02 / Diagnostic ]</span>",
+      "css": ".ds-label-mono { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #cbd5e1; font-weight: 500; } .ds-label-mono.ds-violet { color: #c4b5fd; } .ds-label-mono.ds-lime { color: #bef264; } .ds-label-mono.ds-amber { color: #f59e0b; } .ds-label-mono.ds-white { color: #e9eef5; }"
+    },
+    {
+      "name": "Dashboard Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "The base reusable container — translucent slate with backdrop blur and a subtle structural border.",
+      "html": "<div class=\"ds-panel\"><h3 class=\"ds-panel-title\">Augmentation 02</h3><p class=\"ds-panel-body\">Tonal layer over slate, used sparingly across the page.</p></div>",
+      "css": ".ds-panel { background: rgba(30, 41, 59, 0.42); border: 1px solid #1e293b; border-radius: 0.75rem; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); padding: 32px; transition: border-color 400ms cubic-bezier(0.16, 1, 0.3, 1), transform 400ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-panel:hover { border-color: rgba(109, 40, 217, 0.5); } .ds-panel-title { font-family: 'Geist', system-ui, sans-serif; font-size: 16.5px; font-weight: 600; color: #e9eef5; letter-spacing: -0.015em; line-height: 1.3; margin: 0 0 6px; } .ds-panel-body { font-family: 'Geist', system-ui, sans-serif; font-size: 13.5px; color: #cbd5e1; line-height: 1.55; margin: 0; }"
+    },
+    {
+      "name": "Waitlist Input",
+      "kind": "input",
+      "refersTo": "input-text",
+      "description": "Minimal dark input — surface background, dash-border outline, lime ring on focus.",
+      "html": "<input class=\"ds-input\" type=\"email\" placeholder=\"toi@indé.fr\" />",
+      "css": ".ds-input { width: 100%; padding: 16px 18px; font-family: 'Geist', system-ui, sans-serif; font-size: 15px; color: #f1f5f9; background: #000000; border: 1px solid #1e293b; border-radius: 10px; outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .ds-input::placeholder { color: #94a3b8; opacity: 0.7; } .ds-input:focus-visible { border-color: #bef264; box-shadow: 0 0 0 3px rgba(190, 242, 100, 0.25); }"
+    },
+    {
+      "name": "Bonus Card",
+      "kind": "card",
+      "description": "Bonus list card — flat dark transparent surface with a tinted icon block.",
+      "html": "<article class=\"ds-bonus\"><div class=\"ds-bonus-icon ds-violet\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2 14.5 8.5 21 9 16 13.5 17.5 20 12 16.5 6.5 20 8 13.5 3 9 9.5 8.5z\"/></svg></div><h3 class=\"ds-bonus-title\">Pack templates n8n</h3><p class=\"ds-bonus-sub\">12 workflows prêts à brancher pour tes premiers livrables.</p></article>",
+      "css": ".ds-bonus { padding: 20px 20px 22px; border: 1px solid #1e293b; border-radius: 12px; background: rgba(0, 0, 0, 0.25); transition: border-color 300ms, transform 300ms cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column; gap: 14px; } .ds-bonus:hover { border-color: rgba(241, 245, 249, 0.16); transform: translateY(-2px); } .ds-bonus-icon { width: 44px; height: 44px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; } .ds-bonus-icon.ds-violet { background: rgba(196, 181, 253, 0.12); color: #c4b5fd; } .ds-bonus-icon.ds-lime { background: rgba(190, 242, 100, 0.12); color: #bef264; } .ds-bonus-icon.ds-amber { background: rgba(245, 158, 11, 0.12); color: #f59e0b; } .ds-bonus-title { font-family: 'Geist', system-ui, sans-serif; font-size: 15px; font-weight: 600; color: #e9eef5; letter-spacing: -0.01em; line-height: 1.3; margin: 0; } .ds-bonus-sub { font-family: 'Geist', system-ui, sans-serif; font-size: 12.5px; color: #cbd5e1; line-height: 1.5; margin: 0; }"
+    },
+    {
+      "name": "Mentor Stat",
+      "kind": "card",
+      "description": "Compact KPI card — bold number with lime prefix, mono label below.",
+      "html": "<div class=\"ds-stat\"><div class=\"ds-stat-val\"><span class=\"ds-stat-pre\">+</span><span>120</span><span class=\"ds-stat-suf\">k €</span></div><span class=\"ds-stat-lab\">CA généré IA / 2 ans</span></div>",
+      "css": ".ds-stat { padding: 14px 16px 12px; border: 1px solid #1e293b; background: rgba(0, 0, 0, 0.25); border-radius: 10px; transition: border-color 300ms, transform 300ms; } .ds-stat:hover { border-color: rgba(190, 242, 100, 0.4); transform: translateY(-2px); } .ds-stat-val { font-family: 'Geist', system-ui, sans-serif; font-size: 22px; font-weight: 600; color: #f1f5f9; letter-spacing: -0.035em; line-height: 1.05; display: flex; align-items: baseline; gap: 2px; } .ds-stat-val .ds-stat-pre { color: #bef264; margin-right: 2px; } .ds-stat-val .ds-stat-suf { color: #cbd5e1; font-weight: 500; font-size: 14px; margin-left: 3px; } .ds-stat-lab { display: block; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #94a3b8; font-weight: 500; margin-top: 8px; }"
+    },
+    {
+      "name": "Status Row",
+      "kind": "custom",
+      "description": "Pulsing lime dot + mono label — the 'system online' signifier under the hero CTA.",
+      "html": "<div class=\"ds-status-row\"><span class=\"ds-status-dot ds-pulse\" aria-hidden=\"true\"></span><span class=\"ds-status-lab\">Cohorte 1 — Démarrage 15 mai 2026</span></div>",
+      "css": ".ds-status-row { display: inline-flex; gap: 10px; align-items: center; padding-top: 20px; border-top: 1px solid #1e293b; } .ds-status-dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; display: inline-block; background: #bef264; box-shadow: 0 0 12px rgba(190, 242, 100, 0.7); } .ds-status-dot.ds-pulse { animation: ds-pulse 2s infinite; } @keyframes ds-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.35; transform: scale(0.85); } } .ds-status-lab { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #cbd5e1; font-weight: 500; }"
+    },
+    {
+      "name": "Animated Logo Mark",
+      "kind": "custom",
+      "description": "Two counter-rhythm bars — lavender tall, lime short — that breathe on a 5.2s cycle. The brand mark.",
+      "html": "<span class=\"ds-logo-mark\" aria-label=\"Indés Augmentés\"><span class=\"ds-bar-tall\"></span><span class=\"ds-bar-short\"></span></span>",
+      "css": ".ds-logo-mark { display: inline-flex; align-items: flex-end; gap: 4px; height: 22px; } .ds-bar-tall { width: 5px; height: 100%; background: #c4b5fd; border-radius: 2px; transform-origin: bottom center; animation: ds-logo-tall 5.2s cubic-bezier(0.65, 0, 0.35, 1) infinite; } .ds-bar-short { width: 5px; height: 58%; background: #bef264; border-radius: 2px; transform-origin: bottom center; animation: ds-logo-short 5.2s cubic-bezier(0.65, 0, 0.35, 1) infinite; } @keyframes ds-logo-tall { 0%, 10% { transform: scaleY(1); } 50%, 60% { transform: scaleY(0.58); } 100% { transform: scaleY(1); } } @keyframes ds-logo-short { 0%, 10% { transform: scaleY(1); } 50%, 60% { transform: scaleY(1.72); } 100% { transform: scaleY(1); } } @media (prefers-reduced-motion: reduce) { .ds-bar-tall, .ds-bar-short { animation: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Operator Console",
+    "overview": "Indés Augmentés sells the promise of a freelance who pilots their business like a senior ops engineer pilots a stack — instrumented, augmented, in control. The interface borrows the visual language of that world: a dark slate canvas dotted on a 24px grid like a graph-paper terminal, monospace labels stamped above every section like log tags, a status dot that pulses lime to say system online, an ambient cursor aura that follows the reader like a focus reticle. The page reads like a control room first, a marketing site second. Two accents carry the meaning. Violet is identity, wordmarks, branding, lavender text that reads as premium. Lime is action, every primary CTA, every confirmation, every status signal. The two never compete: violet describes, lime commands. Amber appears as a third, sparing voice for warnings and FAQ heat. The system rejects the soft pastel SaaS landing template, the agency-portfolio dark template, and the AI-bootcamp neon-purple-on-black reflex.",
+    "keyCharacteristics": [
+      "Dark slate canvas (#0a1628) with a 24px dot-grid texture",
+      "Geist for prose, Geist Mono for every label, KPI, chip, code-style line",
+      "Violet = identity / atmosphere. Lime = action / confirmation. Amber = alert / heat.",
+      "Tonal layering with selective ambient glows around active state, almost never structural drop-shadows",
+      "Animated micro-instrumentation: scroll progress, cursor aura, scanlines, animated logo bars, blinking carets, type-on quote",
+      "1280px max content width, generous vertical rhythm (96px between sections)"
+    ],
+    "rules": [
+      { "name": "The Two-Voice Rule", "body": "Violet describes, Lime commands. They do not blend, do not gradient into each other across a CTA, and never both appear inside the same button.", "section": "colors" },
+      { "name": "The Lime Means Done Rule", "body": "If lime appears on a piece of UI, it should mean: this is the action, or the action succeeded, or the system is live. It should never decorate.", "section": "colors" },
+      { "name": "The Amber Means Heat Rule", "body": "Amber is reserved for stop-and-read FAQ items, struck-through old prices, and limited / soon / ending cues. Never decorative.", "section": "colors" },
+      { "name": "The Mono Earns Its Keep Rule", "body": "Geist Mono is reserved for type that speaks as the system: labels, KPIs, chip text, button text, log-style quotes, fine print. Never set body prose in mono. Never set h1/h2 in mono.", "section": "typography" },
+      { "name": "The Bright-on-Bright Rule", "body": "Headings use text-bright (#e9eef5), not pure white. Pure white on dash-slate looks acidic; the eased-down bright reads as a film print, not a screen.", "section": "typography" },
+      { "name": "The 65–75ch Rule", "body": "Long body paragraphs cap at ~48rem max-width. Tight columns are part of the operator-console feel.", "section": "typography" },
+      { "name": "The Glow Means On Rule", "body": "A colored halo means a piece of UI is in an active or primary state. Resting elements do not glow. Glow without a meaning is glitter.", "section": "elevation" },
+      { "name": "The Ghost Border Fallback", "body": "When a container needs definition against dash-slate, use a 1px border in rgba(241, 245, 249, 0.06) to rgba(241, 245, 249, 0.16). Never a dash-border solid line on top of dash-slate, too structural.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use text-bright (#e9eef5) for headings and text-main for body. Never pure white on dash-slate.",
+      "Do stamp every section with a Geist Mono label-mono eyebrow, color-tinted to the section's intent.",
+      "Do double the padding when a section feels crowded — 96px between sections, 32–64px inside cards.",
+      "Do earn every accent: lime means action, violet means identity, amber means heat.",
+      "Do layer with tonal shifts and ambient glows, never with crisp black drop shadows.",
+      "Do keep Geist Mono for labels, KPIs, chips, button text, log-style lines. Body prose stays in Geist sans.",
+      "Do respect prefers-reduced-motion. Every blink, sweep, drift, and scanline must shut down."
+    ],
+    "donts": [
+      "Don't introduce a third decorative accent. The palette is locked at violet + lime + amber-as-warning.",
+      "Don't use side-stripe borders thicker than 2px as decorative accents on cards.",
+      "Don't apply background-clip: text gradients to headings.",
+      "Don't use glassmorphism outside the four sanctioned places: the nav, the mobile menu, the .dashboard-panel reusable, the sticky mobile CTA bar.",
+      "Don't put an italic anywhere, even on the brand wordmark.",
+      "Don't drop in icon + heading + paragraph 3-up grids (the SaaS-template reflex).",
+      "Don't add em dashes. Use commas, colons, parentheses, or periods.",
+      "Don't use a second drop-shadow vocabulary outside the four sanctioned shadows.",
+      "Don't glow elements at rest. Glow is reserved for active / primary / destination states.",
+      "Don't use dash-border (#1e293b) as a thick visible line."
+    ]
+  }
+}
