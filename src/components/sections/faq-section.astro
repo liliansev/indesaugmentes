@@ -15,6 +15,15 @@ const faqs = [
   {
     q: "Pourquoi c'est moins cher que d'habitude ?",
     a: "Parce que c'est la cohorte 1. Tu essuies les plâtres avec moi, je te fais un prix en échange. Dès la cohorte 2, le prix passe à 1 800€.",
+    heat: true,
+  },
+  {
+    q: "Et si ça ne me convient pas une fois lancé ?",
+    a: "Le call de cadrage de 15 min sert exactement à ça : on vérifie ensemble que c'est aligné avant que tu paies. Une fois la cohorte démarrée, je ne fais pas de remboursement, mais je te le dirai en face si tu n'es pas dans la cible. C'est aussi mon intérêt que la cohorte tourne.",
+  },
+  {
+    q: "À qui ce bootcamp ne s'adresse pas ?",
+    a: "Si tu cherches une certification, un cours académique structuré, ou un programme passif que tu suis dans ton coin : passe ton chemin. Si tu n'as ni le temps ni l'envie de bosser pendant 3 mois, idem. Ce bootcamp est intensif, en groupe live, et il faut vouloir se lancer pour de vrai.",
   },
   {
     q: "C'est quoi le call de 15 min ?",
@@ -40,11 +49,14 @@ const faqSchema = {
 <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 <section class="faq-wrap" id="faq">
-  <h2 class="reveal">Questions fréquentes</h2>
+  <div class="faq-head reveal">
+    <div class="label-mono violet eyebrow">07 · Questions fréquentes</div>
+    <h2>On répond aux objections honnêtes</h2>
+  </div>
   <div class="faq">
     {
       faqs.map((f, i) => (
-        <div class={`dashboard-panel faq-item reveal d${i + 1}${i === 0 ? ' open' : ''}`}>
+        <div class={`dashboard-panel faq-item reveal d${i + 1}${i === 0 ? ' open' : ''}${f.heat ? ' heat' : ''}`}>
           <div class="faq-summary">
             <span>{f.q}</span>
             <span class="material-symbols-outlined">expand_more</span>
