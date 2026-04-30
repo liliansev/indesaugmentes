@@ -6,7 +6,7 @@ Landing page de vente pour le bootcamp "Indés Augmentés" — 3 mois pour deven
 ## Stack
 - **Framework** : Astro 5 (static)
 - **CSS** : Tailwind CSS v4 avec @theme tokens dans `src/styles/global.css`
-- **Fonts** : Geist Mono (headings), Inter (body) — 2 polices max, Google Fonts
+- **Fonts** : Geist (sans + headings), Geist Mono (mono labels) — 2 polices max, Google Fonts
 - **Icons** : Material Symbols Outlined (Google Fonts)
 - **Hébergement** : Vercel (static)
 - **Package manager** : pnpm
@@ -21,14 +21,14 @@ src/
 ```
 
 ## Design System
-- **Thème** : Light editorial (fond #fafaff)
-- **Palette** : primary #7c3aed (violet), secondary #6d28d9, on-surface #191b23, on-surface-variant #44474e
-- **Contraste** : minimum #44474e sur fond clair (8:1). Pas d'opacité <80% sur du texte lisible
-- **Typo fluide** : clamp() dans @theme (pas de breakpoints pour la typo)
+- **Thème** : Dark Dashboard (fond `#0a1628` slate + dot grid 24px violet/slate)
+- **Palette** : violet `#6d28d9` / text `#c4b5fd`, lime `#bef264` / `#a3e635`, amber `#f59e0b`, text `#f1f5f9` (main) / `#cbd5e1` (dim)
+- **Contraste** : viser AA WCAG. `text-dim` `#cbd5e1` minimum sur le fond slate
 - **Pas d'italic** : jamais d'italic sur les titres ni le body
 - **Bold keywords** : les mots importants dans les paragraphes sont en `<strong>`
-- **6 places max** par cohorte (positionnement premium)
-- **Effets** : scroll reveal (IntersectionObserver), cyber-scanline overlay sur images
+- **7 places max** par cohorte (positionnement premium, cohorte 1 mi-mai 2026)
+- **Effets signature** : scroll reveal (IntersectionObserver), `.hero-seq` choreography au DOMContentLoaded, ambient cursor aura, cyber-scanline overlay sur images, logo bars animation
+- **Motion tokens** dans `@theme` : `--dur-fast/base/slow/reveal/hero` + `--ease-out-expo/quart/sweep`
 - **Ton** : Pro-ambitieux, effet waouh, transformation claire, envie de passer à l'action
 
 ## Commandes
