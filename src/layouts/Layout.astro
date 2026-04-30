@@ -259,6 +259,20 @@ const graphSchema = {
       ;(function () {
         var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
+        // --- Hero choreography (fires on first paint, never waits for IntersectionObserver) ---
+        var heroSeq = document.querySelector('.hero-seq')
+        if (heroSeq) {
+          if (prefersReducedMotion) {
+            heroSeq.classList.add('is-active')
+          } else {
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                heroSeq.classList.add('is-active')
+              })
+            })
+          }
+        }
+
         // --- Scroll reveal ---
         if ('IntersectionObserver' in window && !prefersReducedMotion) {
           var revealObs = new IntersectionObserver(function (entries) {

@@ -27,7 +27,15 @@
 
   /* --- Easings --- */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-sweep: cubic-bezier(0.77, 0, 0.175, 1);
+
+  /* --- Motion durations --- */
+  --dur-fast: 180ms;
+  --dur-base: 280ms;
+  --dur-slow: 420ms;
+  --dur-reveal: 720ms;
+  --dur-hero: 900ms;
 }
 
 @layer base {
@@ -93,7 +101,8 @@
 .reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 700ms var(--ease-out-expo), transform 800ms var(--ease-out-expo);
+  transition: opacity var(--dur-reveal) var(--ease-out-expo),
+    transform var(--dur-reveal) var(--ease-out-expo);
   will-change: opacity, transform;
 }
 .reveal.in {
@@ -106,8 +115,24 @@
 .reveal.d4 { transition-delay: 320ms; }
 .reveal.d5 { transition-delay: 400ms; }
 
+/* Hero page-load choreography: stage stays visible, actors enter staggered.
+   --seq is set per direct child (0..n), 110ms apart. JS adds .is-active on first paint. */
+.hero-seq > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity var(--dur-hero) var(--ease-out-expo),
+    transform var(--dur-hero) var(--ease-out-expo);
+  transition-delay: calc(var(--seq, 0) * 110ms);
+  will-change: opacity, transform;
+}
+.hero-seq.is-active > * {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1 !important; transform: none !important; }
+  .reveal,
+  .hero-seq > * { opacity: 1 !important; transform: none !important; }
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
@@ -451,7 +476,7 @@ section {
   opacity: 0;
   transform: scaleX(0);
   transform-origin: left center;
-  animation: markerIn 900ms var(--ease-out-expo) 400ms forwards;
+  animation: markerIn var(--dur-reveal) var(--ease-out-expo) 1100ms forwards;
 }
 @keyframes markerIn {
   0% { opacity: 0; transform: scaleX(0); }
