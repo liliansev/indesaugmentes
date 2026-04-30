@@ -202,7 +202,13 @@ const graphSchema = {
         </div>
 
         <!-- Mobile hamburger -->
-        <button id="menu-toggle" class="menu-toggle" aria-label="Menu" aria-expanded="false">
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-label="Ouvrir le menu de navigation"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -210,7 +216,7 @@ const graphSchema = {
       </div>
 
       <!-- Mobile menu -->
-      <div id="mobile-menu" class="mobile-menu">
+      <div id="mobile-menu" class="mobile-menu" inert>
         <a class="mobile-link" href="#diagnostics">Diagnostics</a>
         <a class="mobile-link" href="#modules">Modules</a>
         <a class="mobile-link" href="#tarifs">Tarifs</a>
@@ -348,7 +354,13 @@ const graphSchema = {
           else isMenuOpen = !isMenuOpen
           if (!mobileMenu || !menuToggle) return
           mobileMenu.classList.toggle('open', isMenuOpen)
+          if (isMenuOpen) mobileMenu.removeAttribute('inert')
+          else mobileMenu.setAttribute('inert', '')
           menuToggle.setAttribute('aria-expanded', String(isMenuOpen))
+          menuToggle.setAttribute(
+            'aria-label',
+            isMenuOpen ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation'
+          )
           var bars = menuToggle.querySelectorAll('span')
           if (bars.length >= 3) {
             if (isMenuOpen) {
@@ -366,6 +378,12 @@ const graphSchema = {
         document.querySelectorAll('.mobile-link').forEach(function (link) {
           link.addEventListener('click', function () { toggleMenu(false) })
         })
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && isMenuOpen) {
+            toggleMenu(false)
+            if (menuToggle) menuToggle.focus()
+          }
+        })
 
         // --- FAQ accordion ---
         document.querySelectorAll('.faq-item').forEach(function (item) {
@@ -374,9 +392,15 @@ const graphSchema = {
           summary.addEventListener('click', function () {
             var wasOpen = item.classList.contains('open')
             document.querySelectorAll('.faq-item.open').forEach(function (other) {
-              if (other !== item) other.classList.remove('open')
+              if (other !== item) {
+                other.classList.remove('open')
+                var otherBtn = other.querySelector('.faq-summary')
+                if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false')
+              }
             })
-            item.classList.toggle('open', !wasOpen)
+            var nowOpen = !wasOpen
+            item.classList.toggle('open', nowOpen)
+            summary.setAttribute('aria-expanded', String(nowOpen))
           })
         })
 
@@ -386,17 +410,26 @@ const graphSchema = {
         if (aura && supportsHover && !prefersReducedMotion) {
           var mx = window.innerWidth / 2, my = window.innerHeight / 2
           var tx = mx, ty = my
-          window.addEventListener('mousemove', function (e) {
-            mx = e.clientX
-            my = e.clientY
-          }, { passive: true })
+          var auraRunning = false
           function auraLoop() {
-            tx += (mx - tx) * 0.08
-            ty += (my - ty) * 0.08
+            var dx = mx - tx, dy = my - ty
+            if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) {
+              auraRunning = false
+              return
+            }
+            tx += dx * 0.08
+            ty += dy * 0.08
             aura.style.transform = 'translate(' + tx + 'px, ' + ty + 'px)'
             requestAnimationFrame(auraLoop)
           }
-          auraLoop()
+          window.addEventListener('mousemove', function (e) {
+            mx = e.clientX
+            my = e.clientY
+            if (!auraRunning) {
+              auraRunning = true
+              requestAnimationFrame(auraLoop)
+            }
+          }, { passive: true })
         }
 
         // --- Terminal chip typewriter ---

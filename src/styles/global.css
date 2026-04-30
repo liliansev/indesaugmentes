@@ -19,7 +19,7 @@
   --color-text-main: #f1f5f9;
   --color-text-bright: #e9eef5;
   --color-text-dim: #cbd5e1;
-  --color-text-mute: #94a3b8;
+  --color-text-mute: #a8b3c2;
 
   /* --- Fonts --- */
   --font-sans: "Geist", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -173,6 +173,7 @@
   font-size: 13px;
   font-weight: 500;
   padding: 0.75rem 1.25rem;
+  min-height: 44px;
   border-radius: 0.5rem;
   text-decoration: none;
   border: 1px solid transparent;
@@ -235,6 +236,9 @@
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.35; transform: scale(0.85); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse { animation: none; }
 }
 
 /* ========== Logo mark (animated bars) ========== */
@@ -322,6 +326,7 @@
 }
 .nav .links .btn {
   padding: 0.5rem 1rem;
+  min-height: 40px;
   font-size: 12px;
 }
 .nav .links a.label-mono {
@@ -551,7 +556,10 @@ section {
 .photo-frame .photo::before {
   content: '';
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  top: -40px;
+  bottom: -40px;
   background: repeating-linear-gradient(
     0deg,
     transparent 0,
@@ -560,12 +568,16 @@ section {
     rgba(109, 40, 217, 0.04) 4px
   );
   animation: scanlines 8s linear infinite;
+  will-change: transform;
   pointer-events: none;
   z-index: 2;
 }
 @keyframes scanlines {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 40px; }
+  from { transform: translateY(0); }
+  to { transform: translateY(40px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-frame .photo::before { animation: none; }
 }
 
 /* ========== Section head ========== */
@@ -593,7 +605,7 @@ section {
 
 /* ========== Problem grid ========== */
 .problem-intro h2 {
-  font-size: 28px;
+  font-size: clamp(1.5rem, 1rem + 1.6vw, 1.875rem);
   margin-bottom: 0;
   font-weight: 700;
 }
@@ -733,7 +745,7 @@ section {
 .mentor-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 
 .mentor h2 {
-  font-size: 32px;
+  font-size: clamp(1.625rem, 1rem + 2vw, 2rem);
   margin-bottom: 24px;
   font-weight: 700;
 }
@@ -814,7 +826,7 @@ section {
   display: inline-block;
 }
 .programme-head h2 {
-  font-size: 32px;
+  font-size: clamp(1.625rem, 1rem + 2vw, 2rem);
   margin-bottom: 12px;
   font-weight: 700;
 }
@@ -1309,7 +1321,7 @@ section {
   margin-bottom: 12px;
 }
 .faq-head h2 {
-  font-size: 32px;
+  font-size: clamp(1.625rem, 1rem + 2vw, 2rem);
   font-weight: 700;
 }
 .faq {
@@ -1321,12 +1333,18 @@ section {
   overflow: hidden;
 }
 .faq-summary {
+  width: 100%;
   padding: 20px 24px;
+  min-height: 48px;
   cursor: pointer;
+  font-family: inherit;
   font-weight: 600;
   color: var(--color-text-bright);
   font-size: 16px;
   letter-spacing: -0.01em;
+  text-align: left;
+  background: transparent;
+  border: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1456,16 +1474,20 @@ section {
   padding: 16px 18px;
   font: inherit;
   font-size: 15px;
-  color: var(--color-on-surface);
-  background: var(--color-surface);
+  color: var(--color-text-main);
+  background: var(--color-dash-surface);
   border: 1px solid var(--color-dash-border);
   border-radius: 10px;
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .waitlist-input::placeholder {
-  color: var(--color-on-surface-variant);
+  color: var(--color-text-mute);
   opacity: 0.7;
+}
+.waitlist-input[aria-invalid="true"] {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
 }
 .waitlist-input:focus-visible {
   border-color: var(--color-accent-lime);
@@ -1568,7 +1590,7 @@ footer .links {
   z-index: 200;
   padding: 0.5rem 1rem;
   background: var(--color-accent-violet);
-  color: white;
+  color: var(--color-text-bright);
   border-radius: 0.5rem;
 }
 .skip-link:focus {

@@ -55,10 +55,19 @@ const diagnostics = [
 <script is:inline>
   ;(function () {
     document.querySelectorAll('[data-cell]').forEach(function (cell) {
+      var pending = false
+      var lastX = 0, lastY = 0
       cell.addEventListener('mousemove', function (e) {
-        var r = cell.getBoundingClientRect()
-        cell.style.setProperty('--mx', ((e.clientX - r.left) / r.width) * 100 + '%')
-        cell.style.setProperty('--my', ((e.clientY - r.top) / r.height) * 100 + '%')
+        lastX = e.clientX
+        lastY = e.clientY
+        if (pending) return
+        pending = true
+        requestAnimationFrame(function () {
+          pending = false
+          var r = cell.getBoundingClientRect()
+          cell.style.setProperty('--mx', ((lastX - r.left) / r.width) * 100 + '%')
+          cell.style.setProperty('--my', ((lastY - r.top) / r.height) * 100 + '%')
+        })
       })
     })
 

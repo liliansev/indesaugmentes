@@ -13,7 +13,7 @@ colors:
   text-bright: "#e9eef5"
   text-main: "#f1f5f9"
   text-dim: "#cbd5e1"
-  text-mute: "#94a3b8"
+  text-mute: "#a8b3c2"
 typography:
   display:
     fontFamily: "Geist, system-ui, sans-serif"
@@ -141,7 +141,7 @@ A two-accent palette on slate, with one alert color held in reserve. The slate c
 - **Text Bright** (`#e9eef5`): h1, h2, h3, KPI values.
 - **Text Main** (`#f1f5f9`): default body text and headings.
 - **Text Dim** (`#cbd5e1`): secondary prose, intros, taglines, captions.
-- **Text Mute** (`#94a3b8`): meta labels, struck prices, fine print.
+- **Text Mute** (`#a8b3c2`): meta labels, struck prices, fine print. Tuned to clear WCAG AA (≥4.5:1) on dash-slate for the small Geist Mono labels.
 
 ### Named Rules
 **The Two-Voice Rule.** Violet describes, Lime commands. Violet for identity, atmosphere, brand text. Lime for every action, every status, every confirmation. They do not blend, do not gradient into each other across a CTA, and never both appear inside the same button. The only acceptable gradient mixing the two is the scroll-progress bar (a literal tracking line) and the timeline outcome node (a final climax marker).

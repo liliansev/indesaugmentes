@@ -30,6 +30,7 @@
           autocomplete="email"
           placeholder="ton@email.com"
           class="waitlist-input"
+          aria-describedby="waitlist-status"
         />
         <button type="submit" class="btn btn-secondary waitlist-submit" data-fast-goal="click_cta_secondaire">
           Rejoindre la liste d'attente
@@ -52,11 +53,13 @@
       e.preventDefault()
       var email = (input.value || '').trim()
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        input.setAttribute('aria-invalid', 'true')
         status.textContent = 'Email invalide.'
         status.className = 'waitlist-status error'
         input.focus()
         return
       }
+      input.setAttribute('aria-invalid', 'false')
 
       submit.disabled = true
       var originalLabel = submit.textContent
@@ -83,6 +86,12 @@
       } finally {
         submit.disabled = false
         submit.textContent = originalLabel
+      }
+    })
+
+    input.addEventListener('input', function () {
+      if (input.getAttribute('aria-invalid') === 'true') {
+        input.setAttribute('aria-invalid', 'false')
       }
     })
   })()

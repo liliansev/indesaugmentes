@@ -15,7 +15,6 @@ const faqs = [
   {
     q: "Pourquoi c'est moins cher que d'habitude ?",
     a: "Parce que c'est la cohorte 1. Tu essuies les plâtres avec moi, je te fais un prix en échange. Dès la cohorte 2, le prix passe à 1 800€.",
-    heat: true,
   },
   {
     q: "Et si ça ne me convient pas une fois lancé ?",
@@ -57,11 +56,19 @@ const faqSchema = {
     {
       faqs.map((f, i) => (
         <div class={`dashboard-panel faq-item reveal d${i + 1}${i === 0 ? ' open' : ''}${f.heat ? ' heat' : ''}`}>
-          <div class="faq-summary">
+          <button
+            type="button"
+            class="faq-summary"
+            id={`faq-q-${i}`}
+            aria-expanded={i === 0 ? 'true' : 'false'}
+            aria-controls={`faq-a-${i}`}
+          >
             <span>{f.q}</span>
-            <span class="material-symbols-outlined">expand_more</span>
+            <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
+          </button>
+          <div class="faq-body" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
+            <div class="faq-inner">{f.a}</div>
           </div>
-          <div class="faq-body"><div class="faq-inner">{f.a}</div></div>
         </div>
       ))
     }
